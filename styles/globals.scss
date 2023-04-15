@@ -1,0 +1,30 @@
+$primary_color_dark: white;
+$primary_color_light: black;
+$primary_background_dark: black;
+$primary_background_light: white;
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $primary_background_dark;
+    .title {
+      color: $primary_color_dark;
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: $primary_background_light;
+    .title {
+      color: $primary_color_light;
+    }
+  }
+}

@@ -15,7 +15,7 @@ const Home = () => {
           alignItems: "center",
         }}
       >
-        <div>comming soon...</div>
+        <div className="title">comming soon...</div>
       </div>
     </>
   );
