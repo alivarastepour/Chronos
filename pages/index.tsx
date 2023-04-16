@@ -1,22 +1,9 @@
-import { Inter } from "@next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import LandingPage from "@/Components/LandingPage/LandingPage";
 
 const Home = () => {
   return (
     <>
-      <div
-        style={{
-          height: "100vh",
-          fontFamily: inter.style.fontFamily,
-          fontSize: "2rem",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div className="title">comming soon...</div>
-      </div>
+      <LandingPage />
     </>
   );
 };
