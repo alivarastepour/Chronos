@@ -1,7 +1,4 @@
-$primary_color_dark: white;
-$primary_color_light: black;
-$primary_background_dark: black;
-$primary_background_light: white;
+@import "./_variables.scss";
 
 body {
   width: 100%;
@@ -14,17 +11,11 @@ body {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: $primary_background_dark;
-    .title {
-      color: $primary_color_dark;
-    }
   }
 }
 
 @media (prefers-color-scheme: light) {
   body {
     background-color: $primary_background_light;
-    .title {
-      color: $primary_color_light;
-    }
   }
 }
