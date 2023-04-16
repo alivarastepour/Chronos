@@ -1,0 +1,26 @@
+@import "../_variables.scss";
+
+.landing-title-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.landing-title {
+  font-size: 3rem;
+
+  &::first-letter {
+    font-size: 5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .landing-title {
+    color: $primary_color_dark;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .landing-title {
+    color: $primary_color_light;
+  }
+}

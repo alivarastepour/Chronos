@@ -1,3 +1,4 @@
+import styles from "@/styles/LandingPage/landingPage.module.scss";
 import { Inter } from "@next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -6,16 +7,9 @@ const LandingPage = () => {
   return (
     <>
       <div
-        style={{
-          height: "100vh",
-          fontFamily: inter.style.fontFamily,
-          fontSize: "2rem",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        className={`${styles["landing-title-container"]} ${inter.className}`}
       >
-        <div className="title">comming soon...</div>
+        <div className={styles["landing-title"]}>Chronos</div>
       </div>
     </>
   );
