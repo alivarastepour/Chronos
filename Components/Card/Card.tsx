@@ -11,7 +11,10 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ header, explaination }) => {
   return (
     <>
-      <div className={`${styles["card-container"]} ${inter.className}`}>
+      <div
+        tabIndex={1}
+        className={`${styles["card-container"]} ${inter.className}`}
+      >
         <div className={styles["card-header"]}>{header}</div>
         <div className={styles["card-explaination"]}>{explaination}</div>
         <div className={styles["card-show-more-container"]}>
