@@ -1,14 +1,21 @@
 @import "../_variables.scss";
 
-.landing-title-container {
+.landing-title-container,
+.landing-subtitle-container {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+}
+.landing-title-container {
+  margin-top: 70px;
+}
+
+.landing-subtitle-container {
+  margin-top: 20px;
 }
 
 .landing-title {
-  font-size: 4rem;
-  font-weight: 200;
+  font-size: 4.5rem;
+  font-weight: 300;
   transition: 0.5s;
   &:hover {
     letter-spacing: 0.6rem;
@@ -16,4 +23,8 @@
   &:not(:hover) {
     letter-spacing: 0.2rem;
   }
+}
+
+.landing-subtitle {
+  font-size: 1.5rem;
 }
