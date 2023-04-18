@@ -1,0 +1,36 @@
+.card-container {
+  border-radius: 10px;
+  max-width: 400px;
+  min-width: 300px;
+  min-height: 250px;
+  padding: 1rem;
+  text-align: justify;
+  background-color: #865dff;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: #8d67ff;
+    .card-header {
+      transform: translateY(-0.5rem);
+    }
+  }
+  &:not(:hover) {
+    .card-header {
+      transform: translateY(0.5rem);
+    }
+  }
+
+  .card-header {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: 1s;
+  }
+  .card-explaination {
+    display: none;
+    transition: 1s;
+  }
+}
