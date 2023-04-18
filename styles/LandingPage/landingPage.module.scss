@@ -28,3 +28,11 @@
 .landing-subtitle {
   font-size: 1.5rem;
 }
+
+.benefits-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
