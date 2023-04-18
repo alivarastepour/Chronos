@@ -3,23 +3,24 @@
   max-width: 400px;
   min-width: 300px;
   min-height: 250px;
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: justify;
   background-color: #865dff;
   transition: 1s;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
 
   &:hover {
     background-color: #8d67ff;
     .card-header {
-      transform: translateY(-0.5rem);
-    }
-  }
-  &:not(:hover) {
-    .card-header {
       transform: translateY(0.5rem);
+    }
+
+    .card-show-more-container {
+      transform: translateY(-0.5rem);
     }
   }
 
@@ -30,7 +31,25 @@
     transition: 1s;
   }
   .card-explaination {
-    display: none;
+    visibility: hidden;
     transition: 1s;
+  }
+
+  .card-show-more-container {
+    transition: 1s;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #e384ff;
+    border-radius: 5px;
+    cursor: pointer;
+    .show-more-button {
+      color: #ffa3fd;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
   }
 }

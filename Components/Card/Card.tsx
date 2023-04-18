@@ -14,6 +14,9 @@ const Card: React.FC<CardProps> = ({ header, explaination }) => {
       <div className={`${styles["card-container"]} ${inter.className}`}>
         <div className={styles["card-header"]}>{header}</div>
         <div className={styles["card-explaination"]}>{explaination}</div>
+        <div className={styles["card-show-more-container"]}>
+          <div className={styles["show-more-button"]}>Read More</div>
+        </div>
       </div>
     </>
   );
