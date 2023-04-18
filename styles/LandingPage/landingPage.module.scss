@@ -17,20 +17,3 @@
     letter-spacing: 0.2rem;
   }
 }
-
-@media (prefers-color-scheme: dark) {
-  .landing-title {
-    color: $primary_color_dark;
-    &::selection {
-      background-color: $selection_dark;
-    }
-  }
-}
-@media (prefers-color-scheme: light) {
-  .landing-title {
-    color: $primary_color_light;
-    &::selection {
-      background-color: $selection_light;
-    }
-  }
-}
