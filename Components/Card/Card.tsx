@@ -11,10 +11,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ header, explaination }) => {
   return (
     <>
-      <div
-        tabIndex={1}
-        className={`${styles["card-container"]} ${inter.className}`}
-      >
+      <div className={`${styles["card-container"]} ${inter.className}`}>
         <div className={styles["card-header"]}>{header}</div>
         <div className={styles["overlay"]}>
           <div className={styles["card-explaination"]}>
