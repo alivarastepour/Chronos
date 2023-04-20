@@ -1,9 +1,8 @@
 import styles from "@/styles/LandingPage/landingPage.module.scss";
-import { Inter } from "@next/font/google";
-import Benefits from "../Benefits/Benefits";
-import { NextFont } from "@next/font";
+import { inter } from "@/public/Fonts";
 
-const inter: NextFont = Inter({ subsets: ["latin"], weight: ["300"] });
+import Benefits from "../Benefits/Benefits";
+import Overview from "../Overview/Overview";
 
 const LandingPage: React.FC = () => {
   return (
@@ -18,9 +17,9 @@ const LandingPage: React.FC = () => {
           Manage Your Time Like You Are The God Of It
         </div>
       </div>
-      <div className={styles["benefits-container"]}>
-        <Benefits />
-      </div>
+      <Overview />
+
+      <Benefits />
     </>
   );
 };

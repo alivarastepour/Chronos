@@ -1,7 +1,5 @@
 import styles from "@/styles/Card/card.module.scss";
-import { NextFont } from "@next/font";
-import { Inter } from "@next/font/google";
-const inter: NextFont = Inter({ subsets: ["latin"], weight: ["200", "500"] });
+import { inter } from "@/public/Fonts";
 
 interface CardProps {
   header: string;
