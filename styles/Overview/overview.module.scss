@@ -1,0 +1,24 @@
+.overview-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 auto;
+
+  width: 90%;
+
+  .left-overview {
+    font-size: 1.5rem;
+    // line-height: 2rem;
+  }
+  .right-overview {
+    // width: 1360px;
+    // height: 1200px;
+    // background-image: url("/TrelloUICollage_4x.webp");
+    // background-position: center;
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    // z-index: 10;
+  }
+}
