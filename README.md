@@ -21,9 +21,10 @@ Chronos is an ancient greek God. God of time.
 - [ ] Chat and Discussion
 
 ## Challenges
-this lists grows as more parts of the applicataion are implemented.
+this list grows as more parts of the applicataion are implemented.
   
 |   **challenge** | **solution** |
 |-------------|----------|
 | create a slide effect for `Card` component. | use a absolute positioned container and transform it using `translate` and change in its height. |
 | create a glitter effect for the border of `Card` component. | use a `conic-gradient` effect with a proper `animation`. use the `@property` for more ease. |
+| find a scalable solution for handling themes. | use the `prefers-color-scheme` media feature. |
