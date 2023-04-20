@@ -1,8 +1,9 @@
+@import "../variables";
+
 .overview-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 
   margin: 0 auto;
 
@@ -10,15 +11,34 @@
 
   .left-overview {
     font-size: 1.5rem;
-    // line-height: 2rem;
-  }
-  .right-overview {
-    // width: 1360px;
-    // height: 1200px;
-    // background-image: url("/TrelloUICollage_4x.webp");
-    // background-position: center;
-    // background-size: contain;
-    // background-repeat: no-repeat;
-    // z-index: 10;
+    line-height: 2.5rem;
+    text-align: justify;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .landing-title {
+      font-weight: bold;
+      font-size: 6rem;
+
+      transition: 0.6s;
+
+      &:hover {
+        letter-spacing: 0.6rem;
+      }
+
+      &:not(:hover) {
+        letter-spacing: normal;
+      }
+    }
+    .landing-subtitle {
+      margin-top: 2rem;
+      font-size: 2rem;
+    }
+    &::first-letter {
+      font-size: 3rem;
+      color: $secondary_color;
+    }
   }
 }
