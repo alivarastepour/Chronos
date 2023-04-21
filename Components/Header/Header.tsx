@@ -9,26 +9,28 @@ const Header: React.FC = () => {
   return (
     <>
       <div className={styles["header-container"]}>
-        <div className={styles["header-logo"]}>
-          <Link href={"/"}>
-            <Image src={logo} width={200} height={50} alt="logo of Chronos" />
-          </Link>
-        </div>
-        <div className={`${styles["header-content"]} ${inter.className}`}>
-          <div>
+        <div className={styles["header-left-container"]}>
+          <div className={styles["header-logo"]}>
             <Link href={"/"}>
-              <div className={styles["header-content-item"]}>Features</div>
+              <Image src={logo} width={200} height={50} alt="logo of Chronos" />
             </Link>
           </div>
-          <div>
-            <Link href={"/"}>
-              <div className={styles["header-content-item"]}>Plans</div>
-            </Link>
-          </div>
-          <div>
-            <Link href={"/"}>
-              <div className={styles["header-content-item"]}>Try A Demo</div>
-            </Link>
+          <div className={`${styles["header-content"]} ${inter.className}`}>
+            <div>
+              <Link href={"/"}>
+                <div className={styles["header-content-item"]}>features</div>
+              </Link>
+            </div>
+            <div>
+              <Link href={"/"}>
+                <div className={styles["header-content-item"]}>plans</div>
+              </Link>
+            </div>
+            <div>
+              <Link href={"/"}>
+                <div className={styles["header-content-item"]}>try a demo</div>
+              </Link>
+            </div>
           </div>
         </div>
         <div className={styles["header-entry"]}>
@@ -36,13 +38,14 @@ const Header: React.FC = () => {
             <div
               className={`${styles["header-button-text"]} ${inter.className}`}
             >
-              Sign In / Sign Up
+              Start Now
             </div>
             <div className={styles["header-button-arrow"]}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="11"
-                height="20"
+                width="13"
+                height="13"
+                viewBox="0 0 11 20"
                 className={styles["svg-arrow"]}
               >
                 <path
