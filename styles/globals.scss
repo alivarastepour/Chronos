@@ -9,9 +9,6 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: $primary_background_dark;
-  }
   div {
     color: $primary_color_dark;
     &::selection {
@@ -21,9 +18,6 @@ body {
 }
 
 @media (prefers-color-scheme: light) {
-  body {
-    background-color: $primary_background_light;
-  }
   div {
     color: $primary_color_light;
     &::selection {
