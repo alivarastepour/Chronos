@@ -24,13 +24,7 @@
 
       transition: 0.6s;
 
-      &:hover {
-        letter-spacing: 0.6rem;
-      }
-
-      &:not(:hover) {
-        letter-spacing: normal;
-      }
+      letter-spacing: 0.6rem;
     }
     .landing-subtitle {
       color: $fourth_color;
