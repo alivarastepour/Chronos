@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import styles from "@/styles/Header/header.module.scss";
 import { inter } from "@/public/Fonts";
-import logo from "@/public/monday-logo-x2.png";
+import logo from "@/public/logo.png";
 
 const Header: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Header: React.FC = () => {
         <div className={styles["header-left-container"]}>
           <div className={styles["header-logo"]}>
             <Link href={"/"}>
-              <Image src={logo} width={200} height={50} alt="logo of Chronos" />
+              <Image src={logo} width={200} height={40} alt="logo of Chronos" />
             </Link>
           </div>
           <div className={`${styles["header-content"]} ${inter.className}`}>
