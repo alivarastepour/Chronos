@@ -1,6 +1,55 @@
+@import "../variables";
 .benefits-container {
+  position: relative;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+
+  margin-bottom: 10rem;
+  margin-top: 5rem;
+  padding: 0 2rem;
+
+  &::after {
+    content: "Chronos";
+    position: absolute;
+    bottom: 50px;
+    left: 180px;
+    font-size: 10rem;
+    font-weight: bold;
+    opacity: 0.04;
+  }
+
+  .benefits-title {
+    color: $primary_color_light;
+    font-size: 4rem;
+    border-left: 8px solid hsl(0°, 100%, 95%);
+    padding-left: 2rem;
+  }
+
+  .benefits-content {
+    border: 1px black solid;
+    max-width: 500px;
+    min-height: 400px;
+    font-size: 2rem;
+    position: relative;
+
+    .x {
+      position: relative;
+      display: flex;
+      max-height: 400px;
+      overflow: hidden;
+      flex-direction: column;
+      flex-wrap: wrap;
+      text-align: justify;
+      &:hover div {
+        transform: translateX(-500px);
+      }
+      div {
+        margin: 2rem;
+        transition: 1s ease;
+      }
+    }
+  }
 }
