@@ -54,10 +54,11 @@
 
 @media (prefers-color-scheme: light) {
   .overview-wrapper {
-    background-image: radial-gradient(
-      farthest-corner at 300px 400px,
-      hsl(0°, 100%, 95%),
-      $primary_background_light
-    );
+    background: url("../../public/curve.svg") right bottom -0.5px / 100% 13% no-repeat,
+      radial-gradient(
+        farthest-corner at 300px 400px,
+        hsl(0°, 100%, 95%),
+        $primary_background_light
+      );
   }
 }

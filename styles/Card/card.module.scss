@@ -5,8 +5,8 @@ $angle: 90deg;
 .card-container {
   position: relative;
 
-  min-width: 420px;
-  min-height: 300px;
+  min-width: 510px;
+  min-height: 470px;
 
   padding: 0.5rem;
   margin-top: 2rem;
@@ -109,5 +109,11 @@ $angle: 90deg;
 @keyframes rotate {
   to {
     --angle: 360deg;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-container {
+    background-color: $primary_background_dark;
   }
 }
