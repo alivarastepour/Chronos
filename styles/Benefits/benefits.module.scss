@@ -39,7 +39,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         div {
-          transition: 1s;
+          transition: 1s ease-in-out;
         }
       }
     }
@@ -51,7 +51,7 @@
       font-size: 2rem;
       position: relative;
 
-      .x {
+      .benefits-content-container {
         position: relative;
         display: flex;
         max-height: 400px;
@@ -59,12 +59,9 @@
         flex-direction: column;
         flex-wrap: wrap;
         text-align: justify;
-        &:hover div {
-          transform: translateX(-500px);
-        }
         div {
           margin: 2rem;
-          transition: 1s ease;
+          transition: 1s ease-in-out;
         }
       }
     }
