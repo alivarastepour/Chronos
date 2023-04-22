@@ -1,57 +1,61 @@
-const handleBenefitScroll = () => {
-  let transformValue: number = -160;
+export const handleBenefitScroll = (
+  minTransformValue: number,
+  maxTransformValue: number,
+  steps: number,
+  direcion: "horizontal" | "vertical",
+  currentElementID: string,
+  nextElementID: string,
+  parentElementID: string,
+  timerCycle: number,
+  intervalCycle: number
+) => {
+  let transformValue: number = -steps;
   let increasing: boolean = false;
   let interval: NodeJS.Timeout;
   let timeout: NodeJS.Timer;
 
   const calculateTransformValue = () => {
     if (increasing) {
-      if (transformValue == 0) {
-        transformValue = -160;
+      if (transformValue == maxTransformValue) {
+        transformValue = -steps;
         increasing = false;
       } else {
-        transformValue += 160;
+        transformValue += steps;
       }
     } else {
-      if (transformValue == -480) {
-        transformValue = -320;
+      if (transformValue == minTransformValue) {
+        transformValue = minTransformValue + steps;
         increasing = true;
       } else {
-        transformValue -= 160;
+        transformValue -= steps;
       }
     }
   };
 
   interval = setInterval(() => {
-    const current = document.getElementById("current");
-    const next = document.getElementById("next");
+    const current = document.getElementById(currentElementID);
+    const next = document.getElementById(nextElementID);
 
     if (current && next) {
-      current.style.transform = `translateY(${transformValue}px)`;
-      next.style.transform = `translateY(${transformValue}px)`;
+      if (direcion == "horizontal") {
+        current.style.transform = `translateX(${transformValue}px)`;
+        next.style.transform = `translateX(${transformValue}px)`;
+      } else {
+        current.style.transform = `translateY(${transformValue}px)`;
+        next.style.transform = `translateY(${transformValue}px)`;
+      }
       timeout = setTimeout(() => {
         calculateTransformValue();
         const nextt = increasing
           ? next.previousElementSibling ??
-            document.getElementById("benefits-title-container")
-              ?.lastElementChild
+            document.getElementById(parentElementID)?.lastElementChild
           : next.nextElementSibling ??
-            document.getElementById("benefits-title-container")
-              ?.firstElementChild;
+            document.getElementById(parentElementID)?.firstElementChild;
 
         current.removeAttribute("id");
-        nextt?.setAttribute("id", "next");
-        next?.setAttribute("id", "current");
-      }, 2000);
+        nextt?.setAttribute("id", nextElementID);
+        next?.setAttribute("id", currentElementID);
+      }, timerCycle);
     }
-  }, 4000);
-};
-
-export const intersectionHandler = (
-  entries: IntersectionObserverEntry[]
-): void => {
-  const entry: IntersectionObserverEntry = entries[0];
-  const isInView: boolean = entry.isIntersecting;
-  if (isInView) handleBenefitScroll();
-  return;
+  }, intervalCycle);
 };
