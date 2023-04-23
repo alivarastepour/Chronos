@@ -3,60 +3,9 @@ import { useEffect } from "react";
 import styles from "@/styles/Benefits/benefits.module.scss";
 import { inter } from "@/public/Fonts";
 
-import { handleBenefitScroll } from "./utill/transformHandler";
+import { intersectionHandler } from "./utill/transformHandler";
 
 const Benefits: React.FC = () => {
-  const intersectionHandler = (entries: IntersectionObserverEntry[]): void => {
-    const entry: IntersectionObserverEntry = entries[0];
-    const isInView: boolean = entry.isIntersecting;
-    if (isInView) {
-      const titlesCount =
-        document.getElementById("benefits-title-container")
-          ?.childElementCount ?? 0;
-      const contentsCount =
-        document.getElementById("benefits-content-container")
-          ?.childElementCount ?? 0;
-      const beneftisCount = Math.max(contentsCount, titlesCount);
-
-      const titlesScrollHeight =
-        document.getElementById("benefits-title-container")?.scrollHeight ?? 0;
-      const contentsScrollWidth =
-        document.getElementById("benefits-content-container")?.scrollWidth ?? 0;
-
-      const titleHeight = titlesScrollHeight / titlesCount;
-      const contentWidth = contentsScrollWidth / contentsCount;
-      console.log(titleHeight, contentWidth);
-
-      const minTitle = -(titleHeight * (beneftisCount - 1));
-      const minContent = -(contentWidth * (beneftisCount - 1));
-      const timerCycle = 500;
-      const intervalCycle = 1000;
-      handleBenefitScroll(
-        minTitle,
-        0,
-        titleHeight,
-        "vertical",
-        "current-title",
-        "next-title",
-        "benefits-title-container",
-        timerCycle,
-        intervalCycle
-      );
-      handleBenefitScroll(
-        minContent,
-        0,
-        contentWidth,
-        "horizontal",
-        "current-content",
-        "next-content",
-        "benefits-content-container",
-        timerCycle,
-        intervalCycle
-      );
-    }
-    return;
-  };
-
   useEffect(() => {
     // return;
     const target: Element | null = document.querySelector("#benefit-container");
