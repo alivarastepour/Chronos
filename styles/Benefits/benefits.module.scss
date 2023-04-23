@@ -6,6 +6,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     justify-content: space-around;
     align-items: center;
@@ -34,7 +35,8 @@
         width: 100%;
         height: 100%;
         display: flex;
-        max-height: 160px;
+        max-height: 157px;
+        max-width: 700px;
         overflow: hidden;
         flex-direction: row;
         flex-wrap: wrap;
@@ -55,6 +57,7 @@
         position: relative;
         display: flex;
         max-height: 400px;
+        min-width: 450px;
         overflow: hidden;
         flex-direction: column;
         flex-wrap: wrap;

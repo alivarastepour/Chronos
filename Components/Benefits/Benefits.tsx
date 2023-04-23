@@ -10,33 +10,55 @@ const Benefits: React.FC = () => {
     const entry: IntersectionObserverEntry = entries[0];
     const isInView: boolean = entry.isIntersecting;
     if (isInView) {
+      const titlesCount =
+        document.getElementById("benefits-title-container")
+          ?.childElementCount ?? 0;
+      const contentsCount =
+        document.getElementById("benefits-content-container")
+          ?.childElementCount ?? 0;
+      const beneftisCount = Math.max(contentsCount, titlesCount);
+
+      const titlesScrollHeight =
+        document.getElementById("benefits-title-container")?.scrollHeight ?? 0;
+      const contentsScrollWidth =
+        document.getElementById("benefits-content-container")?.scrollWidth ?? 0;
+
+      const titleHeight = titlesScrollHeight / titlesCount;
+      const contentWidth = contentsScrollWidth / contentsCount;
+      console.log(titleHeight, contentWidth);
+
+      const minTitle = -(titleHeight * (beneftisCount - 1));
+      const minContent = -(contentWidth * (beneftisCount - 1));
+      const timerCycle = 500;
+      const intervalCycle = 1000;
       handleBenefitScroll(
-        -480,
+        minTitle,
         0,
-        160,
+        titleHeight,
         "vertical",
         "current-title",
         "next-title",
         "benefits-title-container",
-        2000,
-        4000
+        timerCycle,
+        intervalCycle
       );
       handleBenefitScroll(
-        -1500,
+        minContent,
         0,
-        500,
+        contentWidth,
         "horizontal",
         "current-content",
         "next-content",
         "benefits-content-container",
-        1000,
-        4000
+        timerCycle,
+        intervalCycle
       );
     }
     return;
   };
 
   useEffect(() => {
+    // return;
     const target: Element | null = document.querySelector("#benefit-container");
     if (target !== null) {
       const options: IntersectionObserverInit = {
@@ -73,6 +95,12 @@ const Benefits: React.FC = () => {
               </div>
               <div>3Lorem ipsum dolor sit, amet consectetur.</div>
               <div>4Lorem ipsum dolor sit, amet consectetur.</div>
+              <div>5Lorem ipsum dolor sit, amet consectetur.</div>
+              <div>6Lorem ipsum dolor sit, amet consectetur.</div>
+              <div>7Lorem ipsum dolor sit, amet consectetur.</div>
+              <div>8Lorem ipsum dolor sit, amet consectetur.</div>
+              <div>9Lorem ipsum dolor sit, amet consectetur.</div>
+              <div>10Lorem ipsum dolor sit, amet consectetur.</div>
             </div>
           </div>
           <div className={styles["benefits-content"]}>
@@ -100,6 +128,42 @@ const Benefits: React.FC = () => {
               </div>
               <div>
                 4Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti saepe excepturi inventore. Sed, adipisci reiciendis?
+                Tempore, asperiores, nobis itaque totam quis possimus repellat
+                alias quasi
+              </div>
+              <div>
+                5Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti saepe excepturi inventore. Sed, adipisci reiciendis?
+                Tempore, asperiores, nobis itaque totam quis possimus repellat
+                alias quasi
+              </div>
+              <div>
+                6Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti saepe excepturi inventore. Sed, adipisci reiciendis?
+                Tempore, asperiores, nobis itaque totam quis possimus repellat
+                alias quasi
+              </div>
+              <div>
+                7Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti saepe excepturi inventore. Sed, adipisci reiciendis?
+                Tempore, asperiores, nobis itaque totam quis possimus repellat
+                alias quasi
+              </div>
+              <div>
+                8Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti saepe excepturi inventore. Sed, adipisci reiciendis?
+                Tempore, asperiores, nobis itaque totam quis possimus repellat
+                alias quasi
+              </div>
+              <div>
+                9Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti saepe excepturi inventore. Sed, adipisci reiciendis?
+                Tempore, asperiores, nobis itaque totam quis possimus repellat
+                alias quasi
+              </div>
+              <div>
+                10Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Corrupti saepe excepturi inventore. Sed, adipisci reiciendis?
                 Tempore, asperiores, nobis itaque totam quis possimus repellat
                 alias quasi

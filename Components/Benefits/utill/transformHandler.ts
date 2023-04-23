@@ -16,14 +16,14 @@ export const handleBenefitScroll = (
 
   const calculateTransformValue = () => {
     if (increasing) {
-      if (transformValue == maxTransformValue) {
+      if (transformValue >= maxTransformValue) {
         transformValue = -steps;
         increasing = false;
       } else {
         transformValue += steps;
       }
     } else {
-      if (transformValue == minTransformValue) {
+      if (transformValue <= minTransformValue) {
         transformValue = minTransformValue + steps;
         increasing = true;
       } else {
