@@ -14,22 +14,9 @@ interface scrollParameters {
   timerCycle: number;
   intervalCycle: number;
 }
-
-export const handleScroll = ({
-  minTransformValue,
-  maxTransformValue,
-  steps,
-  direction,
-  currentElementID,
-  nextElementID,
-  parentElementID,
-  timerCycle,
-  intervalCycle,
-}: scrollParameters) => {
-  let transformValue: number = -steps;
-  let interval: NodeJS.Timeout | undefined = undefined;
-  let timeout: NodeJS.Timer | undefined = undefined;
-
+// @ts-ignore
+const initTransformValues = (direction, steps) => {
+  let transformValue = 0;
   if (direction == "horizontal") {
     if (transformValueH == -1) {
       transformValue = -steps;
@@ -45,6 +32,24 @@ export const handleScroll = ({
       transformValue = transformValueV;
     }
   }
+  return transformValue;
+};
+
+export const handleScroll = ({
+  minTransformValue,
+  maxTransformValue,
+  steps,
+  direction,
+  currentElementID,
+  nextElementID,
+  parentElementID,
+  timerCycle,
+  intervalCycle,
+}: scrollParameters) => {
+  let transformValue: number = initTransformValues(direction, steps);
+  let interval: NodeJS.Timeout | undefined = undefined;
+  let timeout: NodeJS.Timer | undefined = undefined;
+
   const calculateTransformValue = () => {
     if (increasing) {
       if (transformValue >= maxTransformValue) {
