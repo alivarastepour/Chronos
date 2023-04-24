@@ -64,7 +64,8 @@ const calculateTransformValues = (
         transformValueV = transformValue;
       }
     }
-  } else { // if reached the minimum allowed amount for transform value, reset it
+  } else {
+    // if reached the minimum allowed amount for transform value, reset it
     if (transformValue <= minTransformValue) {
       transformValue = minTransformValue + steps;
       if (direction == "horizontal") {
@@ -101,10 +102,12 @@ export const handleScroll = ({
   let interval: NodeJS.Timeout | undefined = undefined;
   let timeout: NodeJS.Timer | undefined = undefined;
 
-  interval = setInterval(() => { // if there is no intersection, clear the timeout and the interval
+  interval = setInterval(() => {
+    // if there is no intersection, clear the timeout and the interval
     if (!isClockTicking) {
       clearInterval(interval);
       clearTimeout(timeout);
+      return;
     }
 
     const current = document.getElementById(currentElementID);
@@ -119,6 +122,7 @@ export const handleScroll = ({
         current.style.transform = `translateY(${transformValue}px)`;
         next.style.transform = `translateY(${transformValue}px)`;
       }
+
       timeout = setTimeout(() => {
         transformValue = calculateTransformValues(
           transformValue,
@@ -166,8 +170,8 @@ export const intersectionHandler = (
 
     const minTitle = -(titleHeight * (beneftisCount - 1));
     const minContent = -(contentWidth * (beneftisCount - 1));
-    const timerCycle = 500;
-    const intervalCycle = 1000;
+    const timerCycle = 2000;
+    const intervalCycle = 4000;
     const scrollTitle: scrollParameters = {
       minTransformValue: minTitle,
       maxTransformValue: 0,

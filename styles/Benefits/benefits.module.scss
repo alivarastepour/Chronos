@@ -1,7 +1,10 @@
 @import "../variables";
+
 .benefits-wrapper {
   margin-bottom: 20rem;
+  margin: auto 2rem 20rem 2rem;
 
+  // border: 2px solid black;
   .benefits-container {
     position: relative;
     display: flex;
@@ -12,22 +15,37 @@
     align-items: center;
 
     margin-top: 5rem;
-    padding: 0 2rem;
+    padding: 3rem 2rem;
 
     &::after {
+      content: "with";
+      position: absolute;
+      top: 0px;
+      left: 80px;
+      font-size: 4rem;
+      font-weight: bold;
+      color: hsl(0°, 100%, 95%);
+      opacity: 0.3;
+      // transform: rotate(90deg);
+    }
+
+    &::before {
       content: "Chronos";
       position: absolute;
-      bottom: 50px;
-      left: 180px;
+      top: 10px;
+      left: 80px;
       font-size: 10rem;
       font-weight: bold;
-      opacity: 0.04;
+      // color: hsl(0°, 100%, 95%);
+      color: rgba($fourth_color, 0.2);
+      // opacity: 0.2;
+      // transform: rotate(90deg);
     }
 
     .benefits-title {
-      color: $primary_color_light;
+      // color: $primary_color_light;
       font-size: 4rem;
-      border-left: 8px solid hsl(0°, 100%, 95%);
+      border-top: 8px solid rgba($fourth_color, 0.4);
       padding-left: 2rem;
       position: relative;
 
@@ -41,17 +59,17 @@
         flex-direction: row;
         flex-wrap: wrap;
         div {
-          transition: 1s ease-in-out;
+          color: $secondary_color;
+          transition: 0.6s ease-out;
         }
       }
     }
 
     .benefits-content {
-      border: 1px black solid;
       max-width: 500px;
       min-height: 400px;
       font-size: 2rem;
-      position: relative;
+      border-left: 8px solid rgba($fourth_color, 0.4);
 
       .benefits-content-container {
         position: relative;
@@ -63,23 +81,11 @@
         flex-wrap: wrap;
         text-align: justify;
         div {
+          color: $secondary_color;
           margin: 2rem;
-          transition: 1s ease-in-out;
+          transition: 0.6s ease-out;
         }
       }
-    }
-  }
-  .benefits-counter {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    div {
-      width: 25px;
-      height: 1px;
-      border-bottom: 3px black solid;
-      margin-right: 1rem;
     }
   }
 }
