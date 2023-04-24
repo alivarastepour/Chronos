@@ -35,6 +35,51 @@ const initTransformValues = (direction, steps) => {
   return transformValue;
 };
 
+const calculateTransformValues = (
+  transformValue: any,
+  maxTransformValue: any,
+  minTransformValue: any,
+  steps: any,
+  direction: any
+) => {
+  if (increasing) {
+    if (transformValue >= maxTransformValue) {
+      transformValue = -steps;
+      if (direction == "horizontal") {
+        transformValueH = transformValue;
+      } else {
+        transformValueV = transformValue;
+      }
+      increasing = false;
+    } else {
+      transformValue += steps;
+      if (direction == "horizontal") {
+        transformValueH = transformValue;
+      } else {
+        transformValueV = transformValue;
+      }
+    }
+  } else {
+    if (transformValue <= minTransformValue) {
+      transformValue = minTransformValue + steps;
+      if (direction == "horizontal") {
+        transformValueH = transformValue;
+      } else {
+        transformValueV = transformValue;
+      }
+      increasing = true;
+    } else {
+      transformValue -= steps;
+      if (direction == "horizontal") {
+        transformValueH = transformValue;
+      } else {
+        transformValueV = transformValue;
+      }
+    }
+  }
+  return transformValue;
+};
+
 export const handleScroll = ({
   minTransformValue,
   maxTransformValue,
@@ -50,51 +95,12 @@ export const handleScroll = ({
   let interval: NodeJS.Timeout | undefined = undefined;
   let timeout: NodeJS.Timer | undefined = undefined;
 
-  const calculateTransformValue = () => {
-    if (increasing) {
-      if (transformValue >= maxTransformValue) {
-        transformValue = -steps;
-        if (direction == "horizontal") {
-          transformValueH = transformValue;
-        } else {
-          transformValueV = transformValue;
-        }
-        increasing = false;
-      } else {
-        transformValue += steps;
-        if (direction == "horizontal") {
-          transformValueH = transformValue;
-        } else {
-          transformValueV = transformValue;
-        }
-      }
-    } else {
-      if (transformValue <= minTransformValue) {
-        transformValue = minTransformValue + steps;
-        if (direction == "horizontal") {
-          transformValueH = transformValue;
-        } else {
-          transformValueV = transformValue;
-        }
-        increasing = true;
-      } else {
-        transformValue -= steps;
-        if (direction == "horizontal") {
-          transformValueH = transformValue;
-        } else {
-          transformValueV = transformValue;
-        }
-      }
-    }
-  };
-
-  // if (isCloclTicking) {
   interval = setInterval(() => {
     if (!isClockTicking) {
       clearInterval(interval);
       clearTimeout(timeout);
-      // return;
     }
+
     const current = document.getElementById(currentElementID);
     const next = document.getElementById(nextElementID);
 
@@ -107,7 +113,13 @@ export const handleScroll = ({
         next.style.transform = `translateY(${transformValue}px)`;
       }
       timeout = setTimeout(() => {
-        calculateTransformValue();
+        transformValue = calculateTransformValues(
+          transformValue,
+          maxTransformValue,
+          minTransformValue,
+          steps,
+          direction
+        );
         const nextt = increasing
           ? next.previousElementSibling ??
             document.getElementById(parentElementID)?.lastElementChild
