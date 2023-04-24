@@ -1,3 +1,8 @@
+let isClockTicking = false;
+let transformValueH = -1;
+let transformValueV = -1;
+let increasing: boolean = false;
+
 interface scrollParameters {
   minTransformValue: number;
   maxTransformValue: number;
@@ -22,30 +27,69 @@ export const handleScroll = ({
   intervalCycle,
 }: scrollParameters) => {
   let transformValue: number = -steps;
-  let increasing: boolean = false;
   let interval: NodeJS.Timeout | undefined = undefined;
   let timeout: NodeJS.Timer | undefined = undefined;
 
+  if (direction == "horizontal") {
+    if (transformValueH == -1) {
+      transformValue = -steps;
+      transformValueH = -steps;
+    } else {
+      transformValue = transformValueH;
+    }
+  } else {
+    if (transformValueV == -1) {
+      transformValue = -steps;
+      transformValueV = -steps;
+    } else {
+      transformValue = transformValueV;
+    }
+  }
   const calculateTransformValue = () => {
     if (increasing) {
       if (transformValue >= maxTransformValue) {
         transformValue = -steps;
+        if (direction == "horizontal") {
+          transformValueH = transformValue;
+        } else {
+          transformValueV = transformValue;
+        }
         increasing = false;
       } else {
         transformValue += steps;
+        if (direction == "horizontal") {
+          transformValueH = transformValue;
+        } else {
+          transformValueV = transformValue;
+        }
       }
     } else {
       if (transformValue <= minTransformValue) {
         transformValue = minTransformValue + steps;
+        if (direction == "horizontal") {
+          transformValueH = transformValue;
+        } else {
+          transformValueV = transformValue;
+        }
         increasing = true;
       } else {
         transformValue -= steps;
+        if (direction == "horizontal") {
+          transformValueH = transformValue;
+        } else {
+          transformValueV = transformValue;
+        }
       }
     }
   };
 
   // if (isCloclTicking) {
   interval = setInterval(() => {
+    if (!isClockTicking) {
+      clearInterval(interval);
+      clearTimeout(timeout);
+      // return;
+    }
     const current = document.getElementById(currentElementID);
     const next = document.getElementById(nextElementID);
 
@@ -79,6 +123,7 @@ export const intersectionHandler = (
   const entry: IntersectionObserverEntry = entries[0];
   const isInView: boolean = entry.isIntersecting;
   if (isInView) {
+    isClockTicking = true;
     const titlesCount =
       document.getElementById("benefits-title-container")?.childElementCount ??
       0;
@@ -123,5 +168,7 @@ export const intersectionHandler = (
     };
     handleScroll({ ...scrollTitle });
     handleScroll({ ...scrollContent });
+  } else {
+    isClockTicking = false;
   }
 };
