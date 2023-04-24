@@ -1,7 +1,7 @@
-let isClockTicking = false;
-let transformValueH = -1;
-let transformValueV = -1;
-let increasing: boolean = false;
+let isClockTicking = false; // if true, the timer and interval used for auto scroll behaviour should be active, else should be cleared
+let transformValueH = -1; // a global variable to keep track of the transform value in horizontal direction
+let transformValueV = -1; // a global variable to keep track of the transform value in vertival direction
+let increasing: boolean = false; // if true, the scroll is in backward mode
 
 interface scrollParameters {
   minTransformValue: number;
@@ -14,14 +14,17 @@ interface scrollParameters {
   timerCycle: number;
   intervalCycle: number;
 }
+// initializes the transform values: transformValue, transformValueH and transformValueV based on previous events.
 // @ts-ignore
 const initTransformValues = (direction, steps) => {
   let transformValue = 0;
   if (direction == "horizontal") {
     if (transformValueH == -1) {
+      // if there is no value held for later scrolls, init it with the proper value
       transformValue = -steps;
       transformValueH = -steps;
     } else {
+      // if there is a value held for later scroll, use it.
       transformValue = transformValueH;
     }
   } else {
@@ -35,6 +38,7 @@ const initTransformValues = (direction, steps) => {
   return transformValue;
 };
 
+// calculates how much a specific container should move
 const calculateTransformValues = (
   transformValue: any,
   maxTransformValue: any,
@@ -44,6 +48,7 @@ const calculateTransformValues = (
 ) => {
   if (increasing) {
     if (transformValue >= maxTransformValue) {
+      // if reached the maximum allowed amount for transform value, reset it
       transformValue = -steps;
       if (direction == "horizontal") {
         transformValueH = transformValue;
@@ -59,7 +64,7 @@ const calculateTransformValues = (
         transformValueV = transformValue;
       }
     }
-  } else {
+  } else { // if reached the minimum allowed amount for transform value, reset it
     if (transformValue <= minTransformValue) {
       transformValue = minTransformValue + steps;
       if (direction == "horizontal") {
@@ -80,6 +85,7 @@ const calculateTransformValues = (
   return transformValue;
 };
 
+// handles the main procedure for auto scrolling.
 export const handleScroll = ({
   minTransformValue,
   maxTransformValue,
@@ -95,7 +101,7 @@ export const handleScroll = ({
   let interval: NodeJS.Timeout | undefined = undefined;
   let timeout: NodeJS.Timer | undefined = undefined;
 
-  interval = setInterval(() => {
+  interval = setInterval(() => { // if there is no intersection, clear the timeout and the interval
     if (!isClockTicking) {
       clearInterval(interval);
       clearTimeout(timeout);
@@ -105,6 +111,7 @@ export const handleScroll = ({
     const next = document.getElementById(nextElementID);
 
     if (current && next) {
+      // transform the proper container using translate
       if (direction == "horizontal") {
         current.style.transform = `translateX(${transformValue}px)`;
         next.style.transform = `translateX(${transformValue}px)`;
