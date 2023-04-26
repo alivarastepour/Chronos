@@ -1,0 +1,39 @@
+@import "../variables";
+
+.plans-wrapper {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  .plans-header {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 100;
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  .plans-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .plan-header-title {
+      font-size: 3rem;
+      font-weight: 100;
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .plans-header {
+    // color: $primary_background_dark;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+}
