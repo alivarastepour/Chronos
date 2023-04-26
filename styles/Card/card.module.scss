@@ -5,15 +5,13 @@ $angle: 90deg;
 .card-container {
   position: relative;
 
-  min-width: 370px;
-  min-height: 470px;
+  min-height: 600px;
+  max-width: 450px;
 
   padding: 0.5rem;
   margin-top: 2rem;
 
   text-align: justify;
-
-  // border: 1px solid $fourth_color_dark;
 
   transition: 1s;
 
@@ -26,22 +24,13 @@ $angle: 90deg;
     border: 4px solid;
     border-image-slice: 1;
 
-    // --angle: 0deg;
-
-    // border-image-source: conic-gradient(
-    //   from var(--angle),
-    //   $primary_color_light 0deg,
-    //   $secondary_color_light 90deg,
-    //   $third_color_light 180deg,
-    //   $fourth_color_light 360deg
-    // );
+    --angle: 360deg;
 
     animation: 15s rotate infinite linear;
 
     .card-header {
       transition-delay: 0.1s;
-      transform: translateY(-6rem);
-      // color: $fourth_color_light;
+      transform: translateY(-10rem);
     }
     .overlay {
       transition-delay: 0.1s;
@@ -52,10 +41,6 @@ $angle: 90deg;
   }
 
   .card-header {
-    // font-size: 2rem;
-    // text-align: center;
-    // font-weight: 100;
-
     margin-bottom: 1rem;
 
     transition: 1s;
@@ -71,11 +56,6 @@ $angle: 90deg;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-
-    // text-align: center;
-    // line-height: 1.6rem;
-    // font-size: 1.3rem;
-    // font-weight: 200;
 
     .card-explaination-wrapper {
       margin: 10px;
@@ -115,6 +95,15 @@ $angle: 90deg;
 @media (prefers-color-scheme: dark) {
   .card-container {
     background-color: $primary_background_dark;
+
+    &:hover {
+      border-image-source: conic-gradient(
+        from var(--angle),
+        $primary_color_dark 0deg,
+        $third_color_dark 180deg,
+        $secondary_color_dark 360deg
+      );
+    }
   }
 }
 
@@ -123,8 +112,6 @@ $angle: 90deg;
     border: 4px solid $third_color_light;
 
     &:hover {
-      --angle: 360deg;
-
       border-image-source: conic-gradient(
         from var(--angle),
         $primary_color_light 0deg,
