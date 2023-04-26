@@ -23,7 +23,7 @@
       left: 80px;
 
       font-size: 4rem;
-      font-weight: bold;
+      font-weight: 400;
     }
 
     &::before {
@@ -34,13 +34,14 @@
       left: 80px;
 
       font-size: 10rem;
-      font-weight: bold;
+      font-weight: 500;
     }
 
     .benefits-title {
       position: relative;
 
       font-size: 4rem;
+      font-weight: 200;
 
       border-radius: 1rem;
 
@@ -68,6 +69,7 @@
       min-height: 270px;
 
       font-size: 2rem;
+      font-weight: 300;
 
       border-radius: 1rem;
 
