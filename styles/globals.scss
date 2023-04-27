@@ -8,12 +8,34 @@ body {
   box-sizing: border-box;
 }
 
+.active-right {
+  transform: scale(1.1) translateX(2rem);
+}
+.active-left {
+  transform: scale(1.1) translateX(-2rem);
+}
+.active-mid {
+  transform: scale(1.1);
+}
+.deactive-left {
+  transform: scale(0.9) translateX(-2rem);
+}
+.deactive-right {
+  transform: scale(0.9) translateX(2rem);
+}
+
 @media (prefers-color-scheme: dark) {
   div {
     color: $primary_color_dark;
     &::selection {
       background-color: $selection_dark;
     }
+  }
+  .counter-active {
+    border: 3px solid $fourth_color_dark;
+  }
+  .counter-deactive {
+    border: 3px solid $primary_color_dark;
   }
 }
 
@@ -23,5 +45,11 @@ body {
     &::selection {
       background-color: $selection_light;
     }
+  }
+  .counter-active {
+    border: 3px solid $primary_color_light;
+  }
+  .counter-deactive {
+    border: 3px solid $third_color_light;
   }
 }
