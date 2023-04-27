@@ -1,7 +1,7 @@
 @import "../variables";
 
 .benefits-wrapper {
-  margin: 8rem 2rem 0 2rem;
+  margin: 8rem 1rem 0 1rem;
 
   .benefits-container {
     position: relative;
@@ -19,7 +19,7 @@
       content: "with";
 
       position: absolute;
-      top: -70px;
+      top: -35px;
       left: 80px;
 
       font-size: 4rem;
@@ -30,7 +30,7 @@
       content: "Chronos";
 
       position: absolute;
-      top: -40px;
+      top: -5px;
       left: 80px;
 
       font-size: 10rem;
@@ -65,10 +65,10 @@
     }
 
     .benefits-content {
-      max-width: 500px;
-      min-height: 270px;
+      max-width: 600px;
+      min-height: 350px;
 
-      font-size: 2rem;
+      font-size: 2.4rem;
       font-weight: 300;
 
       border-radius: 1rem;
