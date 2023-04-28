@@ -1,4 +1,14 @@
-export const plansInformation = [
+interface PlanInformationProperties {
+  id: number;
+  header_title: string;
+  header_explaination: string;
+  header_button_content: string;
+  more_button_content: string;
+  initial_wrapper_classname: string;
+  content_items: string[];
+}
+
+export const plansInformation: PlanInformationProperties[] = [
   {
     id: 1,
     header_title: "free trial",
