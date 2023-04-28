@@ -1,4 +1,4 @@
-const SELECTORS = ["1", "2", "3"];
+const SELECTORS: string[] = ["1", "2", "3"];
 
 const removePrevEffects = (items: string[], selector: string): void => {
   items.forEach((item: string) => {
@@ -31,8 +31,6 @@ const changeActiveCounter = (target: string): void => {
 
 const changeEffect = (event: Event): void => {
   const target: Element = event.currentTarget as Element;
-  console.log(target);
-
   const targetID: string = target.id;
   const ID: string = targetID[targetID.length - 1];
   const element: Element | null = document.getElementById(`card-wrapper-${ID}`);
@@ -45,21 +43,21 @@ const changeEffect = (event: Event): void => {
 
   removePrevEffects(SELECTORS, "deactive-");
 
-  if (targetID.endsWith("counter-1") || targetID.endsWith("wrapper-1")) {
+  if (targetID.endsWith("1")) {
     removePrevEffects(["2", "3"], "active-");
 
     element?.classList.add("active-right");
 
     document.getElementById("card-wrapper-2")?.classList.add("deactive-right");
     document.getElementById("card-wrapper-3")?.classList.add("deactive-right");
-  } else if (targetID.endsWith("counter-2") || targetID.endsWith("wrapper-2")) {
+  } else if (targetID.endsWith("2")) {
     removePrevEffects(["1", "3"], "active-");
 
     element?.classList.add("active-mid");
 
     document.getElementById("card-wrapper-1")?.classList.add("deactive-left");
     document.getElementById("card-wrapper-3")?.classList.add("deactive-right");
-  } else if (targetID.endsWith("counter-3") || targetID.endsWith("wrapper-3")) {
+  } else if (targetID.endsWith("3")) {
     removePrevEffects(["1", "2"], "active-");
 
     element?.classList.add("active-left");
@@ -71,15 +69,13 @@ const changeEffect = (event: Event): void => {
   }
 };
 
-export const focusOnHover = () => {
-  const e1: Element | null = document.getElementById("plans-counter-1");
-  const e2: Element | null = document.getElementById("plans-counter-2");
-  const e3: Element | null = document.getElementById("plans-counter-3");
-
-  const e4: Element | null = document.getElementById("card-wrapper-1");
-  const e5: Element | null = document.getElementById("card-wrapper-2");
-  const e6: Element | null = document.getElementById("card-wrapper-3");
-  [e1, e2, e3, e4, e5, e6].forEach((e) =>
-    e?.addEventListener("click", changeEffect)
-  );
+export const focusOnHover = (): void => {
+  ["plans-counter-", "card-wrapper-"].forEach((classname: string) => {
+    SELECTORS.forEach((selctor: string) => {
+      const element: Element | null = document.getElementById(
+        `${classname}${selctor}`
+      );
+      element?.addEventListener("click", changeEffect);
+    });
+  });
 };
