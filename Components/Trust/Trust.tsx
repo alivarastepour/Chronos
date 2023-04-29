@@ -1,14 +1,22 @@
 import { inter } from "@/public/Fonts";
 import styles from "@/styles/Trust/trust.module.scss";
+import { addHoverStyle } from "@/styles/Trust/util/hoverStyles";
+import { useEffect } from "react";
 
 const Trust = () => {
+  useEffect(() => {
+    addHoverStyle();
+  }, []);
   return (
     <>
       <div className={styles["trust-wrapper"]}>
         <div
           className={`${styles["trust-container"]} ${styles["trust-container-1"]} ${inter.className}`}
         >
-          <div className={`${styles["trust-item"]} ${styles["item-1"]}`}>
+          <div
+            id="item-1"
+            className={`${styles["trust-item"]} ${styles["item-1"]}`}
+          >
             <div className={styles["trust-content"]}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Repellendus, quibusdam. Lorem, ipsum dolor sit amet consectetur
