@@ -13,20 +13,17 @@
     .trust-item {
       position: relative;
       box-sizing: border-box;
-      border: 2px solid black;
       padding: 2rem 2rem 5rem 2rem;
       text-align: justify;
       border-radius: 2rem;
       .trust-content {
         width: 100%;
-        color: black;
         font-weight: 200;
         font-size: 1.3rem;
       }
       .trust-quote {
         position: absolute;
         bottom: 1rem;
-        color: gray;
         font-weight: 600;
         font-size: 1.2rem;
         text-transform: capitalize;
@@ -85,6 +82,48 @@
       .trust-item.item-4 {
         margin-right: 0;
         margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .trust-wrapper {
+    .trust-container {
+      .trust-item {
+        // background-image: radial-gradient(
+        //   ellipse farthest-corner at 10% 10%,
+        //   rgba($primary_background_dark, 1),
+        //   rgba($primary_background_dark, 0.9)
+        // );
+        background: rgba($primary_background_dark, 1);
+        .trust-content {
+          color: white;
+        }
+        .trust-quote {
+          color: gray;
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .trust-wrapper {
+    .trust-container {
+      .trust-item {
+        // background-image: radial-gradient(
+        //   ellipse farthest-corner at 50% 50%,
+        //   rgba($primary_background_light, 1),
+        //   rgba($primary_background_light, 0.1)
+        // );
+        background: rgba($primary_background_light, 1);
+        .trust-content {
+          color: $primary_color_light;
+        }
+        .trust-quote {
+          color: gray;
+        }
       }
     }
   }
