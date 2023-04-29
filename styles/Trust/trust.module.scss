@@ -5,10 +5,11 @@
   margin: 4rem auto 3rem auto;
   position: relative;
 
-  .trust-container-1 {
+  .trust-container {
     position: relative;
     display: flex;
     flex-direction: row;
+
     .trust-item {
       position: relative;
       box-sizing: border-box;
@@ -31,7 +32,9 @@
         text-transform: capitalize;
       }
     }
+  }
 
+  .trust-container-1 {
     .trust-item.item-1 {
       min-width: 40%;
       margin-right: 2rem;
@@ -42,6 +45,13 @@
     }
     .trust-item.item-3 {
       min-width: 30%;
+    }
+  }
+
+  .trust-container-2 {
+    margin-top: 2rem;
+    .item-4 {
+      margin-right: 2rem;
     }
   }
 }
@@ -60,6 +70,19 @@
 
       .trust-item.item-1,
       .trust-item.item-2 {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .trust-wrapper {
+    .trust-container-2 {
+      flex-wrap: wrap;
+
+      .trust-item.item-4 {
         margin-right: 0;
         margin-bottom: 2rem;
       }

@@ -5,7 +5,9 @@ const Trust = () => {
   return (
     <>
       <div className={styles["trust-wrapper"]}>
-        <div className={`${styles["trust-container-1"]} ${inter.className}`}>
+        <div
+          className={`${styles["trust-container"]} ${styles["trust-container-1"]} ${inter.className}`}
+        >
           <div className={`${styles["trust-item"]} ${styles["item-1"]}`}>
             <div className={styles["trust-content"]}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -33,10 +35,31 @@ const Trust = () => {
             <div className={styles["trust-quote"]}>- rhea seahorn</div>
           </div>
         </div>
-        <div className={`${styles["trust-item"]} ${styles["item-4"]}`}></div>
-        <div className={`${styles["trust-item"]} ${styles["item-5"]}`}></div>
-        <div className={`${styles["trust-item"]} ${styles["item-6"]}`}></div>
-        <div className={`${styles["trust-item"]} ${styles["item-7"]}`}></div>
+        <div
+          className={`${styles["trust-container"]} ${styles["trust-container-2"]} ${inter.className}`}
+        >
+          <div className={`${styles["trust-item"]} ${styles["item-4"]}`}>
+            <div className={styles["trust-content"]}>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium iure ex optio error similique accusamus, deleniti
+              repellat. A, laboriosam laborum.
+            </div>
+            <div className={styles["trust-quote"]}>- rhea seahorn</div>
+          </div>
+          <div className={`${styles["trust-item"]} ${styles["item-5"]}`}>
+            <div className={styles["trust-content"]}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+              temporibus magni deserunt impedit. Facere veniam harum enim magnam
+              at in quisquam possimus unde fugiat corporis. Qui molestias nemo
+              neque. Assumenda dicta nisi laudantium quisquam voluptatum quia
+              adipisci accusamus quam ipsam tempora? Laborum inventore nulla
+              quam perspiciatis deleniti, accusamus ducimus ullam placeat esse
+              maiores doloremque consequatur similique iste! Consequuntur, ipsam
+              sapiente!``
+            </div>
+            <div className={styles["trust-quote"]}>- rhea seahorn</div>
+          </div>
+        </div>
       </div>
     </>
   );
