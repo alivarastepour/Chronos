@@ -1,6 +1,68 @@
 @import "../variables";
 
-.trust-container {
-  margin-top: 4rem;
-  padding: 1rem;
+.trust-wrapper {
+  width: 90%;
+  margin: 4rem auto 3rem auto;
+  position: relative;
+
+  .trust-container-1 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    .trust-item {
+      position: relative;
+      box-sizing: border-box;
+      border: 2px solid black;
+      padding: 2rem 2rem 5rem 2rem;
+      text-align: justify;
+      border-radius: 2rem;
+      .trust-content {
+        width: 100%;
+        color: black;
+        font-weight: 200;
+        font-size: 1.3rem;
+      }
+      .trust-quote {
+        position: absolute;
+        bottom: 1rem;
+        color: gray;
+        font-weight: 600;
+        font-size: 1.2rem;
+        text-transform: capitalize;
+      }
+    }
+
+    .trust-item.item-1 {
+      min-width: 40%;
+      margin-right: 2rem;
+    }
+    .trust-item.item-2 {
+      min-width: 20%;
+      margin-right: 2rem;
+    }
+    .trust-item.item-3 {
+      min-width: 30%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .trust-wrapper {
+    .trust-container-1 {
+      flex-wrap: wrap;
+
+      .trust-item.item-1,
+      .trust-item.item-2,
+      .trust-item.item-3 {
+        min-width: none;
+        width: 100%;
+      }
+
+      .trust-item.item-1,
+      .trust-item.item-2 {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+    }
+  }
 }
