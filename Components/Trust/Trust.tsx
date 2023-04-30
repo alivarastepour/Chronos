@@ -1,6 +1,6 @@
 import { inter } from "@/public/Fonts";
 import styles from "@/styles/Trust/trust.module.scss";
-import { addHoverStyle } from "@/styles/Trust/util/hoverStyles";
+import { addHoverStyle } from "./util/hoverStyles";
 import { useEffect } from "react";
 
 const Trust = () => {

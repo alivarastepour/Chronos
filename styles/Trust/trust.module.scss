@@ -38,6 +38,8 @@
     }
     .trust-item.item-2 {
       min-width: 20%;
+      // min-height: 500px;
+
       margin-right: 2rem;
     }
     .trust-item.item-3 {
@@ -112,12 +114,20 @@
   .trust-wrapper {
     .trust-container {
       .trust-item {
+        transition: 0.3s;
         // background-image: radial-gradient(
         //   ellipse farthest-corner at 50% 50%,
         //   rgba($primary_background_light, 1),
         //   rgba($primary_background_light, 0.1)
         // );
+
         background: rgba($primary_background_light, 1);
+
+        background-image: radial-gradient(
+          circle at 50% 50%,
+          rgba($primary_background_light, 1),
+          rgba($primary_background_light, 0.1)
+        );
         .trust-content {
           color: $primary_color_light;
         }
