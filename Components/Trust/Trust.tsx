@@ -2,6 +2,8 @@ import { inter } from "@/public/Fonts";
 import styles from "@/styles/Trust/trust.module.scss";
 import { addHoverStyle } from "./util/hoverStyles";
 import { useEffect } from "react";
+import Image from "next/image";
+import qoute from "@/public/quote.svg";
 
 const Trust = () => {
   useEffect(() => {
@@ -10,12 +12,25 @@ const Trust = () => {
   return (
     <>
       <div className={styles["trust-wrapper"]}>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"
+            />
+          </svg>
+        </div>
         <div
           className={`${styles["trust-container"]} ${styles["trust-container-1"]} ${inter.className}`}
         >
           <div
             id="item-1"
-            className={`${styles["trust-item"]} ${styles["item-1"]}`}
+            className={`trust-default-theme ${styles["trust-item"]} ${styles["item-1"]}`}
           >
             <div className={styles["trust-content"]}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -28,7 +43,7 @@ const Trust = () => {
           </div>
           <div
             id="item-2"
-            className={`${styles["trust-item"]} ${styles["item-2"]}`}
+            className={`trust-default-theme ${styles["trust-item"]} ${styles["item-2"]}`}
           >
             <div className={styles["trust-content"]}>
               dolor sit amet consectetur adipisicing elit. Nam et architecto
@@ -39,7 +54,7 @@ const Trust = () => {
           </div>
           <div
             id="item-3"
-            className={`${styles["trust-item"]} ${styles["item-3"]}`}
+            className={`trust-default-theme ${styles["trust-item"]} ${styles["item-3"]}`}
           >
             <div className={styles["trust-content"]}>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
@@ -54,7 +69,7 @@ const Trust = () => {
         >
           <div
             id="item-4"
-            className={`${styles["trust-item"]} ${styles["item-4"]}`}
+            className={`trust-default-theme ${styles["trust-item"]} ${styles["item-4"]}`}
           >
             <div className={styles["trust-content"]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -65,7 +80,7 @@ const Trust = () => {
           </div>
           <div
             id="item-5"
-            className={`${styles["trust-item"]} ${styles["item-5"]}`}
+            className={`trust-default-theme ${styles["trust-item"]} ${styles["item-5"]}`}
           >
             <div className={styles["trust-content"]}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
