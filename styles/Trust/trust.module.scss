@@ -2,8 +2,22 @@
 
 .trust-wrapper {
   width: 90%;
-  margin: 4rem auto 3rem auto;
+  margin: auto auto 3rem auto;
   position: relative;
+
+  // background-image: url("/quote.svg");
+
+  // &::after {
+  //   position: absolute;
+  //   content: url("/quote.svg");
+  //   top: 0;
+  //   left: 0;
+  //   font-size: 4rem;
+  //   color: black;
+  //   width: 300px;
+  //   height: 300px;
+  //   // font-family: ;
+  // }
 
   .trust-container {
     position: relative;
@@ -13,18 +27,18 @@
     .trust-item {
       position: relative;
       box-sizing: border-box;
-      padding: 2rem 2rem 5rem 2rem;
+      padding: 3rem 3rem 5rem 3rem;
       text-align: justify;
       border-radius: 2rem;
       .trust-content {
         width: 100%;
-        font-weight: 200;
-        font-size: 1.3rem;
+        font-weight: 400;
+        font-size: 1.5rem;
       }
       .trust-quote {
         position: absolute;
         bottom: 1rem;
-        font-weight: 600;
+        font-weight: 200;
         font-size: 1.2rem;
         text-transform: capitalize;
       }
@@ -38,8 +52,6 @@
     }
     .trust-item.item-2 {
       min-width: 20%;
-      // min-height: 500px;
-
       margin-right: 2rem;
     }
     .trust-item.item-3 {
@@ -93,12 +105,8 @@
   .trust-wrapper {
     .trust-container {
       .trust-item {
-        // background-image: radial-gradient(
-        //   ellipse farthest-corner at 10% 10%,
-        //   rgba($primary_background_dark, 1),
-        //   rgba($primary_background_dark, 0.9)
-        // );
-        background: rgba($primary_background_dark, 1);
+        background-color: rgba($primary_background_dark, 1);
+        transition: 0.3s;
         .trust-content {
           color: white;
         }
@@ -114,25 +122,13 @@
   .trust-wrapper {
     .trust-container {
       .trust-item {
+        background-color: rgba($primary_background_light, 1);
         transition: 0.3s;
-        // background-image: radial-gradient(
-        //   ellipse farthest-corner at 50% 50%,
-        //   rgba($primary_background_light, 1),
-        //   rgba($primary_background_light, 0.1)
-        // );
-
-        background: rgba($primary_background_light, 1);
-
-        background-image: radial-gradient(
-          circle at 50% 50%,
-          rgba($primary_background_light, 1),
-          rgba($primary_background_light, 0.1)
-        );
         .trust-content {
           color: $primary_color_light;
         }
         .trust-quote {
-          color: gray;
+          color: $secondary_color_light;
         }
       }
     }
