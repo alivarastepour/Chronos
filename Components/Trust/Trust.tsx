@@ -1,13 +1,11 @@
 import { inter } from "@/public/Fonts";
 import styles from "@/styles/Trust/trust.module.scss";
-import { addHoverStyle } from "./util/hoverStyles";
+import { handleHoverStyles } from "./util/hoverStyles";
 import { useEffect } from "react";
-import Image from "next/image";
-import qoute from "@/public/quote.svg";
 
 const Trust = () => {
   useEffect(() => {
-    addHoverStyle();
+    handleHoverStyles();
   }, []);
   return (
     <>
