@@ -1,12 +1,12 @@
 @import "../variables";
 
 .trust-wrapper {
-  // width: 90%;
   width: 100%;
-  // margin: 0 auto 3rem auto;
+
   box-sizing: border-box;
-  position: relative;
   padding: 1.3rem;
+
+  position: relative;
 
   .quote-item-wrapper {
     width: 100%;
@@ -26,24 +26,32 @@
 
   .trust-container {
     position: relative;
+
     display: flex;
     flex-direction: row;
 
     .trust-item {
       position: relative;
+
       box-sizing: border-box;
       padding: 3rem 3rem 5rem 3rem;
-      text-align: justify;
+
       border-radius: 2rem;
-      transition: 1s;
+
+      text-align: justify;
+
+      transition: 0.3s;
+
       .trust-content {
         width: 100%;
+
         font-weight: 400;
         font-size: 1.5rem;
       }
       .trust-quote {
         position: absolute;
         bottom: 1rem;
+
         font-weight: 200;
         font-size: 1.2rem;
         text-transform: capitalize;
@@ -54,10 +62,12 @@
   .trust-container-1 {
     .trust-item.item-1 {
       min-width: 40%;
+
       margin-right: 2rem;
     }
     .trust-item.item-2 {
       min-width: 20%;
+
       margin-right: 2rem;
     }
     .trust-item.item-3 {
@@ -114,18 +124,22 @@
       $primary_background_dark,
       rgb(66, 64, 89)
     );
+
     .quote-item-wrapper {
       color: $third_color_dark;
       opacity: 1;
     }
+
     .trust-container {
       .trust-item {
         border: 2px solid white;
+
         background-color: rgba($primary_background_dark, 1);
-        transition: 0.3s;
+
         .trust-content {
           color: white;
         }
+
         .trust-quote {
           color: $third_color_dark;
         }
@@ -139,13 +153,15 @@
     .quote-item-wrapper {
       opacity: 0.1;
     }
+
     .trust-container {
       .trust-item {
         background-color: rgba($primary_background_light, 1);
-        transition: 0.3s;
+
         .trust-content {
           color: $primary_color_light;
         }
+
         .trust-quote {
           color: $secondary_color_light;
         }
