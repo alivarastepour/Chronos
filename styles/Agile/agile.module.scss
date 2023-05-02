@@ -5,7 +5,6 @@
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  background: linear-gradient(to bottom, white, white, $primary_color_light);
 
   padding-bottom: 6rem;
   .agile-header,
@@ -21,16 +20,6 @@
       position: relative;
       font-size: 5.5rem;
       text-transform: uppercase;
-      background: linear-gradient(
-        to top right,
-        $secondary_color_dark,
-        $third_color_dark
-      );
-      background-clip: text;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -moz-text-fill-color: transparent;
 
       &::after {
         position: absolute;
@@ -40,11 +29,6 @@
         border-bottom: 10px solid;
         width: 100%;
         border-image-slice: 1;
-        border-image-source: conic-gradient(
-          from 0deg,
-          $third_color_dark 100deg,
-          $secondary_color_dark 360deg
-        );
       }
     }
   }
@@ -53,9 +37,76 @@
     .agile-details-explaination {
       padding-left: 2rem;
       margin-top: 2rem;
-      border-left: 10px solid $third_color_light;
       font-size: 1.5rem;
       text-align: justify;
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .agile-wrapper {
+    background: linear-gradient(to bottom, white, $fourth_color_light);
+    .agile-header {
+      span {
+        background: linear-gradient(
+          to top right,
+          $secondary_color_dark,
+          $third_color_dark
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        &::after {
+          border-image-source: conic-gradient(
+            from 0deg,
+            $third_color_dark 100deg,
+            $secondary_color_dark 360deg
+          );
+        }
+      }
+    }
+    .agile-details {
+      .agile-details-explaination {
+        border-left: 10px solid $secondary_color_dark;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .agile-wrapper {
+    background: linear-gradient(
+      to bottom,
+      rgb(66, 64, 89),
+      $primary_background_dark
+    );
+    .agile-header {
+      span {
+        background: linear-gradient(
+          to top right,
+          $secondary_color_dark,
+          $third_color_dark
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        &::after {
+          border-image-source: conic-gradient(
+            from 0deg,
+            $third_color_dark 100deg,
+            $secondary_color_dark 360deg
+          );
+        }
+      }
+    }
+    .agile-details {
+      .agile-details-explaination {
+        border-left: 10px solid $secondary_color_dark;
+      }
     }
   }
 }
