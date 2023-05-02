@@ -1,9 +1,12 @@
 @import "../variables";
 
 .trust-wrapper {
-  width: 90%;
-  margin: 0 auto 3rem auto;
+  // width: 90%;
+  width: 100%;
+  // margin: 0 auto 3rem auto;
+  box-sizing: border-box;
   position: relative;
+  padding: 1.3rem;
 
   .quote-item-wrapper {
     width: 100%;
@@ -11,9 +14,8 @@
   }
 
   .quote-item-wrapper.quote-item-end {
-    svg {
-      float: right;
-    }
+    display: flex;
+    justify-content: flex-end;
   }
 
   .quote-item-wrapper.quote-item-start {
@@ -33,6 +35,7 @@
       padding: 3rem 3rem 5rem 3rem;
       text-align: justify;
       border-radius: 2rem;
+      transition: 1s;
       .trust-content {
         width: 100%;
         font-weight: 400;
@@ -106,12 +109,18 @@
 
 @media (prefers-color-scheme: dark) {
   .trust-wrapper {
+    background: linear-gradient(
+      to bottom,
+      $primary_background_dark,
+      rgb(66, 64, 89)
+    );
     .quote-item-wrapper {
       color: $third_color_dark;
       opacity: 1;
     }
     .trust-container {
       .trust-item {
+        border: 2px solid white;
         background-color: rgba($primary_background_dark, 1);
         transition: 0.3s;
         .trust-content {

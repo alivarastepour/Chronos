@@ -14,8 +14,8 @@ const addFadingBackground = (elements: (HTMLElement | null)[]) => {
         window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-      if (isThemeDark) color = "rgba(25, 24, 37, 0.9) , #191825";
-      else color = " rgba(255, 229, 229, 0.5), #ffe5e5 ";
+      if (isThemeDark) color = "rgb(66, 64, 89) , rgba(25, 24, 37, 0.9)";
+      else color = " rgba(255, 229, 229, 0.1), #ffe5e5 ";
 
       element.style.background = "none";
       element.style.backgroundImage = `radial-gradient(circle at ${newCenterX}px ${newCenterY}px, ${color})`;
@@ -23,7 +23,8 @@ const addFadingBackground = (elements: (HTMLElement | null)[]) => {
 
     elements.forEach((element: HTMLElement | null) => {
       element?.addEventListener("mouseleave", () => {
-        element.style.backgroundColor = color.split(",")[0];
+        element.style.backgroundImage = "unset";
+        element.style.backgroundColor = color.split(",")[1].split(" ")[0];
       });
     });
   });
