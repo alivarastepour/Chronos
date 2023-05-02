@@ -1,0 +1,61 @@
+@import "../variables";
+.agile-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background: linear-gradient(to bottom, white, white, $primary_color_light);
+
+  padding-bottom: 6rem;
+  .agile-header,
+  .agile-details {
+    flex: 0 0 30%;
+  }
+
+  .agile-header {
+    font-size: 6rem;
+    font-weight: 800;
+    text-transform: capitalize;
+    span {
+      position: relative;
+      font-size: 5.5rem;
+      text-transform: uppercase;
+      background: linear-gradient(
+        to top right,
+        $secondary_color_dark,
+        $third_color_dark
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "salams";
+        border-bottom: 10px solid;
+        width: 100%;
+        border-image-slice: 1;
+        border-image-source: conic-gradient(
+          from 0deg,
+          $third_color_dark 100deg,
+          $secondary_color_dark 360deg
+        );
+      }
+    }
+  }
+
+  .agile-details {
+    .agile-details-explaination {
+      padding-left: 2rem;
+      margin-top: 2rem;
+      border-left: 10px solid $third_color_light;
+      font-size: 1.5rem;
+      text-align: justify;
+    }
+  }
+}
