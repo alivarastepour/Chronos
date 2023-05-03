@@ -35,19 +35,13 @@ const BenefitsContainer = () => {
       } else {
         target.classList.remove("benefits-counter-deactive");
         target.classList.add("benefits-counter-active");
-        let ch: any = null;
-        indicator.childNodes.forEach((child) => {
-          if (ch === null) {
-            const childElem = child as Element;
-            ch = childElem.classList.contains("benefits-counter-active")
-              ? childElem
-              : null;
+        currentTarget.childNodes.forEach((child) => {
+          const childElem = child as Element;
+          if (!Object.is(childElem, target)) {
+            childElem.classList.remove("benefits-counter-active");
+            childElem.classList.add("benefits-counter-deactive");
           }
         });
-        if (ch instanceof Element) {
-          ch.classList.remove("benefits-counter-active");
-          ch.classList.add("benefits-counter-deactive");
-        }
       }
     });
   };
