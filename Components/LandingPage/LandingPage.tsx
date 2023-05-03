@@ -4,6 +4,7 @@ import Overview from "../Overview/Overview";
 import Plans from "../Plans/Plans";
 import Trust from "../Trust/Trust";
 import Agile from "../Agile/Agile";
+import Footer from "../Footer/Footer";
 
 const LandingPage: React.FC = () => {
   return (
@@ -19,6 +20,8 @@ const LandingPage: React.FC = () => {
       <Trust />
 
       <Agile />
+
+      <Footer />
     </>
   );
 };

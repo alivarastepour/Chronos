@@ -45,7 +45,11 @@
 
 @media (prefers-color-scheme: light) {
   .agile-wrapper {
-    background: linear-gradient(to bottom, white, $fourth_color_light);
+    // background: linear-gradient(
+    //   to bottom,
+    //   white,
+    //   rgba($primary_color_light, 0.3)
+    // );
     .agile-header {
       span {
         background: linear-gradient(
