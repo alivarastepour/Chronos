@@ -1,4 +1,4 @@
-import Benefits from "../Benefits/Benefits";
+import Benefits from "../Benefits/Container/BenefitsContainer";
 import Header from "../Header/Header";
 import Overview from "../Overview/Overview";
 import Plans from "../Plans/Plans";
