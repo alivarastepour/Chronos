@@ -24,6 +24,21 @@ body {
   transform: scale(0.9) translateX(2rem);
 }
 
+.benefits-counter-active {
+  width: 30px;
+  height: 1px;
+  border-radius: 4px;
+  border: 2px solid black;
+}
+
+.benefits-counter-deactive {
+  width: 5px;
+  height: 5px;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 @media (prefers-color-scheme: dark) {
   div {
     color: $primary_color_dark;

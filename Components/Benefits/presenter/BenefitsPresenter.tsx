@@ -95,17 +95,17 @@ const BenefitsPresenter: React.FC = () => (
           </div>
         </div>
       </div>
-      <div className={styles["benefits-counter"]}>
-        <div className={styles["benefits-counter-active"]}></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div id="benefits-counter" className={styles["benefits-counter"]}>
+        <div className="benefits-counter-active"></div>
+        <div className="benefits-counter-deactive"></div>
+        <div className="benefits-counter-deactive"></div>
+        <div className="benefits-counter-deactive"></div>
+        <div className="benefits-counter-deactive"></div>
+        <div className="benefits-counter-deactive"></div>
+        <div className="benefits-counter-deactive"></div>
+        <div className="benefits-counter-deactive"></div>
+        <div className="benefits-counter-deactive"></div>
+        <div className="benefits-counter-deactive"></div>
       </div>
     </div>
   </>
