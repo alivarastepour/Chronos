@@ -120,6 +120,18 @@ const Benefits: React.FC = () => {
             </div>
           </div>
         </div>
+        <div className={styles["benefits-counter"]}>
+          <div className={styles["benefits-counter-active"]}></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </>
   );
