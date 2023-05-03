@@ -1,0 +1,160 @@
+@import "../variables";
+.footer-wrapper {
+  width: 100%;
+
+  padding-top: 5rem;
+
+  .footer-main-container {
+    width: 95%;
+
+    margin: auto;
+    padding-bottom: 5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    ul {
+      list-style-type: none;
+      line-height: 3rem;
+
+      .li-header {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+
+      .li-image {
+        margin-left: -0.5rem;
+      }
+
+      li {
+        font-size: 0.9rem;
+        text-transform: capitalize;
+
+        a {
+          text-decoration: none;
+
+          transition: 0.1s;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-secondary-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.5rem;
+
+    .footer-secondary-right,
+    .footer-secondary-left {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .footer-secondary-left {
+      div {
+        font-weight: 200;
+        font-size: 1rem;
+        text-transform: capitalize;
+      }
+    }
+
+    .footer-secondary-right {
+      svg {
+        transition: 0.2s;
+      }
+
+      div {
+        cursor: pointer;
+      }
+
+      :nth-child(n):not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .footer-wrapper {
+    background-color: rgba($third_color_light, 0.2);
+
+    ul {
+      li {
+        a {
+          font-weight: 400;
+
+          :hover {
+            color: black;
+          }
+        }
+      }
+    }
+    .footer-secondary-container {
+      background-color: $primary_color_light;
+
+      .footer-secondary-left {
+        div {
+          color: white;
+        }
+      }
+
+      .footer-secondary-right {
+        svg {
+          color: white;
+        }
+
+        div {
+          :hover {
+            color: $third_color_light;
+          }
+        }
+      }
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .footer-wrapper {
+    background-color: $primary_background_dark;
+
+    ul {
+      li {
+        a {
+          font-weight: 500;
+          color: white;
+
+          :hover {
+            color: #1e1e1e;
+          }
+        }
+      }
+    }
+
+    .footer-secondary-container {
+      .footer-secondary-left {
+        div {
+          color: white;
+        }
+      }
+
+      .footer-secondary-right {
+        svg {
+          color: white;
+        }
+
+        div {
+          :hover {
+            color: $third_color_light;
+          }
+        }
+      }
+    }
+  }
+}
