@@ -57,7 +57,7 @@ const BenefitsContainer = () => {
     const indicator: Element | null =
       document.getElementById("benefits-counter");
 
-    indicatorInitializer(indicator);
+    // indicatorInitializer(indicator);
 
     () => {
       observer?.disconnect();
