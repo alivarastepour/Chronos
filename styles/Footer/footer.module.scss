@@ -125,6 +125,9 @@
     background-color: $primary_background_dark;
 
     ul {
+      .li-image {
+        filter: invert(1);
+      }
       li {
         a {
           font-weight: 500;

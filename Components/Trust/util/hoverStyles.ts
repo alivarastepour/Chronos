@@ -56,7 +56,7 @@ const addRotation = (elements: (HTMLElement | null)[]) => {
       } else {
         if (percentageY < 50) calculatedX *= -1;
       }
-      element.style.transform = `perspective(400px) rotateY(${calculatedY}deg) rotateX(${calculatedX}deg)`;
+      element.style.transform = `perspective(1000px) rotateY(${calculatedY}deg) rotateX(${calculatedX}deg)`;
     });
   });
 
