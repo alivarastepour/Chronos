@@ -2,6 +2,7 @@
 
 .overview-wrapper {
   .overview-container {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -9,13 +10,9 @@
     padding: 3rem;
     margin: auto;
 
-    width: 90%;
+    width: 100%;
 
     .left-overview {
-      font-size: 1.5rem;
-      line-height: 2.5rem;
-      text-align: justify;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -23,19 +20,13 @@
       .landing-title {
         font-weight: 600;
         font-size: 6rem;
-
-        transition: 0.6s;
-
         letter-spacing: 0.6rem;
       }
+
       .landing-subtitle {
         color: #917fb3;
-        margin-top: 2rem;
         font-size: 2rem;
-      }
-      &::first-letter {
-        font-size: 3rem;
-        color: $secondary_color_dark;
+        font-weight: 200;
       }
     }
   }
@@ -60,5 +51,70 @@
         $primary_background_light,
         rgba($primary_background_light, 0.3)
       );
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .overview-wrapper {
+    .overview-container {
+      padding-top: 1rem;
+      flex-direction: column;
+      align-items: center;
+    }
+    .left-overview {
+      .landing-title,
+      .landing-subtitle {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .right-overview {
+    img {
+      width: 500px;
+      height: 500px;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .overview-wrapper {
+    .overview-container {
+      .left-overview {
+        .landing-title {
+          font-size: 4.5rem;
+          letter-spacing: normal;
+        }
+        .landing-subtitle {
+          font-size: 1.6rem;
+          font-weight: 300;
+        }
+      }
+      .right-overview {
+        img {
+          width: 400px;
+          height: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .overview-wrapper {
+    .overview-container {
+      padding-top: 4rem;
+
+      .right-overview {
+        img {
+          margin-top: 4rem;
+
+          width: 280px;
+          height: 300px;
+        }
+      }
+    }
   }
 }
