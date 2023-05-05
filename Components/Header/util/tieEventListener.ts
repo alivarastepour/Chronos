@@ -3,27 +3,24 @@ export const tieEventListener = (): void => {
     document.getElementById("header-content");
   const closeBTN: HTMLElement | null = document.getElementById("close-btn");
   const openBTN: HTMLElement | null = document.getElementById("open-btn");
-  document.getElementById("open-btn")?.addEventListener("click", () => {
-    if (targetElement) {
-      targetElement.style.visibility = "visible";
-    }
-    if (closeBTN) {
-      closeBTN.style.display = "block";
-    }
-    if (openBTN) {
-      openBTN.style.display = "none";
-    }
+
+  if (!targetElement || !closeBTN || !openBTN) return;
+
+  openBTN.addEventListener("click", () => {
+    targetElement.style.visibility = "visible";
+    closeBTN.style.display = "block";
+    openBTN.style.display = "none";
   });
 
-  document.getElementById("close-btn")?.addEventListener("click", () => {
-    if (targetElement) {
-      targetElement.style.visibility = "hidden";
-    }
-    if (closeBTN) {
-      closeBTN.style.display = "none";
-    }
-    if (openBTN) {
-      openBTN.style.display = "block";
-    }
+  closeBTN.addEventListener("click", () => {
+    targetElement.style.visibility = "hidden";
+    closeBTN.style.display = "none";
+    openBTN.style.display = "block";
+  });
+
+  window.addEventListener("resize", (event) => {
+    const width: number = (event.currentTarget as Window).innerWidth;
+    if (width > 720) targetElement.style.visibility = "visible";
+    else targetElement.style.visibility = "hidden";
   });
 };
