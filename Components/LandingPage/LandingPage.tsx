@@ -13,7 +13,7 @@ const LandingPage: React.FC = () => {
 
       <Overview />
 
-      <Benefits />
+      {/* <Benefits /> */}
 
       <Plans />
 
