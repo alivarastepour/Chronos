@@ -9,7 +9,6 @@ $angle: 90deg;
   max-width: 450px;
 
   padding: 0.5rem;
-  // margin-top: 2rem;
 
   text-align: justify;
 
@@ -94,10 +93,6 @@ $angle: 90deg;
 
 @media (prefers-color-scheme: dark) {
   .card-container {
-    // border: 4px solid $third_color_light;
-    // background-color: rgba($primary_background_dark, 0.1);
-    // background-color: white;
-
     &:hover {
       border-image-source: conic-gradient(
         from var(--angle),
@@ -111,8 +106,6 @@ $angle: 90deg;
 
 @media (prefers-color-scheme: light) {
   .card-container {
-    // border: 4px solid $third_color_light;
-
     &:hover {
       border-image-source: conic-gradient(
         from var(--angle),
@@ -121,5 +114,43 @@ $angle: 90deg;
         $third_color_light 360deg
       );
     }
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .card-container {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .card-container {
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .card-container {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .card-container {
+    width: 100%;
+    min-height: 400px;
+
+    &:hover {
+      .card-header {
+        transform: translateY(-6rem);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .card-container {
+    width: 300px;
+    padding: 1rem;
   }
 }
