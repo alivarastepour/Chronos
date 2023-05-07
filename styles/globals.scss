@@ -24,6 +24,10 @@ body {
   transform: scale(0.9) translateX(2rem);
 }
 
+.deactive-large {
+  display: none;
+}
+
 .benefits-counter-active {
   width: 30px;
   height: 1px;
@@ -66,5 +70,62 @@ body {
   }
   .counter-deactive {
     border: 3px solid $third_color_light;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .active-right {
+    transform: scale(1.05) translateX(1.7rem);
+  }
+  .active-left {
+    transform: scale(1.05) translateX(-1.7rem);
+  }
+  .active-mid {
+    transform: scale(1.05);
+  }
+  .deactive-left {
+    transform: scale(0.9) translateX(-1.7rem);
+  }
+  .deactive-right {
+    transform: scale(0.9) translateX(1.7rem);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .active-right {
+    transform: scale(1.05) translateX(1.5rem);
+  }
+  .active-left {
+    transform: scale(1.05) translateX(-1.5rem);
+  }
+  .active-mid {
+    transform: scale(1.05);
+  }
+  .deactive-left {
+    transform: scale(0.9) translateX(-1.5rem);
+  }
+  .deactive-right {
+    transform: scale(0.9) translateX(1.5rem);
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .active-right {
+    transform: unset;
+  }
+  .active-left {
+    transform: unset;
+  }
+  .active-mid {
+    transform: unset;
+  }
+  .deactive-left {
+    transform: unset;
+  }
+  .deactive-right {
+    transform: unset;
+  }
+  .deactive-large {
+    display: block;
   }
 }
