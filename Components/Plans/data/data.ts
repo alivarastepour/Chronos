@@ -49,4 +49,18 @@ export const plansInformation: PlanInformationProperties[] = [
     more_button_content: "GET EVERYTHING",
     initial_wrapper_classname: "deactive-right",
   },
+  {
+    id: 4,
+    header_title: "enterprise",
+    header_explaination:
+      " For small teams that need to manage work and scale collaboration.",
+    header_button_content: "read more",
+    content_items: [
+      "Try a demo of Chronos for 30 days",
+      "Limited access to boards",
+      "only for test purposes",
+    ],
+    more_button_content: "START TRIAL",
+    initial_wrapper_classname: "deactive-large",
+  },
 ];
