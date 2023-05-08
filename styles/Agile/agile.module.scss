@@ -7,17 +7,21 @@
   flex-wrap: wrap;
 
   padding-bottom: 6rem;
+  padding: 0 3rem 6rem;
+
   .agile-header,
   .agile-details {
-    flex: 0 0 30%;
+    flex: 0 0 40%;
   }
 
   .agile-header {
     font-size: 6rem;
     font-weight: 800;
     text-transform: capitalize;
+
     span {
       position: relative;
+
       font-size: 5.5rem;
       text-transform: uppercase;
 
@@ -25,10 +29,13 @@
         position: absolute;
         top: 0;
         left: 0;
+
         content: "salams";
+
         border-bottom: 10px solid;
-        width: 100%;
         border-image-slice: 1;
+
+        width: 100%;
       }
     }
   }
@@ -37,6 +44,7 @@
     .agile-details-explaination {
       padding-left: 2rem;
       margin-top: 2rem;
+
       font-size: 1.5rem;
       text-align: justify;
     }
@@ -45,11 +53,6 @@
 
 @media (prefers-color-scheme: light) {
   .agile-wrapper {
-    // background: linear-gradient(
-    //   to bottom,
-    //   white,
-    //   rgba($primary_color_light, 0.3)
-    // );
     .agile-header {
       span {
         background: linear-gradient(
@@ -62,6 +65,7 @@
         -moz-background-clip: text;
         -webkit-text-fill-color: transparent;
         -moz-text-fill-color: transparent;
+
         &::after {
           border-image-source: conic-gradient(
             from 0deg,
@@ -71,6 +75,7 @@
         }
       }
     }
+
     .agile-details {
       .agile-details-explaination {
         border-left: 10px solid $secondary_color_dark;
@@ -86,6 +91,7 @@
       rgb(66, 64, 89),
       $primary_background_dark
     );
+
     .agile-header {
       span {
         background: linear-gradient(
@@ -98,6 +104,7 @@
         -moz-background-clip: text;
         -webkit-text-fill-color: transparent;
         -moz-text-fill-color: transparent;
+
         &::after {
           border-image-source: conic-gradient(
             from 0deg,
@@ -107,9 +114,44 @@
         }
       }
     }
+
     .agile-details {
       .agile-details-explaination {
         border-left: 10px solid $secondary_color_dark;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1500px) {
+  .agile-wrapper {
+    .agile-header,
+    .agile-details {
+      flex: 0 0 100%;
+    }
+
+    .agile-header {
+      font-size: 4rem;
+      text-align: center;
+
+      span {
+        font-size: 5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .agile-wrapper {
+    .agile-header {
+      font-size: 3rem;
+
+      span {
+        font-size: 3.5rem;
+      }
+    }
+    .agile-details {
+      .agile-details-explaination {
+        font-size: 1rem;
       }
     }
   }
