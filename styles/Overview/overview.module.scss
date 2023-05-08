@@ -34,23 +34,21 @@
 
 @media (prefers-color-scheme: dark) {
   .overview-wrapper {
-    background: url("../../public/curve.svg") right bottom -0.5px / 100% 13% no-repeat,
-      radial-gradient(
-        farthest-corner at 300px 400px,
-        hsl(245°, 21%, 26%),
-        $primary_background_dark
-      );
+    background: radial-gradient(
+      farthest-corner at 300px 400px,
+      hsl(245°, 21%, 26%),
+      $primary_background_dark
+    );
   }
 }
 
 @media (prefers-color-scheme: light) {
   .overview-wrapper {
-    background: url("../../public/curve.svg") right bottom -0.5px / 100% 13% no-repeat,
-      radial-gradient(
-        farthest-corner at 300px 400px,
-        $primary_background_light,
-        rgba($primary_background_light, 0.3)
-      );
+    background: radial-gradient(
+      farthest-corner at 300px 400px,
+      $primary_background_light,
+      rgba($primary_background_light, 0.3)
+    );
   }
 }
 

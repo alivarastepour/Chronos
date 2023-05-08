@@ -1,8 +1,10 @@
 @import "../variables";
 
 .plans-wrapper {
-  margin-top: 3rem;
+  margin-top: -1rem;
   padding: 5rem 0;
+
+  border-top: $primary_background_dark 3px solid;
 
   .plans-header {
     position: relative;
