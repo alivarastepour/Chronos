@@ -169,3 +169,15 @@
     }
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .trust-wrapper {
+    .trust-container {
+      .trust-item {
+        .trust-content {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
