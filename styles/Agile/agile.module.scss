@@ -6,7 +6,7 @@
   align-items: center;
   flex-wrap: wrap;
 
-  padding-bottom: 6rem;
+
   padding: 0 3rem 6rem;
 
   .agile-header,
@@ -25,18 +25,18 @@
       font-size: 5.5rem;
       text-transform: uppercase;
 
-      &::after {
-        position: absolute;
-        top: 0;
-        left: 0;
+      // &::after {
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
 
-        content: "salams";
+      //   content: "salams";
 
-        border-bottom: 10px solid;
-        border-image-slice: 1;
+      //   border-bottom: 10px solid;
+      //   border-image-slice: 1;
 
-        width: 100%;
-      }
+      //   width: 100%;
+      // }
     }
   }
 
