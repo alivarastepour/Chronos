@@ -153,4 +153,21 @@ body {
   .deactive-large {
     display: block;
   }
+  .features-selected {
+    font-size: 1.2rem;
+  }
+
+  .features-not-selected {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .features-selected {
+    font-size: 1.2rem;
+  }
+
+  .features-not-selected {
+    font-size: 1.1rem;
+  }
 }
