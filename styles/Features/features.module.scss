@@ -1,0 +1,15 @@
+@import "../variables";
+
+.features-wrapper {
+  width: 100%;
+  border: 1px solid black;
+  margin: 3rem 0;
+  padding: 2rem;
+
+  .features-header {
+    font-size: 3rem;
+  }
+  .features-content {
+    font-size: 2rem;
+  }
+}

@@ -5,6 +5,7 @@ import Plans from "../Plans/Plans";
 import Trust from "../Trust/Trust";
 import Agile from "../Agile/Agile";
 import Footer from "../Footer/Footer";
+import Features from "../Features/Features";
 
 const LandingPage: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const LandingPage: React.FC = () => {
       <Overview />
 
       {/* <Benefits /> */}
+      <Features />
 
       <Plans />
 
