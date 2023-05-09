@@ -10,24 +10,39 @@
     font-weight: 500;
   }
   .features-wrapper {
+    // background-image: url("/TaskManagement-hero.webp");
+    // background-size: contain;
+
+    position: relative;
+
     box-sizing: border-box;
     width: 100%;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+
+    .features-header,
+    .features-content {
+      flex: 0 0 40%;
+    }
 
     .features-header {
+      transition: 1s;
       div {
-        padding: 1rem 0 2rem 0;
+        padding: 1rem 0 1rem 0;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+        font-weight: 300;
       }
     }
+
     .features-content {
-      max-width: 45%;
-      font-size: 1.4rem;
-      line-height: 1.9rem;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
     }
   }
 }

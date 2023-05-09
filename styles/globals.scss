@@ -46,11 +46,13 @@ body {
 }
 
 .features-selected {
-  font-size: 1.7rem;
+  transition: 0.3s;
+  font-size: 1.5rem;
 }
 
 .features-not-selected {
-  font-size: 1.2rem;
+  transition: 0.3s;
+  font-size: 1.4rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -87,12 +89,12 @@ body {
     border: 3px solid $third_color_light;
   }
   .features-selected {
-    border-top: 3px solid $primary_color_light;
-    color: $secondary_color_dark;
+    border-bottom: 3px solid $third_color_dark !important;
+    color: $third_color_dark;
   }
   .features-not-selected {
-    border-top: 2px solid $secondary_color_light;
-    color: $third_color_light;
+    // border-top: 2px solid $secondary_color_light;
+    color: rgba($primary_color_light, 0.8);
   }
 }
 
