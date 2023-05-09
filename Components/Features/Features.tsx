@@ -3,8 +3,15 @@ import { inter } from "@/public/Fonts";
 import { data } from "./data/data";
 import { useEffect, useState } from "react";
 import { changeOnClick } from "./utill/changeOnClick";
+import Image from "next/image";
+
+const imageLoader = (content: number) => {
+  return `/image_${content}.webp`;
+};
+
 const Features: React.FC = () => {
-  const [content, setContent] = useState(0);
+  const [content, setContent]: [number, Function] = useState(0);
+
   useEffect(() => {
     changeOnClick(setContent);
   }, []);
@@ -29,7 +36,20 @@ const Features: React.FC = () => {
             })}
           </div>
           <div className={styles["features-content"]}>
-            {data[content].content}
+            <div className={styles["features-image-container"]}>
+              <Image
+                src="/image_0.webp"
+                className={styles["features-image"]}
+                alt="features-image"
+                loader={() => imageLoader(content)}
+                width={500}
+                height={500}
+                quality={100}
+              />
+            </div>
+            <div className={styles["features-explaination"]}>
+              {data[content].content}
+            </div>
           </div>
         </div>
       </div>
