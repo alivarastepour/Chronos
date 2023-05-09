@@ -1,15 +1,33 @@
 @import "../variables";
 
-.features-wrapper {
-  width: 100%;
-  border: 1px solid black;
+.features-container {
   margin: 3rem 0;
-  padding: 2rem;
 
-  .features-header {
-    font-size: 3rem;
+  .features-title {
+    font-size: 5rem;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 500;
   }
-  .features-content {
-    font-size: 2rem;
+  .features-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4rem 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .features-header {
+      div {
+        padding: 1rem 0 2rem 0;
+      }
+    }
+    .features-content {
+      max-width: 45%;
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+    }
   }
 }

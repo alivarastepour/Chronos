@@ -45,6 +45,14 @@ body {
   cursor: pointer;
 }
 
+.features-selected {
+  font-size: 1.7rem;
+}
+
+.features-not-selected {
+  font-size: 1.2rem;
+}
+
 @media (prefers-color-scheme: dark) {
   div {
     color: $primary_color_dark;
@@ -57,6 +65,11 @@ body {
   }
   .counter-deactive {
     border: 3px solid $primary_color_dark;
+  }
+
+  .features-selected {
+  }
+  .features-not-selected {
   }
 }
 
@@ -72,6 +85,14 @@ body {
   }
   .counter-deactive {
     border: 3px solid $third_color_light;
+  }
+  .features-selected {
+    border-top: 3px solid $primary_color_light;
+    color: $secondary_color_dark;
+  }
+  .features-not-selected {
+    border-top: 2px solid $secondary_color_light;
+    color: $third_color_light;
   }
 }
 
