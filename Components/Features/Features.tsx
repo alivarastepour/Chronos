@@ -1,11 +1,12 @@
 import styles from "@/styles/Features/features.module.scss";
 import { inter } from "@/public/Fonts";
 import { data } from "./data/data";
-import { useEffect } from "react";
-import { changeOnHover } from "./utill/changeOnHover";
+import { useEffect, useState } from "react";
+import { changeOnClick } from "./utill/changeOnClick";
 const Features: React.FC = () => {
+  const [content, setContent] = useState(0);
   useEffect(() => {
-    changeOnHover();
+    changeOnClick(setContent);
   }, []);
   return (
     <>
@@ -19,7 +20,7 @@ const Features: React.FC = () => {
               return (
                 <div
                   className={item.className}
-                    id={`feature-header-${item.id}`}
+                  id={`feature-header-${item.id}`}
                   key={item.id}
                 >
                   {item.title}
@@ -27,7 +28,9 @@ const Features: React.FC = () => {
               );
             })}
           </div>
-          <div className={styles["features-content"]}>{data[0].content}</div>
+          <div className={styles["features-content"]}>
+            {data[content].content}
+          </div>
         </div>
       </div>
     </>
