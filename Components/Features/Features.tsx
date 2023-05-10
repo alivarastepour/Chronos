@@ -50,6 +50,14 @@ const Features: React.FC = () => {
             <div className={styles["features-explaination"]}>
               {data[content].content}
             </div>
+            <div className={styles["features-counter"]}>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
         </div>
       </div>

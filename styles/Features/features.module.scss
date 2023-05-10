@@ -79,6 +79,17 @@
         line-height: 2.5rem;
       }
     }
+    .features-counter {
+      display: none;
+
+      div {
+        width: 10px;
+        height: 10px;
+
+        border: 1px solid black;
+        border-radius: 50%;
+      }
+    }
   }
 }
 
@@ -106,10 +117,26 @@
     }
 
     .features-wrapper {
+      .features-header {
+        display: none;
+      }
+
       .features-content {
-        .features-explaination {
-          font-size: 1rem;
+        .features-image-container {
+          .features-image {
+            width: 80vw;
+            margin-top: 2rem;
+          }
         }
+        .features-explaination {
+          margin-bottom: 2rem;
+        }
+      }
+
+      .features-counter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
       }
     }
   }
