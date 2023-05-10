@@ -55,14 +55,6 @@ body {
   font-size: 1.4rem;
 }
 
-.features-counter-active {
-  background-color: black;
-}
-
-.features-counter-deactive {
-  background-color: white;
-}
-
 @media (prefers-color-scheme: dark) {
   div {
     color: $primary_color_dark;
@@ -75,6 +67,20 @@ body {
   }
   .counter-deactive {
     border: 3px solid $primary_color_dark;
+  }
+  .features-selected {
+    border-bottom: 3px solid $third_color_dark !important;
+    color: $third_color_dark;
+  }
+  .features-not-selected {
+    color: rgba($primary_color_light, 0.8);
+  }
+  .features-counter-active {
+    background-color: $third_color_dark;
+  }
+
+  .features-counter-deactive {
+    background-color: white;
   }
 }
 
@@ -98,6 +104,13 @@ body {
   .features-not-selected {
     // border-top: 2px solid $secondary_color_light;
     color: rgba($primary_color_light, 0.8);
+  }
+  .features-counter-active {
+    background-color: $primary_color_light;
+  }
+
+  .features-counter-deactive {
+    background-color: white;
   }
 }
 

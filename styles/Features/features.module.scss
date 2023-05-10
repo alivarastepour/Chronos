@@ -1,7 +1,7 @@
 @import "../variables";
 
 .features-container {
-  margin: 3rem 0;
+  padding: 3rem 0;
 
   .features-title {
     font-size: 5rem;
@@ -83,13 +83,31 @@
       display: none;
 
       div {
+        transition: 0.3s;
         width: 10px;
         height: 10px;
 
-        border: 1px solid black;
         border-radius: 50%;
 
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .features-container {
+    background-color: $primary_background_dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .features-wrapper {
+    .features-content {
+      .features-counter {
+        div {
+          border: 1px solid $primary_color_light; // ?
+        }
       }
     }
   }
@@ -124,6 +142,16 @@
       }
 
       .features-content {
+        background: rgba(255, 255, 255, 0.11);
+
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(12.8px);
+        -webkit-backdrop-filter: blur(12.8px);
+
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.83);
+
+        padding: 1rem;
         .features-image-container {
           .features-image {
             width: 80vw;
@@ -133,6 +161,9 @@
         }
         .features-explaination {
           margin-bottom: 2rem;
+          height: 320px;
+          overflow: hidden;
+          text-align: justify;
         }
       }
 
