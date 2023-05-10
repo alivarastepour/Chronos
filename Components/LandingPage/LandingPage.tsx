@@ -6,6 +6,7 @@ import Trust from "../Trust/Trust";
 import Agile from "../Agile/Agile";
 import Footer from "../Footer/Footer";
 import Features from "../Features/Features";
+import CookiesTOS from "../CookiesTOS/CookiesTOS";
 
 const LandingPage: React.FC = () => {
   return (
@@ -24,6 +25,8 @@ const LandingPage: React.FC = () => {
       <Agile />
 
       <Footer />
+
+      <CookiesTOS />
     </>
   );
 };

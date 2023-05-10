@@ -1,0 +1,82 @@
+@import "../variables";
+
+.cookie-container {
+  @include glassEffect;
+
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 15vh;
+  padding: 0.5rem;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  //   flex-wrap: wrap;
+  .cookie-header {
+    // width: 100%;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+  }
+  .cookie-body {
+    // box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .cookie-text {
+      flex: 0 0 60%;
+
+      // width: 50%;
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+    .cookie-action {
+      flex: 0 0 35%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      font-weight: 500;
+
+      div {
+        transition: 0.4s;
+        max-height: 20px;
+        display: grid;
+        place-content: center;
+        border: 2px solid black;
+        border-radius: 0.8rem;
+        padding: 0.4rem 0.6rem;
+        cursor: pointer;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .cookie-container {
+    .cookie-header {
+      color: $primary_background_dark;
+    }
+    .cookie-body {
+      .cookie-text {
+        color: $primary_background_dark;
+      }
+      .cookie-action {
+        div {
+          background-color: transparent;
+          color: $primary_background_dark;
+          &:hover {
+            background-color: $primary_background_dark;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+}
