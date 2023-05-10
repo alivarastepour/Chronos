@@ -1,16 +1,25 @@
 import styles from "@/styles/CookiesTOS/cookiesTOS.module.scss";
 import { inter } from "@/public/Fonts";
+import { useEffect, useState } from "react";
+import { cookiesTOS_actions } from "./utill/cookiesTOS_actions";
 
 const CookiesTOS: React.FC = () => {
+  useEffect(() => {
+    cookiesTOS_actions();
+  }, []);
+
   return (
     <>
-      <div className={`${styles["cookie-container"]} ${inter.className}`}>
+      <div
+        id="cookie-container"
+        className={`${styles["cookie-container"]} ${inter.className}`}
+      >
         <div className={styles["cookie-header"]}>
           <div>everyone loves a cookie</div>
           <div>
             <svg
               className={styles["close-btn"]}
-              id="close-btn"
+              id="close-btn-cookie"
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
               y="0px"
