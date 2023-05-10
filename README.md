@@ -28,3 +28,5 @@ this list grows as more parts of the applicataion are implemented.
 | create a slide effect for `Card` component. | use a absolute positioned container and transform it using `translate` and change in its height. |
 | create a glitter effect for the border of `Card` component. | use a `conic-gradient` effect with a proper `animation`. use the `@property` for more ease. |
 | find a scalable solution for handling themes. | use the `prefers-color-scheme` media feature. |
+| to scale compnents to all device widths can be tricky. | use `mobile-first` design approach.|
+| UI design for small and large devices are not compatible. | use different UI designs for different view widths with different components|
