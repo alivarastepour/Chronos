@@ -14,11 +14,17 @@
   flex-direction: column;
   //   flex-wrap: wrap;
   .cookie-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     // width: 100%;
     margin-bottom: 0.4rem;
     font-weight: 600;
     font-size: 1.4rem;
     text-transform: capitalize;
+    .close-btn {
+    }
   }
   .cookie-body {
     // box-sizing: border-box;
@@ -58,7 +64,9 @@
 @media (prefers-color-scheme: dark) {
   .cookie-container {
     .cookie-header {
-      color: $primary_background_dark;
+      div {
+        color: $primary_background_dark;
+      }
     }
     .cookie-body {
       .cookie-text {
