@@ -88,6 +88,8 @@
 
         border: 1px solid black;
         border-radius: 50%;
+
+        cursor: pointer;
       }
     }
   }
@@ -125,6 +127,7 @@
         .features-image-container {
           .features-image {
             width: 80vw;
+            height: 200px;
             margin-top: 2rem;
           }
         }

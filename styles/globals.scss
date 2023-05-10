@@ -55,6 +55,14 @@ body {
   font-size: 1.4rem;
 }
 
+.features-counter-active {
+  background-color: black;
+}
+
+.features-counter-deactive {
+  background-color: white;
+}
+
 @media (prefers-color-scheme: dark) {
   div {
     color: $primary_color_dark;
@@ -67,11 +75,6 @@ body {
   }
   .counter-deactive {
     border: 3px solid $primary_color_dark;
-  }
-
-  .features-selected {
-  }
-  .features-not-selected {
   }
 }
 

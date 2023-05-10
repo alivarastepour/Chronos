@@ -9,6 +9,13 @@ const imageLoader = (content: number) => {
   return `/image_${content}.webp`;
 };
 
+const getCounterClassName = (id: number, content: number): string => {
+  if (content == id - 1) {
+    return "features-counter-active";
+  }
+  return "features-counter-deactive";
+};
+
 const Features: React.FC = () => {
   const [content, setContent]: [number, Function] = useState(0);
 
@@ -21,7 +28,7 @@ const Features: React.FC = () => {
         <div className={styles["features-title"]}>
           exprience our reach platforms
         </div>
-        <div className={styles["features-wrapper"]}>
+        <div id="features-wrapper" className={styles["features-wrapper"]}>
           <div id="features-header" className={styles["features-header"]}>
             {data.map((item) => {
               return (
@@ -50,13 +57,31 @@ const Features: React.FC = () => {
             <div className={styles["features-explaination"]}>
               {data[content].content}
             </div>
-            <div className={styles["features-counter"]}>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
+            <div id="features-counter" className={styles["features-counter"]}>
+              <div
+                id="features-counter-1"
+                className={getCounterClassName(1, content)}
+              ></div>
+              <div
+                id="features-counter-2"
+                className={getCounterClassName(2, content)}
+              ></div>
+              <div
+                id="features-counter-3"
+                className={getCounterClassName(3, content)}
+              ></div>
+              <div
+                id="features-counter-4"
+                className={getCounterClassName(4, content)}
+              ></div>
+              <div
+                id="features-counter-5"
+                className={getCounterClassName(5, content)}
+              ></div>
+              <div
+                id="features-counter-6"
+                className={getCounterClassName(6, content)}
+              ></div>
             </div>
           </div>
         </div>
