@@ -154,7 +154,7 @@
         padding: 1rem;
         .features-image-container {
           .features-image {
-            width: 80vw;
+            width: 60vw;
             height: 200px;
             margin-top: 2rem;
           }
@@ -171,6 +171,20 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .features-container {
+    .features-wrapper {
+      .features-content {
+        .features-image-container {
+          .features-image {
+            width: 80vw;
+          }
+        }
       }
     }
   }
