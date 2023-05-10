@@ -87,4 +87,29 @@
 }
 
 @media (prefers-color-scheme: light) {
+  .cookie-container {
+    box-shadow: 0px -2px 23px -1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px -2px 23px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px -2px 23px -1px rgba(0, 0, 0, 0.1);
+    .cookie-header {
+      div {
+        color: $primary_background_dark;
+      }
+    }
+    .cookie-body {
+      .cookie-text {
+        color: $primary_background_dark;
+      }
+      .cookie-action {
+        div {
+          background-color: transparent;
+          color: $primary_background_dark;
+          &:hover {
+            background-color: $primary_background_dark;
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }
