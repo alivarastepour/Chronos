@@ -79,6 +79,8 @@
 
 @media only screen and (max-width: 500px) {
   .overview-wrapper {
+    height: 100vh;
+
     .overview-container {
       .left-overview {
         .landing-title {
