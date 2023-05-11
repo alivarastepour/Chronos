@@ -37,12 +37,13 @@ const CookiesTOS: React.FC = () => {
             We use cookies and other tracking technologies to improve your
             browsing experience on our website, to show you personalized content
             and targeted ads, to analyze our website traffic, and to understand
-            where our visitors are coming from.
+            where our visitors are coming from.{" "}
+            <span>read our privacy policy.</span>
           </div>
           <div className={styles["cookie-action"]}>
-            <div>consent</div>
-            <div>use minimum cookies</div>
-            <div>don't use cookies</div>
+            <div id="cookie-consent">consent</div>
+            <div id="cookie-minimum">use minimum cookies</div>
+            <div id="cookie-deny">don't use cookies</div>
           </div>
         </div>
       </div>
