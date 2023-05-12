@@ -79,13 +79,14 @@
 
 @media only screen and (max-width: 500px) {
   .overview-wrapper {
-    height: 100vh;
+    // height: 100vh;
 
     .overview-container {
       .left-overview {
         .landing-title {
           font-size: 4.5rem;
           letter-spacing: normal;
+          padding-bottom: 0;
         }
         .landing-subtitle {
           font-size: 1.6rem;
