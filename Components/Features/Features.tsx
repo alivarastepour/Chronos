@@ -2,7 +2,7 @@ import styles from "@/styles/Features/features.module.scss";
 import { inter } from "@/public/Fonts";
 import { data } from "./data/data";
 import { useEffect, useState } from "react";
-import { changeOnClick } from "./utill/changeOnClick";
+import { handleChangeContent } from "./utill/changeOnClick";
 import Image from "next/image";
 
 const imageLoader = (content: number) => {
@@ -20,7 +20,7 @@ const Features: React.FC = () => {
   const [content, setContent]: [number, Function] = useState(0);
 
   useEffect(() => {
-    changeOnClick(setContent);
+    handleChangeContent(content, setContent);
   }, []);
   return (
     <>
