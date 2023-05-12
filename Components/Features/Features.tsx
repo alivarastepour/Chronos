@@ -20,7 +20,7 @@ const Features: React.FC = () => {
   const [content, setContent]: [number, Function] = useState(0);
 
   useEffect(() => {
-    handleChangeContent(content, setContent);
+    handleChangeContent(setContent);
   }, []);
   return (
     <>

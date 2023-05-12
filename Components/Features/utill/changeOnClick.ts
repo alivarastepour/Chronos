@@ -37,18 +37,34 @@ const getCurrent = () => {
   return "";
 };
 
+const getNext = (dir: swipeDir, current: number) => {
+  let next;
+
+  if (dir == "left") {
+    if (current - 1 < 0) {
+      next = 5;
+    } else {
+      next = current - 1;
+    }
+  } else {
+    if (current + 1 > 5) {
+      next = 0;
+    } else {
+      next = current + 1;
+    }
+  }
+  return next;
+};
+
 const handleSwipeEvents = (setContent: Function, parent: HTMLElement) => {
-  let screenstartx: number | undefined;
-  let screenendx: number | undefined;
+  let screenstartx: number = 0;
+  let screenendx: number = 0;
   let dir: swipeDir;
-  // let started = false;
+
   parent?.addEventListener(
     "touchstart",
     (e) => {
-
-
       screenstartx = e.targetTouches[0].screenX;
-      // started = true;
     },
     { passive: true }
   );
@@ -56,38 +72,22 @@ const handleSwipeEvents = (setContent: Function, parent: HTMLElement) => {
   parent?.addEventListener(
     "touchend",
     (e) => {
-      // if (!started) {
-      // return;
-      // }
       screenendx = e.changedTouches[0].screenX;
 
-      // @ts-ignore
-      if (screenstartx > screenendx) {
-        dir = "left";
-      } else {
-        dir = "right";
-      }
-      const current = +getCurrent() - 1;
-      let next;
+      const distance = screenendx - screenstartx;
 
-      let id = "";
-      if (dir == "left") {
-        if (current - 1 < 0) {
-          next = 5;
-        } else {
-          next = current - 1;
-        }
-        // id = `features-counter-${0}`;
-      } else {
-        // id = `features-counter-${0}`;
-        if (current + 1 > 5) {
-          next = 0;
-        } else {
-          next = current + 1;
-        }
+      if (Math.abs(distance) < 40) {
+        return;
       }
+
+      const current = +getCurrent() - 1;
+
+      if (distance < 0) dir = "left";
+      else dir = "right";
+
+      const next = getNext(dir, current);
+
       setContent(next);
-      // started = false;
     },
     { passive: true }
   );
@@ -108,7 +108,7 @@ const handleClickEvents = (parent: Element, setContent: Function) => {
   });
 };
 
-export const handleChangeContent = (content: number, setContent: Function) => {
+export const handleChangeContent = (setContent: Function) => {
   const parent = document.getElementById("features-wrapper");
 
   handleClickEvents(parent as Element, setContent);
