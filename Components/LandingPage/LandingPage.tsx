@@ -7,6 +7,7 @@ import Agile from "../Agile/Agile";
 import Footer from "../Footer/Footer";
 import Features from "../Features/Features";
 import CookiesTOS from "../CookiesTOS/CookiesTOS";
+import FastJoin from "../FastJoin/FastJoin";
 
 const LandingPage: React.FC = () => {
   return (
@@ -23,6 +24,8 @@ const LandingPage: React.FC = () => {
       <Trust />
 
       <Agile />
+
+      <FastJoin />
 
       <Footer />
 
