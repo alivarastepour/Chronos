@@ -14,6 +14,7 @@
     font-size: 4rem;
     text-transform: capitalize;
     font-weight: 800;
+    text-align: center;
   }
 
   .fast-join-body {
@@ -39,17 +40,18 @@
     }
     .fast-join-body-left-col-action {
       cursor: pointer;
-      width: 40%;
+      width: 30%;
       margin: 2rem auto;
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: center;
       border: 2px solid $secondary_color_light;
       border-radius: 1rem;
       padding: 0.8rem 1.2rem;
+      transition: 0.3s;
       div {
-        flex: 0 0 50%;
+        // flex: 0 0 50%;
       }
 
       .fast-join-body-left-col-action-text {
@@ -60,7 +62,19 @@
         text-align: center;
       }
       .fast-join-body-left-col-action-svg {
-        text-align: center;
+        // text-align: center;
+      }
+      &:hover {
+        background-color: $secondary_color_light;
+        transform: scale(1.1);
+        div,
+        svg {
+          color: white;
+        }
+        div {
+          transition: 0.3s;
+          letter-spacing: 0.1rem;
+        }
       }
     }
   }
@@ -69,20 +83,26 @@
     .fast-join-body-right-col-title {
       font-size: 2rem;
       text-transform: capitalize;
+      text-align: center;
     }
     .fast-join-body-right-col-action {
-      //   text-align: center;
-
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      margin: 2rem auto;
       input {
-        width: 40%;
-        margin: 2rem auto;
+        box-sizing: border-box;
+        height: 52px;
         display: block;
         padding: 0.8rem 1.2rem;
         color: $primary_color_light;
 
         font-size: 1.2rem;
         border: 2px solid $secondary_color_light;
-        border-radius: 1rem;
+        border-radius: 1rem 0 0 1rem;
 
         &:focus {
           outline: none;
@@ -90,6 +110,20 @@
         &::placeholder {
           text-transform: capitalize;
           color: $primary_color_light;
+        }
+      }
+      :nth-child(2) {
+        border: 2px solid $secondary_color_light;
+        border-left: none;
+        border-radius: 0 1rem 1rem 0;
+        padding: 0.8rem 1.2rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        transition: 0.3s;
+        &:hover {
+          background-color: $secondary_color_light;
+          color: white;
         }
       }
     }

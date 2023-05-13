@@ -65,10 +65,13 @@ const FastJoin: React.FC = () => {
           </div>
           <div className={styles["fast-join-body-right-col"]}>
             <div className={styles["fast-join-body-right-col-title"]}>
-              stay tuned with our latest offers, updates and more
+              stay tuned with our latest offers, updates and more through email
             </div>
             <div className={styles["fast-join-body-right-col-action"]}>
-              <input placeholder="email address" type="email" name="" id="" />
+              <div>
+                <input placeholder="email address" type="email" name="" id="" />
+              </div>
+              <div>submit</div>
             </div>
           </div>
         </div>
