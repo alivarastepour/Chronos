@@ -8,6 +8,10 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+  background: url("../../public/curve.svg") right bottom -0.5px / 100% 23% no-repeat,
+    linear-gradient(to bottom, white, rgba($third_color_light, 0.2));
 
   .fast-join-title {
     color: $third_color_dark;
@@ -30,6 +34,7 @@
     flex: 0 0 40%;
     padding: 1rem;
     margin-top: 2rem;
+    border-radius: 1rem;
   }
 
   .fast-join-body-left-col {
@@ -50,9 +55,6 @@
       border-radius: 1rem;
       padding: 0.8rem 1.2rem;
       transition: 0.3s;
-      div {
-        // flex: 0 0 50%;
-      }
 
       .fast-join-body-left-col-action-text {
         font-size: 1.2rem;
@@ -61,9 +63,7 @@
         box-sizing: border-box;
         text-align: center;
       }
-      .fast-join-body-left-col-action-svg {
-        // text-align: center;
-      }
+
       &:hover {
         background-color: $secondary_color_light;
         transform: scale(1.1);
