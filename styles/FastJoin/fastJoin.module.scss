@@ -21,6 +21,7 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .fast-join-body-left-col,
@@ -70,7 +71,27 @@
       text-transform: capitalize;
     }
     .fast-join-body-right-col-action {
-      text-align: center;
+      //   text-align: center;
+
+      input {
+        width: 40%;
+        margin: 2rem auto;
+        display: block;
+        padding: 0.8rem 1.2rem;
+        color: $primary_color_light;
+
+        font-size: 1.2rem;
+        border: 2px solid $secondary_color_light;
+        border-radius: 1rem;
+
+        &:focus {
+          outline: none;
+        }
+        &::placeholder {
+          text-transform: capitalize;
+          color: $primary_color_light;
+        }
+      }
     }
   }
 }
