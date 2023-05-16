@@ -2,19 +2,18 @@
 
 .fast-join-wrapper {
   position: relative;
+
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+
+  padding: 5rem 2rem 2rem;
   margin-bottom: 5rem;
-  padding-top: 5rem;
-  // background: url("../../public/curve.svg") right bottom -0.5px / 100% 23% no-repeat,
-  //   linear-gradient(to bottom, white, rgba($third_color_light, 0.2));
 
   .fast-join-title {
-    // color: $third_color_dark;
+    color: $third_color_dark;
     font-size: 4rem;
     text-transform: capitalize;
     font-weight: 800;
@@ -32,8 +31,10 @@
   .fast-join-body-left-col,
   .fast-join-body-right-col {
     flex: 0 0 40%;
+
     padding: 1rem;
     margin-top: 2rem;
+
     border-radius: 1rem;
   }
 
@@ -43,38 +44,41 @@
       text-transform: capitalize;
       text-align: center;
     }
+
     .fast-join-body-left-col-action {
       cursor: pointer;
+
       width: 30%;
+
       margin: 2rem auto;
+      padding: 0.8rem 1.2rem;
+
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      // border: 2px solid $secondary_color_light;
+
       border-radius: 1rem;
-      padding: 0.8rem 1.2rem;
+
       transition: 0.3s;
 
       .fast-join-body-left-col-action-text {
+        box-sizing: border-box;
+
         font-size: 1.2rem;
         text-transform: uppercase;
         font-weight: 500;
-        box-sizing: border-box;
         text-align: center;
       }
+
       div {
         transition: 0.3s;
       }
+
       &:hover {
-        // background-color: $secondary_color_light;
         transform: scale(1.1);
-        div,
-        svg {
-          // color: white;
-        }
+
         div {
-          // transition: 0.3s;
           letter-spacing: 0.1rem;
         }
       }
@@ -87,48 +91,52 @@
       text-transform: capitalize;
       text-align: center;
     }
+
     .fast-join-body-right-col-action {
+      position: relative;
+
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      position: relative;
+
       width: 100%;
+
       margin: 2rem auto;
+
       input {
-        box-sizing: border-box;
-        height: 52px;
         display: block;
+
+        box-sizing: border-box;
+
+        height: 52px;
+
         padding: 0.8rem 1.2rem;
-        // color: $primary_color_light;
 
         font-size: 1.2rem;
-        // border: 2px solid $secondary_color_light;
+
         border-radius: 1rem 0 0 1rem;
 
         &:focus {
           outline: none;
         }
+
         &::placeholder {
           text-transform: capitalize;
-          // color: $primary_color_light;
         }
       }
+
       :nth-child(2) {
-        // border: 2px solid $secondary_color_light;
-        // border-left: none;
         text-transform: capitalize;
-        border-radius: 0 1rem 1rem 0;
-        padding: 0.8rem 1.2rem;
         font-size: 1.2rem;
+
+        border-radius: 0 1rem 1rem 0;
+
+        padding: 0.8rem 1.2rem;
+
         cursor: pointer;
 
         transition: 0.3s;
-
-        // &:hover {
-        //   background-color: $secondary_color_light;
-        //   color: white;
-        // }
       }
     }
   }
@@ -138,14 +146,14 @@
   .fast-join-wrapper {
     background: url("../../public/curve.svg") right bottom -0.5px / 100% 18% no-repeat,
       linear-gradient(to bottom, white, rgba($third_color_light, 0.2));
-    .fast-join-title {
-      color: $third_color_dark;
-    }
+
     .fast-join-body-left-col {
       .fast-join-body-left-col-action {
         border: 2px solid $secondary_color_light;
+
         &:hover {
           background-color: $secondary_color_light;
+
           div,
           svg {
             color: white;
@@ -153,18 +161,23 @@
         }
       }
     }
+
     .fast-join-body-right-col {
       .fast-join-body-right-col-action {
         input {
           color: $primary_color_light;
+
           border: 2px solid $secondary_color_light;
+
           &::placeholder {
             color: $primary_color_light;
           }
         }
+
         :nth-child(2) {
           border: 2px solid $secondary_color_light;
           border-left: none;
+
           &:hover {
             background-color: $secondary_color_light;
             color: white;
@@ -183,15 +196,18 @@
         rgba($primary_background_dark, 0.7),
         rgba($primary_background_dark, 1)
       );
+
     .fast-join-title {
       border-top: 2px solid white;
-      color: $third_color_dark;
     }
+
     .fast-join-body-left-col {
       .fast-join-body-left-col-action {
         border: 2px solid $secondary_color_dark;
+
         &:hover {
           background-color: $secondary_color_dark;
+
           div,
           svg {
             color: white;
@@ -199,21 +215,26 @@
         }
       }
     }
+
     .fast-join-body-right-col {
       .fast-join-body-right-col-action {
         input {
+          border: 2px solid $secondary_color_dark;
+
           color: white;
-          border: 2px solid white;
-          background-color: $secondary_color_dark;
+          background-color: transparent;
+
           &::placeholder {
             color: white;
           }
         }
+
         :nth-child(2) {
-          border: 2px solid white;
+          border: 2px solid $secondary_color_dark;
           border-left: none;
+
           &:hover {
-            background-color: $third_color_dark;
+            background-color: $secondary_color_dark;
             color: white;
           }
         }
