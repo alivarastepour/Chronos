@@ -104,25 +104,30 @@
 
       margin: 2rem auto;
 
-      input {
-        display: block;
+      .fast-join-input-wrapper {
+        width: 40%;
 
-        box-sizing: border-box;
+        input {
+          width: 100%;
+          display: block;
 
-        height: 52px;
+          box-sizing: border-box;
 
-        padding: 0.8rem 1.2rem;
+          height: 52px;
 
-        font-size: 1.2rem;
+          padding: 0.8rem 1.2rem;
 
-        border-radius: 1rem 0 0 1rem;
+          font-size: 1.2rem;
 
-        &:focus {
-          outline: none;
-        }
+          border-radius: 1rem 0 0 1rem;
 
-        &::placeholder {
-          text-transform: capitalize;
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            text-transform: capitalize;
+          }
         }
       }
 
@@ -144,7 +149,7 @@
 
 @media (prefers-color-scheme: light) {
   .fast-join-wrapper {
-    background: url("../../public/curve.svg") right bottom -0.5px / 100% 18% no-repeat,
+    background: url("../../public/curve.svg") right bottom -0.5px / 100% 12% no-repeat,
       linear-gradient(to bottom, white, rgba($third_color_light, 0.2));
 
     .fast-join-body-left-col {
@@ -190,7 +195,7 @@
 
 @media (prefers-color-scheme: dark) {
   .fast-join-wrapper {
-    background: url("../../public/curve.svg") right bottom -0.5px / 100% 18% no-repeat,
+    background: url("../../public/curve.svg") right bottom -0.5px / 100% 12% no-repeat,
       linear-gradient(
         to top,
         rgba($primary_background_dark, 0.7),
@@ -238,6 +243,99 @@
             color: white;
           }
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1115px) {
+  .fast-join-wrapper {
+    .fast-join-body {
+      flex-direction: column;
+    }
+
+    .fast-join-body-right-col,
+    .fast-join-body-left-col {
+      max-width: 60%;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .fast-join-wrapper {
+    .fast-join-title {
+      font-size: 3rem;
+    }
+
+    .fast-join-body-right-col,
+    .fast-join-body-left-col {
+      max-width: 100%;
+    }
+
+    .fast-join-body-right-col {
+      .fast-join-body-right-col-action {
+        .fast-join-input-wrapper {
+          width: 60%;
+        }
+      }
+    }
+
+    .fast-join-body-left-col {
+      .fast-join-body-left-col-action {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .fast-join-wrapper {
+    margin-bottom: 0;
+    padding: 5rem 0.5rem 2rem;
+
+    .fast-join-title {
+      text-align: left;
+      font-size: 2.5rem;
+    }
+
+    .fast-join-body-left-col,
+    .fast-join-body-right-col {
+      .fast-join-body-left-col-title,
+      .fast-join-body-right-col-title {
+        text-align: left;
+      }
+
+      .fast-join-body-left-col-action {
+        margin-left: 0;
+      }
+
+      .fast-join-body-right-col-action {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .fast-join-wrapper {
+      background: linear-gradient(
+        to top,
+        rgba($primary_background_dark, 0.7),
+        rgba($primary_background_dark, 1)
+      );
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    .fast-join-wrapper {
+      background: linear-gradient(
+        to bottom,
+        white,
+        rgba($third_color_light, 0.2)
+      );
+
+      .fast-join-body-right-col,
+      .fast-join-body-left-col {
+        @include glassEffect;
       }
     }
   }
