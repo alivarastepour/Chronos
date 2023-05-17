@@ -1,12 +1,12 @@
 type swipeDir = "left" | "right";
 
-const changeHeader = (target: Element) => {
+const changeHeader = (target: Element): void => {
   if (target.classList.contains("features-selected")) return;
 
-  const parent = document.getElementById("features-header") as Element;
+  const parent: Element = document.getElementById("features-header") as Element;
 
   for (let i = 0; i < parent.childElementCount; i++) {
-    const child = parent.children[i];
+    const child: Element = parent.children[i];
     if (child.classList.contains("features-selected")) {
       child.classList.remove("features-selected");
       child.classList.add("features-not-selected");
@@ -18,99 +18,101 @@ const changeHeader = (target: Element) => {
   target.classList.remove("features-not-selected");
 };
 
-const changeContent = (id: string, setContent: Function) => {
-  const num: string[] = id.split("-");
-  const selected = num[num.length - 1];
-  setContent(+selected - 1);
-};
-
-const getCurrent = () => {
+const getCurrent = (): string | never => {
   const parent = document.getElementById("features-counter") as Element;
   for (let i = 0; i < parent.childElementCount; i++) {
-    const current = parent.children[i];
+    const current: Element = parent.children[i];
     if (current.classList.contains("features-counter-active")) {
-      const id = current.id;
+      const id: string = current.id;
       const ids: string[] = id.split("-");
       return ids[ids.length - 1];
     }
   }
-  return "";
+  throw Error("features counter element must have been changed intentionally.");
 };
 
-const getNext = (dir: swipeDir, current: number) => {
-  let next;
+const getNext = (dir: swipeDir, current: number): number => {
+  let next: number = 0;
 
   if (dir == "left") {
-    if (current - 1 < 0) {
-      next = 5;
-    } else {
-      next = current - 1;
-    }
+    next = current - 1;
+    if (next < 0) next = 5;
   } else {
-    if (current + 1 > 5) {
-      next = 0;
-    } else {
-      next = current + 1;
-    }
+    next = current + 1;
+    if (next > 5) next = 0;
   }
+
   return next;
 };
 
-const handleSwipeEvents = (setContent: Function, parent: HTMLElement) => {
-  let screenstartx: number = 0;
-  let screenendx: number = 0;
-  let dir: swipeDir;
+const changeContentOnSwipe = (
+  direction: swipeDir,
+  distance: number,
+  setContent: Function
+): void => {
+  if (Math.abs(distance) < 40) return;
 
-  parent?.addEventListener(
+  direction = getDirection(distance);
+
+  const current: number = +getCurrent() - 1;
+  const next: number = getNext(direction, current);
+
+  setContent(next);
+};
+
+const getDirection = (distance: number): swipeDir => {
+  return distance < 0 ? "right" : "left";
+};
+
+const handleSwipeEvents = (parent: HTMLElement, setContent: Function): void => {
+  let screenStartX: number = 0;
+  let screenStartY: number = 0;
+  let direction: swipeDir;
+
+  parent.addEventListener(
     "touchstart",
-    (e) => {
-      screenstartx = e.targetTouches[0].screenX;
+    (event: TouchEvent) => {
+      screenStartX = event.targetTouches[0].screenX;
     },
     { passive: true }
   );
 
-  parent?.addEventListener(
+  parent.addEventListener(
     "touchend",
-    (e) => {
-      screenendx = e.changedTouches[0].screenX;
+    (event: TouchEvent) => {
+      screenStartY = event.changedTouches[0].screenX;
 
-      const distance = screenendx - screenstartx;
+      const distance: number = screenStartY - screenStartX;
 
-      if (Math.abs(distance) < 40) {
-        return;
-      }
-
-      const current = +getCurrent() - 1;
-
-      if (distance < 0) dir = "right";
-      else dir = "left";
-
-      const next = getNext(dir, current);
-
-      setContent(next);
+      changeContentOnSwipe(direction, distance, setContent);
     },
     { passive: true }
   );
 };
 
-const handleClickEvents = (parent: Element, setContent: Function) => {
-  parent?.addEventListener("click", (e) => {
-    const target: Element | null = e.target as Element;
+const handleClickEvents = (parent: Element, setContent: Function): void => {
+  parent.addEventListener("click", (event) => {
+    const target: Element | null = event.target as Element;
     const targetID: string = target.id;
+
     const onHeader: boolean = targetID.startsWith("feature-header-");
     const onCounter: boolean = targetID.startsWith("features-counter-");
+
     if (!onHeader && !onCounter) return;
 
-    changeContent(targetID, setContent);
-    if (onHeader) {
-      changeHeader(target);
-    }
+    if (onHeader) changeHeader(target);
+
+    const num: string[] = targetID.split("-");
+    const selected = num[num.length - 1];
+    setContent(+selected - 1);
   });
 };
 
-export const handleChangeContent = (setContent: Function) => {
-  const parent = document.getElementById("features-wrapper");
+export const handleChangeContent = (setContent: Function): void => {
+  const parent: HTMLElement | null =
+    document.getElementById("features-wrapper");
 
   handleClickEvents(parent as Element, setContent);
-  handleSwipeEvents(setContent, parent as HTMLElement);
+
+  handleSwipeEvents(parent as HTMLElement, setContent);
 };
