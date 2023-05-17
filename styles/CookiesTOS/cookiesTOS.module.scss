@@ -148,12 +148,18 @@
 
 @media only screen and (max-width: 650px) {
   .cookie-container {
-    height: 30vh;
+    height: 25vh;
     .cookie-body {
       flex-direction: column;
       .cookie-action {
         margin-top: 0.5rem;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .cookie-container {
+    height: 27vh;
   }
 }
