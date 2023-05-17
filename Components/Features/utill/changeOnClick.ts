@@ -82,8 +82,8 @@ const handleSwipeEvents = (setContent: Function, parent: HTMLElement) => {
 
       const current = +getCurrent() - 1;
 
-      if (distance < 0) dir = "left";
-      else dir = "right";
+      if (distance < 0) dir = "right";
+      else dir = "left";
 
       const next = getNext(dir, current);
 
