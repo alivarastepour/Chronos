@@ -1,10 +1,13 @@
 export const tieEventListener = (): void => {
-  const targetElement: HTMLElement | null =
-    document.getElementById("header-content");
-  const closeBTN: HTMLElement | null = document.getElementById("close-btn");
-  const openBTN: HTMLElement | null = document.getElementById("open-btn");
-
-  if (!targetElement || !closeBTN || !openBTN) return;
+  const targetElement: HTMLElement = document.getElementById(
+    "header-content"
+  ) as HTMLElement;
+  const closeBTN: HTMLElement = document.getElementById(
+    "close-btn"
+  ) as HTMLElement;
+  const openBTN: HTMLElement = document.getElementById(
+    "open-btn"
+  ) as HTMLElement;
 
   openBTN.addEventListener("click", () => {
     targetElement.style.visibility = "visible";
