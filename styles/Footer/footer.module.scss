@@ -192,3 +192,15 @@
     }
   }
 }
+
+@media only screen and (max-width: 415px) {
+  .footer-wrapper {
+    ul {
+      padding: 0.5rem;
+      li {
+        width: 100%;
+        overflow: hidden;
+      }
+    }
+  }
+}

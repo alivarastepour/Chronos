@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                 <a href="">marketing</a>
               </li>
               <li>
-                <a href="">project management</a>
+                <a href="">management</a>
               </li>
               <li>
                 <a href="">sales</a>
