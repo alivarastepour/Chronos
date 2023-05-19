@@ -56,7 +56,8 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  div {
+  div,
+  h1 {
     color: $primary_color_dark;
     &::selection {
       background-color: $selection_dark;
@@ -85,7 +86,8 @@ body {
 }
 
 @media (prefers-color-scheme: light) {
-  div {
+  div,
+  h1 {
     color: $primary_color_light;
     &::selection {
       background-color: $selection_light;
