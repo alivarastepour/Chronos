@@ -1,3 +1,4 @@
+import LoginPage from "@/Components/LoginPage/LoginPage";
 import Head from "next/head";
 
 const Login = () => {
@@ -6,7 +7,7 @@ const Login = () => {
       <Head>
         <title>Chronos | Login To Your Account</title>
       </Head>
-      <div>hello world</div>
+      <LoginPage />
     </>
   );
 };
