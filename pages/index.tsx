@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Chronos: a motto</title>
+        <title>Chronos | Manage Your Time Like You Are The God Of It.</title>
       </Head>
       <LandingPage />
     </>
