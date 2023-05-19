@@ -175,7 +175,7 @@
 
 @media only screen and (max-width: 650px) {
   .cookie-container {
-    height: 25vh;
+    height: 27vh;
 
     .cookie-body {
       flex-direction: column;
@@ -186,9 +186,18 @@
     }
   }
 }
-
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 420px) {
   .cookie-container {
-    height: 27vh;
+    .cookie-header {
+      div {
+        font-size: 1rem;
+      }
+    }
+
+    .cookie-body {
+      .cookie-text {
+        font-size: 0.7rem;
+      }
+    }
   }
 }
