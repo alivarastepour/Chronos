@@ -173,6 +173,9 @@
 @media only screen and (max-width: 720px) {
   .header-container {
     .header-content {
+      opacity: 0;
+      transition: 0.5s;
+
       visibility: hidden;
 
       position: fixed;
@@ -181,7 +184,7 @@
       top: 0;
 
       height: 100vh;
-      width: 50%;
+      width: 25%;
 
       padding-top: 4.7rem;
       margin-top: 4.75rem;
@@ -290,7 +293,7 @@
 @media only screen and (max-width: 500px) {
   .header-container {
     .header-content {
-      width: 100%;
+      width: 50%;
     }
   }
 }

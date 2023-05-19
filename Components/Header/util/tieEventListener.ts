@@ -11,19 +11,34 @@ export const tieEventListener = (): void => {
 
   openBTN.addEventListener("click", () => {
     targetElement.style.visibility = "visible";
+    targetElement.style.opacity = "1";
+    targetElement.style.width = `${targetElement.clientWidth * 2}px`;
     closeBTN.style.display = "block";
     openBTN.style.display = "none";
   });
 
   closeBTN.addEventListener("click", () => {
     targetElement.style.visibility = "hidden";
+    targetElement.style.opacity = "0";
+    targetElement.style.width = `${targetElement.clientWidth / 2}px`;
     closeBTN.style.display = "none";
     openBTN.style.display = "block";
   });
 
   window.addEventListener("resize", (event) => {
     const width: number = (event.currentTarget as Window).innerWidth;
-    if (width > 720) targetElement.style.visibility = "visible";
-    else targetElement.style.visibility = "hidden";
+    if (width > 720) {
+      targetElement.style.visibility = "visible";
+      targetElement.style.opacity = "1";
+      targetElement.style.width = "unset";
+    } else {
+      targetElement.style.visibility = "hidden";
+      targetElement.style.opacity = "0";
+      if (width > 500) {
+        targetElement.style.width = "25%";
+      } else {
+        targetElement.style.width = "50%";
+      }
+    }
   });
 };
