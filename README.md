@@ -9,8 +9,8 @@ Choronos is a web-based project management tool
 Chronos is an ancient greek God. God of time.
 
 ## To-do List
-- [ ] Landig Page: **on going**
-- [ ] Sign-in/Sign-up
+- [X] Landig Page
+- [ ] Sign-in/Sign-up  **ON GOING**
 - [ ] Dashboard Layout
 - [ ] Project Creation/Inbox
 - [ ] Collabrators Assignment
