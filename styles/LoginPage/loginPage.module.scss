@@ -45,7 +45,8 @@
         }
       }
 
-      p {
+      p.login-password-error,
+      p.login-username-error {
         font-size: 0.8rem;
         font-weight: 500;
         background-color: #d25380;
@@ -54,52 +55,82 @@
         margin-top: 0.3rem;
         padding: 0.5rem 0.3rem;
         border-radius: 0.3rem;
-        visibility: hidden;
+        // visibility: hidden;
+      }
+      p.password-recovery {
+        text-align: right;
+        margin: 0.3rem auto;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 300;
+        text-decoration: underline;
+        cursor: pointer;
       }
 
       .login-page-login-button {
         font-size: 1.7rem;
         background-color: $primary_color_light;
         color: white;
+        transition: 0.3s;
+        &:hover {
+          background-color: rgba($primary_color_light, 0.9);
+        }
       }
     }
-    .secondary-login-button {
-      border: 1px solid $primary_color_light;
-      background-color: white;
-      color: $primary_color_light;
-      text-transform: capitalize;
-      font-size: 1.4rem;
-      transition: 0.3s;
 
-      .login-button-flex {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: start;
+    .secondary-login-container {
+      width: 70%;
+      margin: auto;
 
-        :first-child {
-          margin-right: 0.2rem;
-        }
-      }
-      &:hover {
-        background-color: rgba($primary_color_light, 0.4);
-        border: 1px solid rgba($primary_color_light, 0.4);
-      }
+      .secondary-login-button {
+        border: 1px solid $primary_color_light;
+        background-color: white;
+        color: $primary_color_light;
+        text-transform: capitalize;
+        font-size: 1.4rem;
+        transition: 0.3s;
+        .login-button-flex {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: start;
 
-      .login-button-flex.login-button-google {
-        div {
-          // color: red;
+          :first-child {
+            margin-right: 0.2rem;
+          }
+        }
+        &:hover {
+          div {
+            color: white;
+          }
+          background-color: rgba($primary_color_light, 0.7);
+          border: 1px solid rgba($primary_color_light, 0.7);
+        }
+
+        .login-button-flex.login-button-google {
+          div {
+            // color: red;
+          }
+        }
+        .login-button-flex.login-button-outlook {
+          div {
+            // color: green;
+          }
+        }
+        .login-button-flex.login-button-linkedin {
+          div {
+            // color: blue;
+          }
         }
       }
-      .login-button-flex.login-button-outlook {
-        div {
-          // color: green;
-        }
-      }
-      .login-button-flex.login-button-linkedin {
-        div {
-          // color: blue;
-        }
+    }
+    .login-signup-referrer-container {
+      text-align: center;
+      color: rgba($primary_color_light, 0.8);
+      a {
+        color: unset;
+        display: inline-block;
+        margin-left: 0.2rem;
       }
     }
   }
