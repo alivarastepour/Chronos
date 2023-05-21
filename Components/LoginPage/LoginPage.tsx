@@ -1,12 +1,23 @@
 import styles from "@/styles/LoginPage/loginPage.module.scss";
 import { inter } from "@/public/Fonts";
 import Link from "next/link";
-
+import logo from "@/public/logo.png";
+import Image from "next/image";
 const LoginPage: React.FC = () => {
   return (
     <>
       <div className={`${styles["login-page-wrapper"]} ${inter.className}`}>
-        <div className={styles["login-page-logo"]}>Chronos</div>
+        {/* <div className={styles["login-page-logo"]}>Chronos</div> */}
+        <div className={styles["login-page-logo-wrapper"]}>
+          <Image
+            src={logo}
+            alt="Chronos logo"
+            className={styles["login-page-logo"]}
+          />
+          <div className={styles["login-page-logo-subtitle"]}>
+            manage your time like you are the god of it
+          </div>
+        </div>
         <h1 className={styles["login-title"]}>login to your account</h1>
         <main className={styles["login-page-login-form-container"]}>
           <form>

@@ -4,14 +4,43 @@
   box-sizing: border-box;
   padding: 0.5rem;
 
-  .login-page-logo {
-    font-size: 4.4rem;
-    text-align: center;
+  .login-page-logo-wrapper {
+    // margin: auto;
+    width: 80%;
+    position: relative;
+    margin: 2rem auto;
+    .login-page-logo {
+      // font-size: 4.4rem;
+      // text-align: center;
+      margin: auto;
+      height: 100%;
+      width: 100%;
+    }
+    .login-page-logo-subtitle {
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      text-align: center;
+      color: black;
+      text-transform: capitalize;
+    }
   }
 
   .login-title {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-transform: capitalize;
+    font-size: 1rem;
+    position: relative;
+    &::after {
+      position: absolute;
+
+      top: 20px;
+      left: 0;
+
+      width: 40px;
+
+      content: " ";
+      border: 1px solid $primary_color_light;
+    }
   }
 
   .login-page-login-form-container {
@@ -55,7 +84,7 @@
         margin-top: 0.3rem;
         padding: 0.5rem 0.3rem;
         border-radius: 0.3rem;
-        // visibility: hidden;
+        visibility: hidden;
       }
       div.password-recovery {
         text-align: right;
