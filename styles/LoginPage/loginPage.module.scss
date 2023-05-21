@@ -5,13 +5,10 @@
   padding: 0.5rem;
 
   .login-page-logo-wrapper {
-    // margin: auto;
     width: 80%;
     position: relative;
     margin: 1.5rem auto;
     .login-page-logo {
-      // font-size: 4.4rem;
-      // text-align: center;
       margin: auto;
       height: 100%;
       width: 100%;
@@ -20,7 +17,6 @@
       margin-top: 0.5rem;
       font-size: 0.7rem;
       text-align: center;
-      color: black;
       text-transform: capitalize;
     }
   }
@@ -62,15 +58,15 @@
         height: 40px;
         font-size: 1rem;
         padding-left: 0.5rem;
-        border: 2px solid rgba($primary_color_light, 0.4);
-        color: $primary_color_light;
+        // border: 2px solid rgba($primary_color_light, 0.4);
+        // color: $primary_color_light;
         border-radius: 0.3rem;
         &:focus {
           outline: none;
-          border: 2px solid rgba($primary_color_light, 0.8);
+          // border: 2px solid rgba($primary_color_light, 0.8);
         }
         &:hover:not(&:focus) {
-          border: 2px solid rgba($primary_color_light, 0.5);
+          // border: 2px solid rgba($primary_color_light, 0.5);
         }
       }
 
@@ -103,12 +99,12 @@
 
       .login-page-login-button {
         font-size: 1.4rem;
-        background-color: $primary_color_light;
+        // background-color: $primary_color_light;
         color: white;
         transition: 0.3s;
-        &:hover {
-          background-color: rgba($primary_color_light, 0.9);
-        }
+        // &:hover {
+        //   background-color: rgba($primary_color_light, 0.9);
+        // }
       }
     }
 
@@ -117,10 +113,10 @@
       margin: auto;
 
       .secondary-login-button {
-        border: 1px solid $primary_background_dark;
-        background-color: white;
+        // border: 1px solid $primary_background_dark;
+        // background-color: white;
         div {
-          color: $primary_background_dark;
+          // color: $primary_background_dark;
         }
         text-transform: capitalize;
         font-size: 1.1rem;
@@ -135,13 +131,13 @@
             margin-right: 0.2rem;
           }
         }
-        &:hover {
-          div {
-            color: white;
-          }
-          background-color: #1e1e1e;
-          border: 1px solid black;
-        }
+        // &:hover {
+        //   div {
+        //     color: white;
+        //   }
+        //   background-color: #1e1e1e;
+        //   border: 1px solid black;
+        // }
 
         .login-button-flex.login-button-google {
           div {
@@ -162,7 +158,6 @@
     }
     .login-signup-referrer-container {
       text-align: center;
-      color: #1e1e1e;
       text-transform: capitalize;
       font-size: 0.7rem;
       a {
@@ -182,4 +177,99 @@
   border: none;
   width: 100%;
   margin-top: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .login-page-wrapper {
+    background-color: $primary_background_dark;
+    .login-page-logo-wrapper {
+      .login-page-logo {
+        filter: invert(1);
+      }
+    }
+    .login-page-login-form-container {
+      form {
+        input {
+          border: none;
+          &:focus {
+            box-shadow: 1px 8px 12px rgba(255, 255, 255, 0.1);
+          }
+
+          &:hover:not(:focus) {
+            box-shadow: 1px 6px 12px rgba(255, 255, 255, 0.1);
+          }
+        }
+        .login-page-login-button {
+          background-color: $secondary_color_dark;
+          &:hover {
+            background-color: rgba($secondary_color_dark, 0.9);
+          }
+        }
+      }
+      .secondary-login-container {
+        .secondary-login-button {
+          border: 1px solid white;
+          background-color: transparent;
+          div {
+            color: white;
+          }
+          &:hover {
+            background-color: rgba($secondary_color_dark, 0.1);
+          }
+        }
+      }
+      .login-signup-referrer-container {
+        color: #fefefe;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .login-page-wrapper {
+    .login-page-logo-wrapper {
+      .login-page-logo-subtitle {
+        color: #1e1e1e;
+      }
+    }
+    .login-page-login-form-container {
+      form {
+        input {
+          border: 2px solid rgba($primary_color_light, 0.4);
+          color: $primary_color_light;
+          &:focus {
+            border: 2px solid rgba($primary_color_light, 0.8);
+          }
+          &:hover:not(&:focus) {
+            border: 2px solid rgba($primary_color_light, 0.5);
+          }
+        }
+        .login-page-login-button {
+          background-color: $primary_color_light;
+          &:hover {
+            background-color: rgba($primary_color_light, 0.9);
+          }
+        }
+      }
+      .secondary-login-container {
+        .secondary-login-button {
+          border: 1px solid $primary_background_dark;
+          background-color: white;
+          div {
+            color: $primary_background_dark;
+          }
+          &:hover {
+            div {
+              color: white;
+            }
+            background-color: #1e1e1e;
+            border: 1px solid black;
+          }
+        }
+      }
+      .login-signup-referrer-container {
+        color: #1e1e1e;
+      }
+    }
+  }
 }
