@@ -4,6 +4,11 @@
   box-sizing: border-box;
   padding: 0.5rem;
 
+  .login-page-logo {
+    font-size: 4.4rem;
+    text-align: center;
+  }
+
   .login-title {
     margin-bottom: 2rem;
     text-transform: capitalize;
@@ -52,20 +57,59 @@
         visibility: hidden;
       }
 
-      button {
-        background-color: transparent;
+      .login-page-login-button {
         font-size: 1.7rem;
-        cursor: pointer;
-        padding: 0.4rem 0.8rem;
-        border-radius: 0.6rem;
-        border: none;
-        width: 100%;
-        margin-top: 2rem;
         background-color: $primary_color_light;
         color: white;
-        &:hover {
+      }
+    }
+    .secondary-login-button {
+      border: 1px solid $primary_color_light;
+      background-color: white;
+      color: $primary_color_light;
+      text-transform: capitalize;
+      font-size: 1.4rem;
+      transition: 0.3s;
+
+      .login-button-flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+
+        :first-child {
+          margin-right: 0.2rem;
+        }
+      }
+      &:hover {
+        background-color: rgba($primary_color_light, 0.4);
+        border: 1px solid rgba($primary_color_light, 0.4);
+      }
+
+      .login-button-flex.login-button-google {
+        div {
+          // color: red;
+        }
+      }
+      .login-button-flex.login-button-outlook {
+        div {
+          // color: green;
+        }
+      }
+      .login-button-flex.login-button-linkedin {
+        div {
+          // color: blue;
         }
       }
     }
   }
+}
+
+.primary-login-button {
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.6rem;
+  border: none;
+  width: 100%;
+  margin-top: 2rem;
 }
