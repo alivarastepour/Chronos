@@ -19,10 +19,10 @@ const LoginPage: React.FC = () => {
             </div>
             <div>
               <label htmlFor="login-password">password</label>
-              <input type="text" id="login-password" />
-              <p className={styles["password-recovery"]}>
-                i forgot my password
-              </p>
+              <input type="password" id="login-password" />
+              <div className={styles["password-recovery"]}>
+                <p>i forgot my password</p>
+              </div>
               <p className={styles["login-password-error"]}>
                 enter a password.
               </p>
