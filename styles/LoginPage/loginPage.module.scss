@@ -97,22 +97,45 @@
         visibility: hidden;
       }
 
-      div.password-recovery {
-        text-align: right;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        text-decoration: underline;
-        font-weight: 300;
-
-        margin: 0.3rem auto;
-
-        display: block;
-
+      .password-util {
         width: 100%;
 
-        p {
-          display: inline;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
 
+        font-size: 0.7rem;
+
+        margin-top: 0.4rem;
+
+        .login-remember-label {
+          font-size: 0.7rem;
+        }
+
+        .login-remember-checkbox {
+          width: 15px;
+          height: 15px;
+          background-color: red;
+        }
+
+        :nth-child(1) {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+
+          cursor: pointer;
+
+          :nth-child(1) {
+            height: 15px;
+            margin-bottom: 0;
+          }
+        }
+
+        :nth-child(2) {
+          text-transform: capitalize;
+          text-decoration: underline;
           cursor: pointer;
         }
       }

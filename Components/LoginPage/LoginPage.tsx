@@ -31,8 +31,26 @@ const LoginPage: React.FC = () => {
             <div>
               <label htmlFor="login-password">password</label>
               <input type="password" id="login-password" />
-              <div className={styles["password-recovery"]}>
-                <p>i forgot my password</p>
+              <div className={styles["password-util"]}>
+                <div>
+                  <div>
+                    <label
+                      className={styles["login-remember-label"]}
+                      htmlFor="login-remember"
+                    >
+                      remember me
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      className={styles["login-remember-checkbox"]}
+                      name="remember"
+                      id="login-remember"
+                    />
+                  </div>
+                </div>
+                <div>i forgot my password</div>
               </div>
               <p className={styles["login-password-error"]}>
                 enter a password.
