@@ -5,7 +5,7 @@
 
   padding: 0.5rem;
 
-  height: 100vh;
+  // height: 100vh;
 
   .login-page-logo-wrapper {
     width: 80%;
@@ -116,7 +116,6 @@
         .login-remember-checkbox {
           width: 15px;
           height: 15px;
-          background-color: red;
         }
 
         :nth-child(1) {
@@ -187,6 +186,13 @@
       }
     }
   }
+
+  footer {
+    margin-top: 4rem;
+    div {
+      padding: 0;
+    }
+  }
 }
 
 .primary-login-button {
@@ -252,6 +258,9 @@
       .login-signup-referrer-container {
         color: #fefefe;
       }
+    }
+    footer {
+      border-top: 1px solid white;
     }
   }
 }

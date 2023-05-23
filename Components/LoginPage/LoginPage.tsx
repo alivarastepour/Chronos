@@ -3,6 +3,8 @@ import { inter } from "@/public/Fonts";
 import Link from "next/link";
 import logo from "@/public/logo.png";
 import Image from "next/image";
+import Footer from "../Footer/Footer";
+import SecondaryFooter from "../SecondaryFooter/SecondaryFooter";
 const LoginPage: React.FC = () => {
   return (
     <>
@@ -188,6 +190,9 @@ const LoginPage: React.FC = () => {
             <Link href="/">join us know</Link>
           </p>
         </main>
+        <footer>
+          <SecondaryFooter />
+        </footer>
       </div>
     </>
   );
