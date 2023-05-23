@@ -3,16 +3,16 @@
 .login-page-wrapper {
   box-sizing: border-box;
 
-  padding: 0.5rem;
+  // padding: 0.5rem;
 
   // height: 100vh;
-
+  padding-top: 2rem;
   .login-page-logo-wrapper {
     width: 80%;
 
     position: relative;
-
-    margin: 1.5rem auto;
+    // box-sizing: border-box;
+    margin: auto;
 
     .login-page-logo {
       margin: auto;
@@ -53,6 +53,8 @@
   }
 
   .login-page-login-form-container {
+    padding: 0.5rem;
+
     form {
       label {
         display: block;
@@ -189,9 +191,6 @@
 
   footer {
     margin-top: 4rem;
-    div {
-      padding: 0;
-    }
   }
 }
 
@@ -323,4 +322,55 @@
       }
     }
   }
+}
+
+@media only screen and (min-width: 500px) {
+  .login-page-wrapper {
+    .login-page-logo-wrapper {
+      width: 60%;
+    }
+    .login-page-login-form-container {
+      margin: auto;
+      width: 70%;
+    }
+    footer {
+      border-top: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .login-page-wrapper {
+    .login-page-logo-wrapper {
+      width: 50%;
+      .login-page-logo-subtitle {
+        font-size: 0.9rem;
+      }
+    }
+    .login-page-login-form-container {
+      margin: auto;
+      width: 60%;
+      box-sizing: border-box;
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .login-page-wrapper {
+      footer,
+      .login-page-login-form-container {
+        background-color: #1e1e1e;
+      }
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    .login-page-wrapper {
+      .login-page-login-form-container {
+        background-color: #f4f4f4;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
 }

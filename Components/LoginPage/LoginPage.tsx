@@ -20,8 +20,8 @@ const LoginPage: React.FC = () => {
             manage your time like you are the god of it
           </div>
         </div>
-        <h1 className={styles["login-title"]}>login to your account</h1>
         <main className={styles["login-page-login-form-container"]}>
+          <h1 className={styles["login-title"]}>login to your account</h1>
           <form>
             <div>
               <label htmlFor="login-username">username</label>
