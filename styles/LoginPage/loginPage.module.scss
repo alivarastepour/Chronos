@@ -344,6 +344,7 @@
     .login-page-logo-wrapper {
       width: 50%;
       .login-page-logo-subtitle {
+        margin-bottom: 0.5rem;
         font-size: 0.9rem;
       }
     }
@@ -372,5 +373,20 @@
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 900px) {
+  .login-page-wrapper {
+    .login-page-flex-wrapper {
+      display: flex;
+    }
+    .login-page-logo-wrapper {
+      width: 40%;
+      .login-page-logo-subtitle {
+        font-size: 1.5rem;
+      }
+    }
+    .login-page-login-form-container {
+      margin: auto;
+      width: 45%;
+    }
+  }
 }
