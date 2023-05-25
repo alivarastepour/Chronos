@@ -4,8 +4,40 @@ import logo from "@/public/logo.png";
 import { inter } from "@/public/Fonts";
 import Link from "next/link";
 import SecondaryFooter from "../SecondaryFooter/SecondaryFooter";
+import { MouseEventHandler, useState } from "react";
+import FirstStage from "./FirstStage";
+import SecondStage from "./SecondStage";
+import ThirdStage from "./ThirdStage";
 
 const SignUpPage: React.FC = () => {
+  const [signUpStage, setSignUpStage] = useState(1);
+
+  const prevStage: React.MouseEventHandler<HTMLButtonElement> = () => {
+    setSignUpStage((prev) => --prev);
+  };
+
+  const nextStage: React.MouseEventHandler<HTMLButtonElement> = () => {
+    setSignUpStage((prev) => ++prev);
+  };
+
+  const handleSignUpStageChange = (state: "next" | "prev") => {
+    return state === "next" ? nextStage : prevStage;
+  };
+
+  const getCurrentStageComponent = () => {
+    if (signUpStage == 1) {
+      return <FirstStage handleSignUpStageChange={handleSignUpStageChange} />;
+    } else if (signUpStage == 2) {
+      return <SecondStage handleSignUpStageChange={handleSignUpStageChange} />;
+    } else if (signUpStage == 3) {
+      return <ThirdStage />;
+    } else {
+      return <div>error bitch</div>;
+    }
+  };
+
+  console.log(signUpStage);
+
   return (
     <>
       <div className={`${styles["login-page-wrapper"]} ${inter.className}`}>
@@ -30,30 +62,31 @@ const SignUpPage: React.FC = () => {
                 <div className="signup-stage-deactive">3</div>
               </div>
             </div>
-            <form>
+            {getCurrentStageComponent()}
+            {/* <form onSubmit={(e) => e.preventDefault()}>
               <div>
                 <label htmlFor="login-username">full name</label>
                 <input type="text" id="login-username" />
                 <p className={styles["login-username-error"]}>
-                  enter a username.
+                  enter a valid name.
                 </p>
               </div>
               <div>
                 <label htmlFor="login-password">email address</label>
                 <input type="email" id="login-password" />
                 <p className={styles["login-password-error"]}>
-                  enter a password.
+                  enter an email.
                 </p>
               </div>
               <div>
                 <button
                   className={`${styles["login-page-login-button"]} ${styles["primary-login-button"]}`}
-                  type="submit"
+                  onClick={handleSignUpStageChange}
                 >
                   Next
                 </button>
               </div>
-            </form>
+            </form> */}
             <div className={styles["secondary-login-container"]}>
               <button
                 className={`${styles["primary-login-button"]} ${styles["secondary-login-button"]}`}
