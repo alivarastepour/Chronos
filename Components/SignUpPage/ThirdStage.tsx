@@ -11,13 +11,8 @@ const ThirdStage = ({
     <>
       <form onSubmit={(e) => e.preventDefault()}>
         <div>
-          <label htmlFor="signup-select-organization">
-            what is your gender?
-          </label>
-          <select
-            name="signup-select-organization"
-            id="signup-select-organization"
-          >
+          <label htmlFor="signup-gender">what is your gender?</label>
+          <select name="signup-gender" id="signup-gender">
             <option value="male">male</option>
             <option value="female">female</option>
             <option value="non-binary">non-binary</option>
@@ -28,20 +23,26 @@ const ThirdStage = ({
           </p>
         </div>
         <div className={styles["signup-checkbox-container"]}>
-          <label data-checkboxlabel="true" htmlFor="login-password">
+          <label data-checkboxlabel="true" htmlFor="signup-tos">
             i agree to Chronos's terms of services
           </label>
-          <input data-checkbox="true" type="checkbox" id="login-password" />
+          <input
+            data-checkbox="true"
+            type="checkbox"
+            name="signup-tos"
+            id="signup-tos"
+          />
         </div>
         <div className={styles["signup-checkbox-container"]}>
-          <label data-checkboxlabel="true" htmlFor="login-password">
+          <label data-checkboxlabel="true" htmlFor="signup-updates">
             keep me inforemd of the latest updates
           </label>
           <input
             data-checkbox="true"
             defaultChecked
             type="checkbox"
-            id="login-password"
+            name="signup-updates"
+            id="signup-updates"
           />
         </div>
         <div className={styles["signup-flex-action-container"]}>

@@ -11,13 +11,13 @@ const FirstStage = ({
     <>
       <form onSubmit={(e) => e.preventDefault()}>
         <div>
-          <label htmlFor="login-username">full name</label>
-          <input type="text" id="login-username" />
+          <label htmlFor="signup-fullname">full name</label>
+          <input type="text" name="signup-fullname" id="signup-fullname" />
           <p className={styles["login-username-error"]}>enter a valid name.</p>
         </div>
         <div>
-          <label htmlFor="login-password">email address</label>
-          <input type="email" id="login-password" />
+          <label htmlFor="signup-email">email address</label>
+          <input type="email" name="signup-email" id="signup-email" />
           <p className={styles["login-password-error"]}>enter an email.</p>
         </div>
         <div>
