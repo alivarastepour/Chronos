@@ -55,6 +55,20 @@ body {
   font-size: 1.4rem;
 }
 
+.signup-stage-active {
+  background-color: $primary_color_light;
+  color: white;
+  border: 1px solid $primary_color_light;
+  cursor: pointer;
+}
+
+.signup-stage-deactive {
+  background-color: white;
+  color: $primary_color_light;
+  border: 1px solid $primary_color_light;
+  cursor: no-drop;
+}
+
 @media (prefers-color-scheme: dark) {
   div,
   h1 {
