@@ -113,6 +113,33 @@
         }
       }
 
+      select {
+        width: 100%;
+        height: 40px;
+        font-size: 1rem;
+        text-transform: capitalize;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .signup-checkbox-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        label[data-checkboxlabel*="true"] {
+          font-size: 0.9rem;
+          margin-bottom: 0;
+        }
+
+        input[data-checkbox*="true"] {
+          width: 15px;
+          height: 15px;
+        }
+      }
+
       p.login-password-error,
       p.login-username-error {
         font-size: 0.7rem;
@@ -249,7 +276,8 @@
 
     .login-page-login-form-container {
       form {
-        input {
+        input,
+        select {
           border: none;
 
           &:focus {
@@ -305,7 +333,8 @@
 
     .login-page-login-form-container {
       form {
-        input {
+        input,
+        select {
           border: 2px solid rgba($primary_color_light, 0.4);
           color: $primary_color_light;
 

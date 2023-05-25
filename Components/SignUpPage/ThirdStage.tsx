@@ -11,16 +11,38 @@ const ThirdStage = ({
     <>
       <form onSubmit={(e) => e.preventDefault()}>
         <div>
-          <label htmlFor="login-username">password</label>
-          <input type="password" id="login-username" />
+          <label htmlFor="signup-select-organization">
+            what is your gender?
+          </label>
+          <select
+            name="signup-select-organization"
+            id="signup-select-organization"
+          >
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="non-binary">non-binary</option>
+            <option value="rather-not-say">i rather not say</option>
+          </select>
           <p className={styles["login-username-error"]}>
             enter a valid password.
           </p>
         </div>
-        <div>
-          <label htmlFor="login-password">repeat password</label>
-          <input type="password" id="login-password" />
-          <p className={styles["login-password-error"]}>enter an email.</p>
+        <div className={styles["signup-checkbox-container"]}>
+          <label data-checkboxlabel="true" htmlFor="login-password">
+            i agree to Chronos's terms of services
+          </label>
+          <input data-checkbox="true" type="checkbox" id="login-password" />
+        </div>
+        <div className={styles["signup-checkbox-container"]}>
+          <label data-checkboxlabel="true" htmlFor="login-password">
+            keep me inforemd of the latest updates
+          </label>
+          <input
+            data-checkbox="true"
+            defaultChecked
+            type="checkbox"
+            id="login-password"
+          />
         </div>
         <div className={styles["signup-flex-action-container"]}>
           <button
