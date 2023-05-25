@@ -77,6 +77,16 @@
       }
     }
     form {
+      .signup-flex-action-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        button {
+          font-size: 1.2rem;
+          width: 45%;
+          // border-radius: 1.rem;
+        }
+      }
       label {
         display: block;
 
