@@ -9,7 +9,7 @@ styles_parent_dir = "./styles"
 styles_path = path.join(styles_parent_dir, component_name)
 
 TSX_TEMPLATE = f'import styles from "@/styles/{component_name}/{style_name}.module.scss";\n\nconst {component_name} = () => {{\nreturn <></>;\n}};\n\nexport default {component_name};'
-SCSS_TEMPLATE = '@import \'../_variables.scss\''
+SCSS_TEMPLATE = '@import "../_variables.scss";'
 
 mkdir(component_path)
 mkdir(styles_path)
