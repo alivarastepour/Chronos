@@ -44,22 +44,22 @@ const SignUpPage: React.FC = () => {
 
   return (
     <>
-      <div className={`${styles["login-page-wrapper"]} ${inter.className}`}>
-        {/* <div className={styles["login-page-logo"]}>Chronos</div> */}
-        <div className={styles["login-page-flex-wrapper"]}>
-          <div className={styles["login-page-logo-wrapper"]}>
+      <div className={`${styles["signup-page-wrapper"]} ${inter.className}`}>
+        <div className={styles["signup-page-flex-wrapper"]}>
+          <div className={styles["signup-page-logo-wrapper"]}>
             <Image
+              priority
               src={logo}
               alt="Chronos logo"
-              className={styles["login-page-logo"]}
+              className={styles["signup-page-logo"]}
             />
-            <div className={styles["login-page-logo-subtitle"]}>
+            <div className={styles["signup-page-logo-subtitle"]}>
               manage your time like you are the god of it
             </div>
           </div>
-          <main className={styles["login-page-login-form-container"]}>
+          <main className={styles["signup-page-signup-form-container"]}>
             <div className={styles["signup-header-wrapper"]}>
-              <h1 className={styles["login-title"]}>Create your account</h1>
+              <h1 className={styles["signup-title"]}>Create your account</h1>
               <div className={styles["signup-stage-holder"]}>
                 <div data-current={1} className={getStageHolderClassName(1)}>
                   1
@@ -72,13 +72,15 @@ const SignUpPage: React.FC = () => {
                 </div>
               </div>
             </div>
+
             {getCurrentStageForm()}
-            <div className={styles["secondary-login-container"]}>
+
+            <div className={styles["secondary-signup-container"]}>
               <button
-                className={`${styles["primary-login-button"]} ${styles["secondary-login-button"]}`}
+                className={`${styles["primary-signup-button"]} ${styles["secondary-signup-button"]}`}
               >
                 <div
-                  className={`${styles["login-button-flex"]} ${styles["login-button-google"]}`}
+                  className={`${styles["signup-button-flex"]} ${styles["signup-button-google"]}`}
                 >
                   <div>
                     <svg
@@ -107,16 +109,16 @@ const SignUpPage: React.FC = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div>login with google</div>
+                  <div>sign up with google</div>
                 </div>
               </button>
             </div>
-            <div className={styles["secondary-login-container"]}>
+            <div className={styles["secondary-signup-container"]}>
               <button
-                className={`${styles["primary-login-button"]} ${styles["secondary-login-button"]}`}
+                className={`${styles["primary-signup-button"]} ${styles["secondary-signup-button"]}`}
               >
                 <div
-                  className={`${styles["login-button-flex"]} ${styles["login-button-outlook"]}`}
+                  className={`${styles["signup-button-flex"]} ${styles["signup-button-outlook"]}`}
                 >
                   <div>
                     <svg
@@ -149,16 +151,16 @@ const SignUpPage: React.FC = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div>login with outlook</div>
+                  <div>sign up with outlook</div>
                 </div>
               </button>
             </div>
-            <div className={styles["secondary-login-container"]}>
+            <div className={styles["secondary-signup-container"]}>
               <button
-                className={`${styles["primary-login-button"]} ${styles["secondary-login-button"]}`}
+                className={`${styles["primary-signup-button"]} ${styles["secondary-signup-button"]}`}
               >
                 <div
-                  className={`${styles["login-button-flex"]} ${styles["login-button-linkedin"]}`}
+                  className={`${styles["signup-button-flex"]} ${styles["signup-button-linkedin"]}`}
                 >
                   <div>
                     <svg
@@ -187,13 +189,13 @@ const SignUpPage: React.FC = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div>login with linkedin</div>
+                  <div>sign up with linkedin</div>
                 </div>
               </button>
             </div>
-            <p className={styles["login-signup-referrer-container"]}>
-              don't have an account?
-              <Link href="/">join us know</Link>
+            <p className={styles["signup-signup-referrer-container"]}>
+              already have an account?
+              <Link href="/">login</Link>
             </p>
           </main>
         </div>

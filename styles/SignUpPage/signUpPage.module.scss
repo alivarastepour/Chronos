@@ -1,27 +1,27 @@
 @import "../_variables.scss";
 
-.login-page-wrapper {
+.signup-page-wrapper {
   box-sizing: border-box;
 
   // padding: 0.5rem;
 
   // height: 100vh;
   padding-top: 2rem;
-  .login-page-logo-wrapper {
+  .signup-page-logo-wrapper {
     width: 80%;
 
     position: relative;
     // box-sizing: border-box;
     margin: auto;
 
-    .login-page-logo {
+    .signup-page-logo {
       margin: auto;
 
       height: 100%;
       width: 100%;
     }
 
-    .login-page-logo-subtitle {
+    .signup-page-logo-subtitle {
       margin-top: 0.5rem;
 
       font-size: 0.7rem;
@@ -30,7 +30,7 @@
     }
   }
 
-  .login-title {
+  .signup-title {
     position: relative;
 
     margin-bottom: 1rem;
@@ -52,7 +52,7 @@
     }
   }
 
-  .login-page-login-form-container {
+  .signup-page-signup-form-container {
     padding: 0.5rem;
     .signup-header-wrapper {
       display: flex;
@@ -144,8 +144,8 @@
         }
       }
 
-      p.login-password-error,
-      p.login-username-error {
+      p.signup-password-error,
+      p.signup-username-error {
         font-size: 0.7rem;
         font-weight: 500;
         color: white;
@@ -173,11 +173,11 @@
 
         margin-top: 0.4rem;
 
-        .login-remember-label {
+        .signup-remember-label {
           font-size: 0.7rem;
         }
 
-        .login-remember-checkbox {
+        .signup-remember-checkbox {
           width: 15px;
           height: 15px;
         }
@@ -203,7 +203,7 @@
         }
       }
 
-      .login-page-login-button {
+      .signup-page-signup-button {
         font-size: 1.4rem;
         color: white;
         border-radius: 1rem;
@@ -212,18 +212,18 @@
       }
     }
 
-    .secondary-login-container {
+    .secondary-signup-container {
       width: 70%;
 
       margin: auto;
 
-      .secondary-login-button {
+      .secondary-signup-button {
         text-transform: capitalize;
         font-size: 1.1rem;
 
         transition: 0.3s;
 
-        .login-button-flex {
+        .signup-button-flex {
           display: flex;
           flex-direction: row;
           justify-content: center;
@@ -236,7 +236,7 @@
       }
     }
 
-    .login-signup-referrer-container {
+    .signup-signup-referrer-container {
       text-align: center;
       text-transform: capitalize;
       font-size: 0.7rem;
@@ -257,7 +257,7 @@
   }
 }
 
-.primary-login-button {
+.primary-signup-button {
   width: 100%;
 
   border-radius: 0.6rem;
@@ -270,16 +270,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .login-page-wrapper {
+  .signup-page-wrapper {
     background-color: $primary_background_dark;
 
-    .login-page-logo-wrapper {
-      .login-page-logo {
+    .signup-page-logo-wrapper {
+      .signup-page-logo {
         filter: invert(1);
       }
     }
 
-    .login-page-login-form-container {
+    .signup-page-signup-form-container {
       form {
         input,
         select {
@@ -294,7 +294,7 @@
           }
         }
 
-        .login-page-login-button {
+        .signup-page-signup-button {
           background-color: $secondary_color_dark;
 
           &:hover {
@@ -303,8 +303,8 @@
         }
       }
 
-      .secondary-login-container {
-        .secondary-login-button {
+      .secondary-signup-container {
+        .secondary-signup-button {
           border: 1px solid white;
           background-color: transparent;
 
@@ -318,7 +318,7 @@
         }
       }
 
-      .login-signup-referrer-container {
+      .signup-signup-referrer-container {
         color: #fefefe;
       }
     }
@@ -329,14 +329,14 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .login-page-wrapper {
-    .login-page-logo-wrapper {
-      .login-page-logo-subtitle {
+  .signup-page-wrapper {
+    .signup-page-logo-wrapper {
+      .signup-page-logo-subtitle {
         color: #1e1e1e;
       }
     }
 
-    .login-page-login-form-container {
+    .signup-page-signup-form-container {
       form {
         input,
         select {
@@ -352,7 +352,7 @@
           }
         }
 
-        .login-page-login-button {
+        .signup-page-signup-button {
           background-color: $primary_color_light;
 
           &:hover {
@@ -361,8 +361,8 @@
         }
       }
 
-      .secondary-login-container {
-        .secondary-login-button {
+      .secondary-signup-container {
+        .secondary-signup-button {
           border: 1px solid $primary_background_dark;
           background-color: white;
 
@@ -382,7 +382,7 @@
         }
       }
 
-      .login-signup-referrer-container {
+      .signup-signup-referrer-container {
         color: #1e1e1e;
       }
     }
@@ -390,11 +390,11 @@
 }
 
 @media only screen and (min-width: 500px) {
-  .login-page-wrapper {
-    .login-page-logo-wrapper {
+  .signup-page-wrapper {
+    .signup-page-logo-wrapper {
       width: 60%;
     }
-    .login-page-login-form-container {
+    .signup-page-signup-form-container {
       margin: auto;
       width: 70%;
     }
@@ -405,15 +405,15 @@
 }
 
 @media only screen and (min-width: 700px) {
-  .login-page-wrapper {
-    .login-page-logo-wrapper {
+  .signup-page-wrapper {
+    .signup-page-logo-wrapper {
       width: 50%;
-      .login-page-logo-subtitle {
+      .signup-page-logo-subtitle {
         margin-bottom: 0.5rem;
         font-size: 0.9rem;
       }
     }
-    .login-page-login-form-container {
+    .signup-page-signup-form-container {
       margin: auto;
       width: 60%;
       box-sizing: border-box;
@@ -422,16 +422,16 @@
     }
   }
   @media (prefers-color-scheme: dark) {
-    .login-page-wrapper {
+    .signup-page-wrapper {
       footer,
-      .login-page-login-form-container {
+      .signup-page-signup-form-container {
         background-color: #1e1e1e;
       }
     }
   }
   @media (prefers-color-scheme: light) {
-    .login-page-wrapper {
-      .login-page-login-form-container {
+    .signup-page-wrapper {
+      .signup-page-signup-form-container {
         background-color: #f4f4f4;
       }
     }
@@ -439,17 +439,17 @@
 }
 
 @media only screen and (min-width: 900px) {
-  .login-page-wrapper {
-    .login-page-flex-wrapper {
+  .signup-page-wrapper {
+    .signup-page-flex-wrapper {
       display: flex;
     }
-    .login-page-logo-wrapper {
+    .signup-page-logo-wrapper {
       width: 40%;
-      .login-page-logo-subtitle {
+      .signup-page-logo-subtitle {
         font-size: 1.5rem;
       }
     }
-    .login-page-login-form-container {
+    .signup-page-signup-form-container {
       margin: auto;
       width: 45%;
     }

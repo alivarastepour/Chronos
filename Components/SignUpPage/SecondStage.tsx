@@ -11,9 +11,15 @@ const SecondStage = ({
     <>
       <form onSubmit={(e) => e.preventDefault()}>
         <div>
+          <input type="text" autoComplete="username" hidden name="" id="" />
           <label htmlFor="signup-password">password</label>
-          <input type="password" name="signup-password" id="signup-password" />
-          <p className={styles["login-username-error"]}>
+          <input
+            type="password"
+            autoComplete="new-password"
+            name="signup-password"
+            id="signup-password"
+          />
+          <p className={styles["signup-username-error"]}>
             enter a valid password.
           </p>
         </div>
@@ -21,20 +27,21 @@ const SecondStage = ({
           <label htmlFor="signup-password-repeat">repeat password</label>
           <input
             type="password"
+            autoComplete="new-password"
             name="signup-password-repeat"
             id="signup-password-repeat"
           />
-          <p className={styles["login-password-error"]}>passwords dont match</p>
+          <p className={styles["signup-password-error"]}>passwords dont match</p>
         </div>
         <div className={styles["signup-flex-action-container"]}>
           <button
-            className={`${styles["login-page-login-button"]} ${styles["primary-login-button"]}`}
+            className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
             onClick={handleSignUpStageChange("prev")}
           >
             Previous
           </button>
           <button
-            className={`${styles["login-page-login-button"]} ${styles["primary-login-button"]}`}
+            className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
             onClick={handleSignUpStageChange("next")}
           >
             Next

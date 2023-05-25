@@ -18,7 +18,7 @@ const ThirdStage = ({
             <option value="non-binary">non-binary</option>
             <option value="rather-not-say">i rather not say</option>
           </select>
-          <p className={styles["login-username-error"]}>
+          <p className={styles["signup-username-error"]}>
             enter a valid password.
           </p>
         </div>
@@ -47,13 +47,13 @@ const ThirdStage = ({
         </div>
         <div className={styles["signup-flex-action-container"]}>
           <button
-            className={`${styles["login-page-login-button"]} ${styles["primary-login-button"]}`}
+            className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
             onClick={handleSignUpStageChange("prev")}
           >
             Previous
           </button>
           <button
-            className={`${styles["login-page-login-button"]} ${styles["primary-login-button"]}`}
+            className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
             onClick={undefined}
           >
             Sign Up

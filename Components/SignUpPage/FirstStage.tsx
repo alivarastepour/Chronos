@@ -13,16 +13,21 @@ const FirstStage = ({
         <div>
           <label htmlFor="signup-fullname">full name</label>
           <input type="text" name="signup-fullname" id="signup-fullname" />
-          <p className={styles["login-username-error"]}>enter a valid name.</p>
+          <p className={styles["signup-username-error"]}>enter a valid name.</p>
         </div>
         <div>
           <label htmlFor="signup-email">email address</label>
-          <input type="email" name="signup-email" id="signup-email" />
-          <p className={styles["login-password-error"]}>enter an email.</p>
+          <input
+            type="email"
+            autoComplete="username"
+            name="signup-email"
+            id="signup-email"
+          />
+          <p className={styles["signup-password-error"]}>enter an email.</p>
         </div>
         <div>
           <button
-            className={`${styles["login-page-login-button"]} ${styles["primary-login-button"]}`}
+            className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
             onClick={handleSignUpStageChange("next")}
           >
             Next
