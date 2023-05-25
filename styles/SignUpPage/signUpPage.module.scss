@@ -78,14 +78,17 @@
     }
     form {
       height: 304px;
+      position: relative;
       .signup-flex-action-container {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         button {
-          font-size: 1.2rem;
+          font-size: 1.4rem;
           width: 45%;
-          // border-radius: 1.rem;
         }
       }
       label {
@@ -203,6 +206,7 @@
       .login-page-login-button {
         font-size: 1.4rem;
         color: white;
+        border-radius: 1rem;
 
         transition: 0.3s;
       }
