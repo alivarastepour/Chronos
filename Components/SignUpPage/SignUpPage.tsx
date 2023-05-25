@@ -24,7 +24,7 @@ const SignUpPage: React.FC = () => {
     return state === "next" ? nextStage : prevStage;
   };
 
-  const getCurrentStageComponent = () => {
+  const getCurrentStageForm = () => {
     if (signUpStage == 1) {
       return <FirstStage handleSignUpStageChange={handleSignUpStageChange} />;
     } else if (signUpStage == 2) {
@@ -34,6 +34,12 @@ const SignUpPage: React.FC = () => {
     } else {
       return <div>error bitch</div>;
     }
+  };
+
+  const getStageHolderClassName = (state: number) => {
+    return state === signUpStage
+      ? "signup-stage-active"
+      : "signup-stage-deactive";
   };
 
   return (
@@ -55,12 +61,18 @@ const SignUpPage: React.FC = () => {
             <div className={styles["signup-header-wrapper"]}>
               <h1 className={styles["login-title"]}>Create your account</h1>
               <div className={styles["signup-stage-holder"]}>
-                <div className="signup-stage-active">1</div>
-                <div className="signup-stage-deactive">2</div>
-                <div className="signup-stage-deactive">3</div>
+                <div data-current={1} className={getStageHolderClassName(1)}>
+                  1
+                </div>
+                <div data-current={2} className={getStageHolderClassName(2)}>
+                  2
+                </div>
+                <div data-current={3} className={getStageHolderClassName(3)}>
+                  3
+                </div>
               </div>
             </div>
-            {getCurrentStageComponent()}
+            {getCurrentStageForm()}
             <div className={styles["secondary-login-container"]}>
               <button
                 className={`${styles["primary-login-button"]} ${styles["secondary-login-button"]}`}
