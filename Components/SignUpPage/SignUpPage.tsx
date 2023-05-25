@@ -30,13 +30,11 @@ const SignUpPage: React.FC = () => {
     } else if (signUpStage == 2) {
       return <SecondStage handleSignUpStageChange={handleSignUpStageChange} />;
     } else if (signUpStage == 3) {
-      return <ThirdStage />;
+      return <ThirdStage handleSignUpStageChange={handleSignUpStageChange} />;
     } else {
       return <div>error bitch</div>;
     }
   };
-
-  console.log(signUpStage);
 
   return (
     <>
@@ -63,30 +61,6 @@ const SignUpPage: React.FC = () => {
               </div>
             </div>
             {getCurrentStageComponent()}
-            {/* <form onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label htmlFor="login-username">full name</label>
-                <input type="text" id="login-username" />
-                <p className={styles["login-username-error"]}>
-                  enter a valid name.
-                </p>
-              </div>
-              <div>
-                <label htmlFor="login-password">email address</label>
-                <input type="email" id="login-password" />
-                <p className={styles["login-password-error"]}>
-                  enter an email.
-                </p>
-              </div>
-              <div>
-                <button
-                  className={`${styles["login-page-login-button"]} ${styles["primary-login-button"]}`}
-                  onClick={handleSignUpStageChange}
-                >
-                  Next
-                </button>
-              </div>
-            </form> */}
             <div className={styles["secondary-login-container"]}>
               <button
                 className={`${styles["primary-login-button"]} ${styles["secondary-login-button"]}`}
