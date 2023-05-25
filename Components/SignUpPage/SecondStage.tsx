@@ -31,7 +31,9 @@ const SecondStage = ({
             name="signup-password-repeat"
             id="signup-password-repeat"
           />
-          <p className={styles["signup-password-error"]}>passwords dont match</p>
+          <p className={styles["signup-password-error"]}>
+            passwords dont match
+          </p>
         </div>
         <div className={styles["signup-flex-action-container"]}>
           <button

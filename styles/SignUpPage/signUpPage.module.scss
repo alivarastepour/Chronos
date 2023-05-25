@@ -3,15 +3,13 @@
 .signup-page-wrapper {
   box-sizing: border-box;
 
-  // padding: 0.5rem;
-
-  // height: 100vh;
   padding-top: 2rem;
+
   .signup-page-logo-wrapper {
     width: 80%;
 
     position: relative;
-    // box-sizing: border-box;
+
     margin: auto;
 
     .signup-page-logo {
@@ -54,43 +52,56 @@
 
   .signup-page-signup-form-container {
     padding: 0.5rem;
+
     .signup-header-wrapper {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+
       .signup-stage-holder {
         display: flex;
         flex-direction: row;
+
         div {
           width: 30px;
           height: 30px;
-          //   border: 1px solid black;
+
           border-radius: 50%;
+
           display: grid;
           place-content: center;
+
           font-size: 0.8rem;
         }
+
         :not(:last-child) {
           margin-right: 0.2rem;
         }
       }
     }
+
     form {
-      height: 304px;
       position: relative;
+
+      height: 304px;
+
       .signup-flex-action-container {
         position: absolute;
         bottom: 0;
+
         width: 100%;
+
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+
         button {
           font-size: 1.4rem;
           width: 45%;
         }
       }
+
       label {
         display: block;
 
@@ -133,6 +144,7 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 0.5rem;
+
         label[data-checkboxlabel*="true"] {
           font-size: 0.9rem;
           margin-bottom: 0;
