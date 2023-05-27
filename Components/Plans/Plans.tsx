@@ -18,7 +18,7 @@ const Plans: React.FC = () => {
         <div className={`${styles["plans-header"]} ${inter.className}`}>
           Add <span>CHRONOS</span> To Your Workflow <span>NOW</span>
         </div>
-        <div className={styles["plans-container"]}>
+        <div id="plans-container" className={styles["plans-container"]}>
           {plansInformation.map((planInfo) => {
             const {
               id,
