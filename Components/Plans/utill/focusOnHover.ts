@@ -23,16 +23,16 @@ const getDeactiveScenarios = (dir: directionValues): directionValues[] => {
   }
 };
 
-const focusOnCurrentTarget = (target: Element, dir: directionValues) => {
+const focusOnCurrentTarget = (target: Element, dir: directionValues): void => {
   target.classList.add(`active-${dir}`);
-  const deactives = getDeactiveScenarios(dir);
-  deactives.forEach((deactive) =>
-    target.classList.remove(`deactive-${deactive}`)
+  const deactives: directionValues[] = getDeactiveScenarios(dir);
+  deactives.forEach((scenario: directionValues) =>
+    target.classList.remove(`deactive-${scenario}`)
   );
 };
 
-const removeFocusOnPrevTarget = (parent: HTMLElement) => {
-  parent.childNodes.forEach((child) => {
+const removeFocusOnPrevTarget = (parent: HTMLElement): void => {
+  parent.childNodes.forEach((child: ChildNode) => {
     const childClassList: DOMTokenList = (child as Element).classList;
     if (childClassList.contains("active-left")) {
       childClassList.remove("active-left");
@@ -48,7 +48,7 @@ const removeFocusOnPrevTarget = (parent: HTMLElement) => {
 };
 
 const shiftSecondContaier = (dir: directionValues) => {
-  const secondContainer = get("card-wrapper-2") as Element;
+  const secondContainer: Element = get("card-wrapper-2") as Element;
   if (dir === "left") {
     secondContainer.classList.add("deactive-left");
     secondContainer.classList.remove("deactive-right");
@@ -60,18 +60,21 @@ const shiftSecondContaier = (dir: directionValues) => {
   }
 };
 
-const effectChange = (event: Event) => {
+const effectChange = (event: Event): void => {
   const target: Element = event.currentTarget as Element;
   const targetID: string = target.id;
-  const targetIDLength = targetID.length;
-  const targetPosition = targetID[targetIDLength - 1] as directionKeys;
-  const changeDirection = getChangeDirection(targetPosition);
-  const indirectTargetID = targetID.startsWith("card-wrapper-")
+  const targetIDLength: number = targetID.length;
+  const targetPosition: directionKeys = targetID[
+    targetIDLength - 1
+  ] as directionKeys;
+  const changeDirection: directionValues = getChangeDirection(targetPosition);
+  const indirectTargetID: string = targetID.startsWith("card-wrapper-")
     ? `plans-counter-${targetPosition}`
     : `card-wrapper-${targetPosition}`;
-  const indirectTarget = get(indirectTargetID) as Element;
-  const targetParent = target.parentElement as HTMLElement;
-  const indirectTargetParent = indirectTarget.parentElement as HTMLElement;
+  const indirectTarget: Element = get(indirectTargetID) as Element;
+  const targetParent: HTMLElement = target.parentElement as HTMLElement;
+  const indirectTargetParent: HTMLElement =
+    indirectTarget.parentElement as HTMLElement;
 
   removeFocusOnPrevTarget(targetParent);
   removeFocusOnPrevTarget(indirectTargetParent);
