@@ -32,6 +32,7 @@ const Plans: React.FC = () => {
             return (
               <div
                 key={id}
+                data-type="container"
                 id={`card-wrapper-${id}`}
                 className={`${styles["card-wrapper"]} ${
                   styles[`card-wrapper-${id}`]
@@ -72,9 +73,21 @@ const Plans: React.FC = () => {
           })}
         </div>
         <div className={styles["plans-counter"]}>
-          <div id="plans-counter-1" className={`counter-deactive`}></div>
-          <div id="plans-counter-2" className={`counter-active`}></div>
-          <div id="plans-counter-3" className={`counter-deactive`}></div>
+          <div
+            data-type="counter"
+            id="plans-counter-1"
+            className="deactive-left"
+          ></div>
+          <div
+            data-type="counter"
+            id="plans-counter-2"
+            className="active-mid"
+          ></div>
+          <div
+            data-type="counter"
+            id="plans-counter-3"
+            className="deactive-right"
+          ></div>
         </div>
       </div>
     </>
