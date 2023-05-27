@@ -185,25 +185,25 @@ div[data-type*="container"].deactive-mid {
 }
 
 @media only screen and (max-width: 1140px) {
-  .active-right {
+  div[data-type*="container"].active-right {
     transform: unset;
   }
-  .active-left {
+  div[data-type*="container"].active-left {
     transform: unset;
   }
-  .active-mid {
+  div[data-type*="container"].active-mid {
     transform: unset;
   }
-  .deactive-left {
+  div[data-type*="container"].deactive-left {
     transform: unset;
   }
-  .deactive-right {
+  div[data-type*="container"].deactive-right {
     transform: unset;
   }
-  .deactive-mid {
+  div[data-type*="container"].deactive-mid {
     transform: unset;
   }
-  .deactive-large {
+  div[data-type*="container"].deactive-large {
     display: block;
   }
   .features-selected {

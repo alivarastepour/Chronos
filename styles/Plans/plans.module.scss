@@ -28,6 +28,7 @@
 
     .card-wrapper {
       transition: 1s;
+      cursor: pointer;
 
       &:hover {
         .plan-header-button {
