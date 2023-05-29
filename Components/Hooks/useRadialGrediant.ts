@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import getUserTheme from "@/public/util/userTheme";
 import type { TuserTheme } from "@/public/util/userTheme";
-
+import getMousePosition from "@/public/util/mousePosition";
 type TcolorShade = {
   light: string;
   dark: string;
@@ -11,18 +11,6 @@ interface IuseRadialGradient {
   elements: React.RefObject<HTMLDivElement>[];
   colorShade: TcolorShade;
 }
-
-const getMousePosition = (
-  element: HTMLElement,
-  event: MouseEvent
-): [newCenterX: number, newCentetY: number] => {
-  const elementRect: DOMRect = element.getBoundingClientRect();
-
-  const newCenterX: number = event.clientX - elementRect.left;
-  const newCenterY: number = event.clientY - elementRect.top;
-
-  return [newCenterX, newCenterY];
-};
 
 const useRadialGradient = ({ elements, colorShade }: IuseRadialGradient) => {
   const [color, setColor] = useState("");
