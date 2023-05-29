@@ -15,7 +15,10 @@ interface IuseRadialGradient {
   colorShade: TcolorShade;
 }
 
-const useRadialGradient = ({ elements, colorShade }: IuseRadialGradient) => {
+const useRadialGradientOnHover = ({
+  elements,
+  colorShade,
+}: IuseRadialGradient) => {
   let color: string = "";
 
   const setColorShade = (): string => {
@@ -57,4 +60,4 @@ const useRadialGradient = ({ elements, colorShade }: IuseRadialGradient) => {
   return null;
 };
 
-export default useRadialGradient;
+export default useRadialGradientOnHover;

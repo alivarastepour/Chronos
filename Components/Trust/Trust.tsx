@@ -2,12 +2,12 @@ import { inter } from "@/public/util/Fonts";
 import styles from "@/styles/Trust/trust.module.scss";
 import { handleHoverStyles } from "./util/hoverStyles";
 import { createRef, useEffect } from "react";
-import useRadialGradient from "../Hooks/useRadialGrediant";
+import useRadialGradientOnHover from "../Hooks/useRadialGrediantOnHover";
 
 const Trust = () => {
   const refs = Array.from({ length: 5 }, () => createRef<any>());
 
-  useRadialGradient({
+  useRadialGradientOnHover({
     elements: refs,
     colorShade: {
       dark: "#424059, #191825e6, #191825e6, #191825e6",
