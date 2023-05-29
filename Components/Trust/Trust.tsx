@@ -1,9 +1,21 @@
 import { inter } from "@/public/Fonts";
 import styles from "@/styles/Trust/trust.module.scss";
 import { handleHoverStyles } from "./util/hoverStyles";
-import { useEffect } from "react";
+import { createRef, useEffect } from "react";
+import useRadialGradient from "../Hooks/useRadialGrediant";
 
 const Trust = () => {
+  const refs = Array.from({ length: 5 }, () => createRef<any>());
+  // console.log(refs);
+
+  useRadialGradient({
+    elements: refs,
+    colorShade: {
+      dark: "#424059, #191825e6, #191825e6, #191825e6",
+      light: "#ffe5e51a, #f7e4e4, #f7e4e4,#f7e4e4",
+    },
+  });
+
   useEffect(() => {
     handleHoverStyles();
   }, []);
@@ -29,7 +41,8 @@ const Trust = () => {
           className={`${styles["trust-container"]} ${styles["trust-container-1"]} ${inter.className}`}
         >
           <div
-            id="item-1"
+            ref={refs[0]}
+            id="trust-item-1"
             className={`trust-default-theme ${styles["trust-item"]} ${styles["item-1"]}`}
           >
             <div className={styles["trust-content"]}>
@@ -42,7 +55,8 @@ const Trust = () => {
             <div className={styles["trust-quote"]}>- neil patrick harris</div>
           </div>
           <div
-            id="item-2"
+            id="trust-item-2"
+            ref={refs[1]}
             className={`trust-default-theme ${styles["trust-item"]} ${styles["item-2"]}`}
           >
             <div className={styles["trust-content"]}>
@@ -53,7 +67,8 @@ const Trust = () => {
             <div className={styles["trust-quote"]}>- jason sagal</div>
           </div>
           <div
-            id="item-3"
+            id="trust-item-3"
+            ref={refs[2]}
             className={`trust-default-theme ${styles["trust-item"]} ${styles["item-3"]}`}
           >
             <div className={styles["trust-content"]}>
@@ -68,7 +83,8 @@ const Trust = () => {
           className={`${styles["trust-container"]} ${styles["trust-container-2"]} ${inter.className}`}
         >
           <div
-            id="item-4"
+            id="trust-item-4"
+            ref={refs[3]}
             className={`trust-default-theme ${styles["trust-item"]} ${styles["item-4"]}`}
           >
             <div className={styles["trust-content"]}>
@@ -79,7 +95,8 @@ const Trust = () => {
             <div className={styles["trust-quote"]}>- rhea seahorn</div>
           </div>
           <div
-            id="item-5"
+            id="trust-item-5"
+            ref={refs[4]}
             className={`trust-default-theme ${styles["trust-item"]} ${styles["item-5"]}`}
           >
             <div className={styles["trust-content"]}>

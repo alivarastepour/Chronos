@@ -130,8 +130,8 @@ const addRotation = (elements: (HTMLElement | null)[]): void => {
 
 export const handleHoverStyles = (): void => {
   const elements: (HTMLElement | null)[] = [1, 2, 3, 4, 5, 6].map((num) =>
-    document.getElementById(`item-${num}`)
+    document.getElementById(`trust-item-${num}`)
   );
-  addFadingBackground(elements);
+  // addFadingBackground(elements);
   addRotation(elements);
 };
