@@ -1,17 +1,28 @@
 import styles from "@/styles/CookiesTOS/cookiesTOS.module.scss";
 import { inter } from "@/public/Fonts";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cookiesTOS_actions } from "./utill/cookiesTOS_actions";
+import useAppear from "../Hooks/useAppear";
 
 const CookiesTOS: React.FC = () => {
   useEffect(() => {
     cookiesTOS_actions();
   }, []);
 
+  const cookiesContainerRef = useRef<HTMLDivElement>(null);
+
+  useAppear({
+    target: cookiesContainerRef,
+    direction: "bottom",
+    delay: 10000,
+    directionOffset: 0,
+  });
+
   return (
     <>
       <div
         id="cookie-container"
+        ref={cookiesContainerRef}
         className={`${styles["cookie-container"]} ${inter.className}`}
       >
         <div className={styles["cookie-header"]}>
