@@ -69,7 +69,7 @@ const addFadingBackground = (elements: (HTMLElement | null)[]): void => {
       const theme: userTheme = getUserTheme();
 
       if (theme == "dark") color = "#424059, #191825e6, #191825e6, #191825e6";
-      else color = "#ffe5e51a, #ffe5e5, #ffe5e5, #ffe5e5";
+      else color = "#ffe5e51a, #f7e4e4, #f7e4e4,#f7e4e4";
 
       element.style.background = "none";
       element.style.backgroundImage = `radial-gradient(circle at ${newCenterX}px ${newCenterY}px, ${color})`;
