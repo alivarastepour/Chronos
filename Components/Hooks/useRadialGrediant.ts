@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-
-type TuserTheme = "dark" | "light";
+import getUserTheme from "@/public/util/userTheme";
+import type { TuserTheme } from "@/public/util/userTheme";
 
 type TcolorShade = {
   light: string;
@@ -11,14 +11,6 @@ interface IuseRadialGradient {
   elements: React.RefObject<HTMLDivElement>[];
   colorShade: TcolorShade;
 }
-
-const getUserTheme = (): TuserTheme => {
-  const isThemeDark: boolean =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const theme: TuserTheme = isThemeDark ? "dark" : "light";
-  return theme;
-};
 
 const getMousePosition = (
   element: HTMLElement,
