@@ -1,5 +1,5 @@
 import styles from "@/styles/Features/features.module.scss";
-import { inter } from "@/public/Fonts";
+import { inter } from "@/public/util/Fonts";
 import { data } from "./data/data";
 import { useEffect, useState } from "react";
 import { handleChangeContent } from "./utill/changeOnClick";

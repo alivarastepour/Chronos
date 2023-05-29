@@ -1,5 +1,5 @@
 import styles from "@/styles/LoginPage/loginPage.module.scss";
-import { inter } from "@/public/Fonts";
+import { inter } from "@/public/util/Fonts";
 import Link from "next/link";
 import logo from "@/public/logo.png";
 import Image from "next/image";

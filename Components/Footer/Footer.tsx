@@ -1,5 +1,5 @@
 import styles from "@/styles/Footer/footer.module.scss";
-import { inter } from "@/public/Fonts";
+import { inter } from "@/public/util/Fonts";
 
 import MainFooter from "../MainFooter/MainFooter";
 import SecondaryFooter from "../SecondaryFooter/SecondaryFooter";

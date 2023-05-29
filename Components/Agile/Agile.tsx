@@ -1,5 +1,5 @@
 import styles from "@/styles/Agile/agile.module.scss";
-import { inter } from "@/public/Fonts";
+import { inter } from "@/public/util/Fonts";
 const Agile: React.FC = () => {
   return (
     <>

@@ -1,5 +1,5 @@
 import styles from "@/styles/Benefits/benefits.module.scss";
-import { inter } from "@/public/Fonts";
+import { inter } from "@/public/util/Fonts";
 
 const BenefitsPresenter: React.FC = () => (
   <>

@@ -1,5 +1,5 @@
 import styles from "@/styles/CookiesTOS/cookiesTOS.module.scss";
-import { inter } from "@/public/Fonts";
+import { inter } from "@/public/util/Fonts";
 import { useEffect, useRef, useState } from "react";
 import { cookiesTOS_actions } from "./utill/cookiesTOS_actions";
 import useAppear from "../Hooks/useAppear";

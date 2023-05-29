@@ -1,4 +1,4 @@
-import { inter } from "@/public/Fonts";
+import { inter } from "@/public/util/Fonts";
 import styles from "@/styles/Trust/trust.module.scss";
 import { handleHoverStyles } from "./util/hoverStyles";
 import { createRef, useEffect } from "react";

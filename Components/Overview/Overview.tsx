@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import styles from "@/styles/Overview/overview.module.scss";
-import { inter } from "@/public/Fonts";
+import { inter } from "@/public/util/Fonts";
 
 import HeroImage from "@/public/TrelloUICollage_4x.webp";
 

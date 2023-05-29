@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import styles from "@/styles/Plans/plans.module.scss";
-import { inter } from "@/public/Fonts";
+import { inter } from "@/public/util/Fonts";
 
 import Card from "../Card/Card";
 

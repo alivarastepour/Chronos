@@ -1,5 +1,5 @@
 import styles from "@/styles/Card/card.module.scss";
-import { inter } from "@/public/Fonts";
+import { inter } from "@/public/util/Fonts";
 
 interface CardProps {
   children: React.ReactNode;

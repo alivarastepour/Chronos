@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "@/styles/Header/header.module.scss";
-import { inter } from "@/public/Fonts";
+import { inter } from "@/public/util/Fonts";
 import logo from "@/public/logo.png";
 import { useEffect } from "react";
 import { tieEventListener } from "./util/tieEventListener";
