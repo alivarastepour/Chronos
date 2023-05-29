@@ -12,7 +12,7 @@ const Trust = () => {
     elements: refs,
     colorShade: {
       dark: "#424059, #191825e6, #191825e6, #191825e6",
-      light: "#ffe5e51a, #f7e4e4, #f7e4e4,#f7e4e4",
+      light: "#ffe5e51a, #ffe5e5, #ffe5e5, #ffe5e5",
     },
   });
 

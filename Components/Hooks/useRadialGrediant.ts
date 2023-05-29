@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+
 import getUserTheme from "@/public/util/userTheme";
-import type { TuserTheme } from "@/public/util/userTheme";
 import getMousePosition from "@/public/util/mousePosition";
+
+import type { TuserTheme } from "@/public/util/userTheme";
+
 type TcolorShade = {
   light: string;
   dark: string;
@@ -13,7 +16,13 @@ interface IuseRadialGradient {
 }
 
 const useRadialGradient = ({ elements, colorShade }: IuseRadialGradient) => {
-  const [color, setColor] = useState("");
+  let color: string = "";
+
+  const setColorShade = (): string => {
+    const theme: TuserTheme = getUserTheme();
+    return theme === "dark" ? colorShade.dark : colorShade.light;
+  };
+
   useEffect(() => {
     elements.forEach((element: React.RefObject<HTMLElement>) => {
       const refTarget = element.current as HTMLElement;
@@ -23,11 +32,7 @@ const useRadialGradient = ({ elements, colorShade }: IuseRadialGradient) => {
           newCenterY: number
         ] = getMousePosition(refTarget, event);
 
-        const theme: TuserTheme = getUserTheme();
-
-        setColor((_) => {
-          return theme === "dark" ? colorShade.dark : colorShade.light;
-        });
+        color = setColorShade();
 
         refTarget.style.background = "none";
         refTarget.style.backgroundImage = `radial-gradient(circle at ${newCenterX}px ${newCenterY}px, ${color})`;
@@ -35,9 +40,9 @@ const useRadialGradient = ({ elements, colorShade }: IuseRadialGradient) => {
 
       elements.forEach((element: React.RefObject<HTMLElement>) => {
         const refTarget = element.current as HTMLElement;
-        refTarget?.addEventListener("mouseleave", () => {
+        refTarget.addEventListener("mouseleave", () => {
           refTarget.style.backgroundImage = "unset";
-          refTarget.style.backgroundColor = color.split(",")[1];
+          refTarget.style.backgroundColor = "";
         });
       });
     }, []);
