@@ -1,10 +1,3 @@
-const cookieAppear = (target: HTMLElement): void => {
-  const timer = setTimeout(() => {
-    target.style.bottom = "0";
-    clearTimeout(timer);
-  }, 10000);
-};
-
 const cookieDisappear = (
   target: HTMLElement,
   disappearDispatchers: HTMLElement[]
@@ -29,8 +22,6 @@ export const cookiesTOS_actions = (): void => {
   const target: HTMLElement = document.getElementById(
     "cookie-container"
   ) as HTMLElement;
-
-  cookieAppear(target);
 
   cookieDisappear(target, getDisappearDispatchers());
 };
