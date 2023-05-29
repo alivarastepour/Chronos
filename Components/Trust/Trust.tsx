@@ -6,7 +6,6 @@ import useRadialGradient from "../Hooks/useRadialGrediant";
 
 const Trust = () => {
   const refs = Array.from({ length: 5 }, () => createRef<any>());
-  // console.log(refs);
 
   useRadialGradient({
     elements: refs,
