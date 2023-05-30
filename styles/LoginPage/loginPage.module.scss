@@ -8,6 +8,10 @@
   // height: 100vh;
   padding-top: 2rem;
   .login-page-logo-wrapper {
+    .login-graphic {
+      display: none;
+    }
+
     width: 80%;
 
     position: relative;
@@ -380,8 +384,19 @@
     }
     .login-page-logo-wrapper {
       width: 40%;
+      position: relative;
+      // padding-top: 1rem;
       .login-page-logo-subtitle {
         font-size: 1.5rem;
+        margin-bottom: -3rem;
+      }
+      .login-graphic {
+        display: block;
+        img {
+          margin: auto;
+          display: block;
+          width: 90%;
+        }
       }
     }
     .login-page-login-form-container {

@@ -3,7 +3,7 @@ import { inter } from "@/public/util/Fonts";
 import Link from "next/link";
 import logo from "@/public/logo.png";
 import Image from "next/image";
-import Footer from "../Footer/Footer";
+import graphic from "@/public/register.svg";
 import SecondaryFooter from "../SecondaryFooter/SecondaryFooter";
 const LoginPage: React.FC = () => {
   return (
@@ -19,6 +19,14 @@ const LoginPage: React.FC = () => {
             />
             <div className={styles["login-page-logo-subtitle"]}>
               manage your time like you are the god of it
+            </div>
+            <div className={styles["login-graphic"]}>
+              <Image
+                src={graphic}
+                alt="login-graphic"
+                // width={500}
+                // height={500}
+              />
             </div>
           </div>
           <main className={styles["login-page-login-form-container"]}>
