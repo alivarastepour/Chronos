@@ -197,9 +197,10 @@
   .fast-join-wrapper {
     background: url("../../public/curve.svg") right bottom -0.5px / 100% 12% no-repeat,
       linear-gradient(
-        to top,
-        rgba($primary_background_dark, 0.7),
-        rgba($primary_background_dark, 1)
+        to bottom,
+        rgba($primary_background_dark, 1),
+        rgba($primary_background_dark, 1),
+        rgba($secondary_color_dark, 0.9)
       );
 
     .fast-join-title {
