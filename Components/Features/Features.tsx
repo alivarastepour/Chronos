@@ -4,6 +4,7 @@ import { data } from "./data/data";
 import { useEffect, useState } from "react";
 import { handleChangeContent } from "./utill/changeOnClick";
 import Image from "next/image";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
 const imageLoader = (content: number) => {
   return `/image_${content}.webp`;
@@ -18,6 +19,8 @@ const getCounterClassName = (id: number, content: number): string => {
 
 const Features: React.FC = () => {
   const [content, setContent]: [number, Function] = useState(0);
+
+  useMediaQuery({ queries: [{ "min-width": 200 }] });
 
   useEffect(() => {
     handleChangeContent(setContent);
