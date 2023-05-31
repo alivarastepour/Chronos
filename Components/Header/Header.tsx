@@ -80,27 +80,29 @@ const Header: React.FC = () => {
               <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
             </svg>
           </div>
-          <div className={styles["header-button"]}>
-            <div
-              className={`${styles["header-button-text"]} ${inter.className}`}
-            >
-              Start Now
-            </div>
-            <div className={styles["header-button-arrow"]}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="13"
-                height="13"
-                viewBox="0 0 11 20"
-                className={styles["svg-arrow"]}
+          <Link href={"/login"}>
+            <div className={styles["header-button"]}>
+              <div
+                className={`${styles["header-button-text"]} ${inter.className}`}
               >
-                <path
-                  fill="currentColor"
-                  d="M.366 19.708c.405.39 1.06.39 1.464 0l8.563-8.264a1.95 1.95 0 0 0 0-2.827L1.768.292A1.063 1.063 0 0 0 .314.282a.976.976 0 0 0-.011 1.425l7.894 7.617a.975.975 0 0 1 0 1.414L.366 18.295a.974.974 0 0 0 0 1.413"
-                ></path>
-              </svg>
+                Start Now
+              </div>
+              <div className={styles["header-button-arrow"]}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 11 20"
+                  className={styles["svg-arrow"]}
+                >
+                  <path
+                    fill="currentColor"
+                    d="M.366 19.708c.405.39 1.06.39 1.464 0l8.563-8.264a1.95 1.95 0 0 0 0-2.827L1.768.292A1.063 1.063 0 0 0 .314.282a.976.976 0 0 0-.011 1.425l7.894 7.617a.975.975 0 0 1 0 1.414L.366 18.295a.974.974 0 0 0 0 1.413"
+                  ></path>
+                </svg>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </>
