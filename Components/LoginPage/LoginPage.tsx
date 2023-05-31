@@ -196,7 +196,7 @@ const LoginPage: React.FC = () => {
             </div>
             <p className={styles["login-signup-referrer-container"]}>
               don't have an account?
-              <Link href="/">join us know</Link>
+              <Link href={"signup"}>join us know</Link>
             </p>
           </main>
         </div>

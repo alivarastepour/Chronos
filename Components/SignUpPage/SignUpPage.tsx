@@ -195,7 +195,7 @@ const SignUpPage: React.FC = () => {
             </div>
             <p className={styles["signup-signup-referrer-container"]}>
               already have an account?
-              <Link href="/">login</Link>
+              <Link href={"/login"}>login</Link>
             </p>
           </main>
         </div>
