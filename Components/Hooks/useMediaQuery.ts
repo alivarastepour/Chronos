@@ -2,9 +2,15 @@ import { useEffect, useState } from "react";
 
 type TqueryKey = "min-width" | "max-width" | "min-height" | "max-height";
 
-type TuseMediaQuery = {
+type TuseMediaQueryAuxilary = {
   [key in TqueryKey]?: number;
 };
+
+type TuseMediaQuery =
+  | Required<Pick<TuseMediaQueryAuxilary, "max-height">>
+  | Required<Pick<TuseMediaQueryAuxilary, "min-height">>
+  | Required<Pick<TuseMediaQueryAuxilary, "max-width">>
+  | Required<Pick<TuseMediaQueryAuxilary, "min-width">>;
 
 type TwindowRect = {
   width: number;
@@ -19,7 +25,7 @@ const useMediaQuery = ({ queries }: { queries: TuseMediaQuery[] }) => {
 
   const [queryResult, setQueryResult] = useState<boolean[]>([]);
 
-  const resizeListener = (event: Event) => {
+  const resizeListener = (event: Event): void => {
     const target: Window = event.target as Window;
     setWindowRect({
       width: target.innerWidth,
@@ -51,10 +57,11 @@ const useMediaQuery = ({ queries }: { queries: TuseMediaQuery[] }) => {
     return res;
   };
 
-  const getQueryResults = () => {
-    const { width, height } = windowRect;
+  const getQueryResults = (): boolean[] => {
+    const { width, height }: TwindowRect = windowRect;
 
     const result: boolean[] = [];
+
     queries.forEach((query: TuseMediaQuery) => {
       const [selector, value] = Object.entries(query)[0];
       const currentQueryResult = isQueryTrue(
@@ -81,10 +88,11 @@ const useMediaQuery = ({ queries }: { queries: TuseMediaQuery[] }) => {
   }, []);
 
   useEffect(() => {
-    const queryResults = getQueryResults();
+    const queryResults: boolean[] = getQueryResults();
     setQueryResult(queryResults);
   }, [windowRect]);
 
   return queryResult;
 };
+
 export default useMediaQuery;
