@@ -20,7 +20,11 @@ const getCounterClassName = (id: number, content: number): string => {
 const Features: React.FC = () => {
   const [content, setContent]: [number, Function] = useState(0);
 
-  useMediaQuery({ queries: [{ "min-width": 200 }] });
+  const res = useMediaQuery({
+    queries: [{ "max-width": 900 }],
+  });
+
+  console.log(res);
 
   useEffect(() => {
     handleChangeContent(setContent);
