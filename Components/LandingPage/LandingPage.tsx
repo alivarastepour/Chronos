@@ -5,7 +5,7 @@ import Plans from "../Plans/Plans";
 import Trust from "../Trust/Trust";
 import Agile from "../Agile/Agile";
 import Footer from "../Footer/Footer";
-import Features from "../Features/Features";
+import Features from "../Features/Container/FeaturesContainer";
 import CookiesTOS from "../CookiesTOS/CookiesTOS";
 import FastJoin from "../FastJoin/FastJoin";
 
