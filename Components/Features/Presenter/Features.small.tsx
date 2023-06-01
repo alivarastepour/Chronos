@@ -8,6 +8,8 @@ import image_3 from "@/public/image_3.webp";
 import image_4 from "@/public/image_4.webp";
 import image_5 from "@/public/image_5.webp";
 import { data, getData } from "../data/data";
+import { useEffect } from "react";
+import { handleSwipeEffect } from "../utill/handleSwipeEffect";
 const FeaturesSmall = () => {
   const images = [
     { src: image_0, id: "0", alt: "task management image" },
@@ -19,6 +21,10 @@ const FeaturesSmall = () => {
   ];
 
   const content = getData(["id", "content"]);
+
+  useEffect(() => {
+    handleSwipeEffect();
+  }, []);
 
   return (
     <>
@@ -40,7 +46,10 @@ const FeaturesSmall = () => {
             })}
           </div>
           <div className={styles["features-small-content-wrapper"]}>
-            <div className={styles["features-small-arrow-rotate"]}>
+            <div
+              id="features-small-arrow-left"
+              className={`${styles["features-small-arrow-rotate"]} features-small-arrow-deactive`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -60,7 +69,10 @@ const FeaturesSmall = () => {
                 return <div key={id}>{content}</div>;
               })}
             </div>
-            <div className={styles["features-small-arrow-norotate"]}>
+            <div
+              id="features-small-arrow-right"
+              className={`${styles["features-small-arrow-norotate"]} features-small-arrow-active`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"

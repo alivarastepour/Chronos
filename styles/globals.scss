@@ -58,6 +58,16 @@ div[data-type*="container"].deactive-mid {
   transform: scale(1.05) translateX(-0.5rem);
 }
 
+.features-small-arrow-deactive {
+  opacity: 0.5;
+  cursor: default !important;
+}
+
+.features-small-arrow-active {
+  opacity: 1;
+  cursor: pointer;
+}
+
 .signup-stage-active {
   transition: 0.3s;
   background-color: $primary_color_light;

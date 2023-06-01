@@ -40,10 +40,12 @@
       .features-small-arrow-rotate {
         transform: rotate(180deg);
         padding-left: 2rem;
+        cursor: pointer;
       }
 
       .features-small-arrow-norotate {
         padding-left: 2rem;
+        cursor: pointer;
       }
 
       .features-small-content-container {
