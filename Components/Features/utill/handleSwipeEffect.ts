@@ -25,15 +25,31 @@ const getDirectionSign = (direction: Tdirection): TdirectionSign => {
   return direction === "right" ? "-" : "+";
 };
 
+const getCurrentTransformValue = (
+  value: string,
+  direction: TdirectionSign,
+  constantTransformValue: number
+) => {
+  const prevValue = value.trim() === "" ? 0 : +value.split("(")[1].slice(0, -3);
+  return direction === "+"
+    ? prevValue + constantTransformValue
+    : prevValue - constantTransformValue;
+};
+
 const swipeTheContainer = (
   container: HTMLElement,
   direction: TdirectionSign
 ) => {
-  const swipeAmount = container.scrollWidth / container.childElementCount;
+  const swipeAmountConstant =
+    container.scrollWidth / container.childElementCount;
   container.childNodes.forEach((child) => {
-    (child as HTMLElement).style.transform = `translateX(${direction}${
-      swipeCoefficient * swipeAmount
-    }px)`;
+    const childHTMLElement = child as HTMLElement;
+    const transformValue = getCurrentTransformValue(
+      childHTMLElement.style.transform,
+      direction,
+      swipeAmountConstant
+    );
+    (child as HTMLElement).style.transform = `translateX(${transformValue}px)`;
   });
 };
 
