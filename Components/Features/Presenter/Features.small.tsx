@@ -35,7 +35,10 @@ const FeaturesSmall = () => {
           exprience our reach platforms
         </div>
         <div className={styles["features-small-wrapper"]}>
-          <div className={styles["features-small-image-wrapper"]}>
+          <div
+            id="features-small-image-container"
+            className={styles["features-small-image-container"]}
+          >
             {images.map((image) => {
               const { src, id, alt } = image;
               return (
@@ -63,10 +66,20 @@ const FeaturesSmall = () => {
                 ></path>
               </svg>
             </div>
-            <div className={styles["features-small-content-container"]}>
+            <div
+              id="features-small-content-container"
+              className={styles["features-small-content-container"]}
+            >
               {content.map((item) => {
                 const { id, content } = item;
-                return <div key={id}>{content}</div>;
+                return (
+                  <div
+                    className={styles["features-small-content-container-item"]}
+                    key={id}
+                  >
+                    {content}
+                  </div>
+                );
               })}
             </div>
             <div
