@@ -21,11 +21,15 @@ const Features: React.FC = () => {
   const [content, setContent]: [number, Function] = useState(0);
 
   useEffect(() => {
-    handleChangeContent(setContent);
+    // handleChangeContent(setContent);
   }, []);
+
+  const [isDeviceSmall] = useMediaQuery({ queries: [{ "max-width": 700 }] });
+
   return (
     <>
-      <div className={`${styles["features-container"]} ${inter.className}`}>
+      {isDeviceSmall ? <>i am small</> : <>i am large</>}
+      {/* <div className={`${styles["features-container"]} ${inter.className}`}>
         <div className={styles["features-title"]}>
           exprience our reach platforms
         </div>
@@ -86,7 +90,7 @@ const Features: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
