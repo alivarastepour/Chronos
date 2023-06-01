@@ -24,8 +24,6 @@ const FeaturesSmall = () => {
     setCurrent((prev) => prev - 1);
   };
 
-  console.log(current);
-
   const images = [
     { src: image_0, id: "0", alt: "task management image" },
     { src: image_1, id: "1", alt: "project management image" },

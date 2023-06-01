@@ -52,9 +52,9 @@ const swipeTheContainer = (
 };
 
 const swipeHandler = (event: MouseEvent) => {
-  const direction = getSwipeDirectionFromDispatcher(
-    event.currentTarget as Element
-  );
+  const target = event.currentTarget as Element;
+
+  const direction = getSwipeDirectionFromDispatcher(target);
   const directionSign = getDirectionSign(direction);
 
   const [imageContainer, contentContainer] = getSwipeTargets();

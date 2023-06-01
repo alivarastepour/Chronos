@@ -59,7 +59,7 @@ div[data-type*="container"].deactive-mid {
 }
 
 .features-small-arrow-deactive {
-  opacity: 0.5;
+  visibility: hidden;
   cursor: default !important;
 }
 
