@@ -7,10 +7,25 @@ import image_2 from "@/public/image_2.webp";
 import image_3 from "@/public/image_3.webp";
 import image_4 from "@/public/image_4.webp";
 import image_5 from "@/public/image_5.webp";
-import { data, getData } from "../data/data";
-import { useEffect } from "react";
-import { handleSwipeEffect } from "../utill/handleSwipeEffect";
+import { getData } from "../data/data";
+import { useEffect, useState } from "react";
+import { Tdirection, handleSwipeEffect } from "../utill/handleSwipeEffect";
 const FeaturesSmall = () => {
+  // let current: number = 1;
+  const [current, setCurrent] = useState(1);
+
+  const changeCurrent = (dir: Tdirection) =>
+    dir === "left" ? decCurrent : addCurrent;
+
+  const addCurrent = () => {
+    setCurrent((prev) => prev + 1);
+  };
+  const decCurrent = () => {
+    setCurrent((prev) => prev - 1);
+  };
+
+  console.log(current);
+
   const images = [
     { src: image_0, id: "0", alt: "task management image" },
     { src: image_1, id: "1", alt: "project management image" },
@@ -50,8 +65,13 @@ const FeaturesSmall = () => {
           </div>
           <div className={styles["features-small-content-wrapper"]}>
             <div
+              onClick={changeCurrent("left")}
               id="features-small-arrow-left"
-              className={`${styles["features-small-arrow-rotate"]} features-small-arrow-deactive`}
+              className={`${styles["features-small-arrow-rotate"]} ${
+                current === 1
+                  ? "features-small-arrow-deactive"
+                  : "features-small-arrow-active"
+              }`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +103,15 @@ const FeaturesSmall = () => {
               })}
             </div>
             <div
+              onClick={changeCurrent("right")}
               id="features-small-arrow-right"
-              className={`${styles["features-small-arrow-norotate"]} features-small-arrow-active`}
+              className={`${styles["features-small-arrow-norotate"]} 
+              ${
+                current === 6
+                  ? "features-small-arrow-deactive"
+                  : "features-small-arrow-active"
+              }
+              `}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

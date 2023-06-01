@@ -1,7 +1,5 @@
-type Tdirection = "left" | "right";
+export type Tdirection = "left" | "right";
 type TdirectionSign = "-" | "+";
-
-let swipeCoefficient: number = 1;
 
 const get = (id: string) => document.getElementById(id);
 
