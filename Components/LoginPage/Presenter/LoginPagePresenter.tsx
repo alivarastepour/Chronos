@@ -5,8 +5,17 @@ import logo from "@/public/logo.png";
 import graphic from "@/public/register.svg";
 import SecondaryFooter from "../../SecondaryFooter/SecondaryFooter";
 import Link from "next/link";
+import { TloginState } from "../TloginState";
 
-const LoginPagePresenter = () => {
+interface IloginPagePresenter {
+  loginState: TloginState;
+  setLoginState: React.Dispatch<React.SetStateAction<TloginState>>;
+}
+
+const LoginPagePresenter = ({
+  loginState,
+  setLoginState,
+}: IloginPagePresenter) => {
   return (
     <>
       <div className={`${styles["login-page-wrapper"]} ${inter.className}`}>
@@ -21,7 +30,7 @@ const LoginPagePresenter = () => {
               manage your time like you are the god of it
             </div>
             <div className={styles["login-graphic"]}>
-              <Image src={graphic} alt="login-graphic" />
+              <Image src={graphic} alt="login-graphic" priority />
             </div>
           </div>
           <main className={styles["login-page-login-form-container"]}>
@@ -29,14 +38,36 @@ const LoginPagePresenter = () => {
             <form>
               <div>
                 <label htmlFor="login-username">username</label>
-                <input type="text" id="login-username" />
+                <input
+                  type="text"
+                  id="login-username"
+                  value={loginState.username}
+                  autoComplete="username"
+                  onChange={(event) =>
+                    setLoginState((prev) => ({
+                      ...prev,
+                      username: event.target.value,
+                    }))
+                  }
+                />
                 <p className={styles["login-username-error"]}>
                   enter a username.
                 </p>
               </div>
               <div>
                 <label htmlFor="login-password">password</label>
-                <input type="password" id="login-password" />
+                <input
+                  type="password"
+                  id="login-password"
+                  value={loginState.password}
+                  autoComplete="current-password"
+                  onChange={(event) =>
+                    setLoginState((prev) => ({
+                      ...prev,
+                      password: event.target.value,
+                    }))
+                  }
+                />
                 <div className={styles["password-util"]}>
                   <div>
                     <div>
@@ -53,6 +84,13 @@ const LoginPagePresenter = () => {
                         className={styles["login-remember-checkbox"]}
                         name="remember"
                         id="login-remember"
+                        checked={loginState.saveLoginInfo}
+                        onChange={(event) =>
+                          setLoginState((prev) => ({
+                            ...prev,
+                            saveLoginInfo: event.target.checked,
+                          }))
+                        }
                       />
                     </div>
                   </div>
