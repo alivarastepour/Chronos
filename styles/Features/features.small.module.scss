@@ -21,14 +21,18 @@
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
+      // justify-content: flex-start;
       overflow-x: hidden;
       width: 100%;
       div {
         transition: transform 0.95s cubic-bezier(0.39, 0.58, 0.57, 1);
         will-change: transform;
+        position: relative;
+        // width: 100%;
+        flex: 0 0 100%;
       }
       img {
-        width: 600px;
+        width: 85vw;
         height: 400px;
         object-fit: contain;
       }
@@ -81,5 +85,53 @@
 @media (prefers-color-scheme: dark) {
   .features-small-container {
     background-color: $primary_background_dark;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .features-small-container {
+    .features-small-wrapper {
+      .features-small-image-container {
+        div {
+          // margin-top: -2rem;
+          // z-index: -1;
+          // margin-bottom: -2rem;
+          img {
+            margin: auto;
+            object-fit: cover;
+          }
+        }
+      }
+      .features-small-content-container {
+        div {
+          // margin-top: -1rem;
+          // z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .features-small-container {
+    .features-small-wrapper {
+      .features-small-image-container {
+        div {
+          // margin-top: -2rem;
+          // z-index: -1;
+          // margin-bottom: -2rem;
+          img {
+            margin-top: 1rem;
+            height: 200px;
+          }
+        }
+      }
+      .features-small-content-container {
+        div {
+          // margin-top: -1rem;
+          // z-index: 2;
+        }
+      }
+    }
   }
 }
