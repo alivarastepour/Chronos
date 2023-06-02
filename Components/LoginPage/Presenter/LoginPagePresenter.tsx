@@ -1,17 +1,12 @@
 import styles from "@/styles/LoginPage/loginPage.module.scss";
 import { inter } from "@/public/util/Fonts";
-import Link from "next/link";
-import logo from "@/public/logo.png";
 import Image from "next/image";
+import logo from "@/public/logo.png";
 import graphic from "@/public/register.svg";
-import SecondaryFooter from "../SecondaryFooter/SecondaryFooter";
-import { useState } from "react";
-const LoginPage: React.FC = () => {
-  const [loginState, setLoginState] = useState({
-    username: "",
-    password: "",
-    saveLoginInfo: false,
-  });
+import SecondaryFooter from "../../SecondaryFooter/SecondaryFooter";
+import Link from "next/link";
+
+const LoginPagePresenter = () => {
   return (
     <>
       <div className={`${styles["login-page-wrapper"]} ${inter.className}`}>
@@ -208,4 +203,4 @@ const LoginPage: React.FC = () => {
   );
 };
 
-export default LoginPage;
+export default LoginPagePresenter;

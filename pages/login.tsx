@@ -1,4 +1,4 @@
-import LoginPage from "@/Components/LoginPage/LoginPage";
+import LoginPage from "@/Components/LoginPage/Container/LoginPageContainer";
 import Head from "next/head";
 
 const Login = () => {
