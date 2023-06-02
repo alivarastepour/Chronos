@@ -82,6 +82,11 @@ div[data-type*="container"].deactive-mid {
   border: 1px solid $primary_color_light;
 }
 
+.login-username-error,
+.login-password-error {
+  visibility: hidden;
+}
+
 @media (prefers-color-scheme: dark) {
   div,
   h1 {

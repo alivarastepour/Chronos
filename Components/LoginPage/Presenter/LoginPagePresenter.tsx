@@ -6,6 +6,7 @@ import graphic from "@/public/register.svg";
 import SecondaryFooter from "../../SecondaryFooter/SecondaryFooter";
 import Link from "next/link";
 import { TloginState } from "../TloginState";
+import { checkForm } from "../util/checkForm";
 
 interface IloginPagePresenter {
   loginState: TloginState;
@@ -35,12 +36,13 @@ const LoginPagePresenter = ({
           </div>
           <main className={styles["login-page-login-form-container"]}>
             <h1 className={styles["login-title"]}>login to your account</h1>
-            <form>
+            <form name="login-form" onSubmit={(e) => checkForm(e, loginState)}>
               <div>
                 <label htmlFor="login-username">username</label>
                 <input
                   type="text"
                   id="login-username"
+                  name="login-username"
                   value={loginState.username}
                   autoComplete="username"
                   onChange={(event) =>
@@ -50,9 +52,10 @@ const LoginPagePresenter = ({
                     }))
                   }
                 />
-                <p className={styles["login-username-error"]}>
-                  enter a username.
-                </p>
+                <p
+                  id="login-username-error"
+                  className={`${styles["login-username-error"]} login-username-error`}
+                ></p>
               </div>
               <div>
                 <label htmlFor="login-password">password</label>
@@ -96,9 +99,10 @@ const LoginPagePresenter = ({
                   </div>
                   <div>i forgot my password</div>
                 </div>
-                <p className={styles["login-password-error"]}>
-                  enter a password.
-                </p>
+                <p
+                  id="login-password-error"
+                  className={`${styles["login-password-error"]} login-password-error`}
+                ></p>
               </div>
               <div>
                 <button
