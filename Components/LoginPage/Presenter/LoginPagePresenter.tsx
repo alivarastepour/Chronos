@@ -12,11 +12,13 @@ import { useState } from "react";
 interface IloginPagePresenter {
   loginState: TloginState;
   setLoginState: React.Dispatch<React.SetStateAction<TloginState>>;
+  loginToGoogle: Function;
 }
 
 const LoginPagePresenter = ({
   loginState,
   setLoginState,
+  loginToGoogle,
 }: IloginPagePresenter) => {
   const [showPassword, setShowPassword] = useState(false);
   return (
@@ -33,7 +35,7 @@ const LoginPagePresenter = ({
               manage your time like you are the god of it
             </div>
             <div className={styles["login-graphic"]}>
-              <Image src={graphic} alt="login-graphic" priority />
+              {/* <Image src={graphic} alt="login-graphic" priority /> */}
             </div>
           </div>
           <main className={styles["login-page-login-form-container"]}>
@@ -192,6 +194,7 @@ const LoginPagePresenter = ({
             </form>
             <div className={styles["secondary-login-container"]}>
               <button
+                onClick={() => loginToGoogle("google")}
                 className={`${styles["primary-login-button"]} ${styles["secondary-login-button"]}`}
               >
                 <div
