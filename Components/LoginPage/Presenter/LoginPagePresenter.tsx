@@ -41,7 +41,10 @@ const LoginPagePresenter = ({
               onSubmit={(e) => submitCheck(e, loginState)}
             >
               <div>
-                <label htmlFor="login-username">username</label>
+                <label htmlFor="login-username">
+                  username
+                  <span>*</span>
+                </label>
                 <input
                   type="text"
                   id="login-username"
@@ -63,7 +66,10 @@ const LoginPagePresenter = ({
                 ></p>
               </div>
               <div>
-                <label htmlFor="login-password">password</label>
+                <label htmlFor="login-password">
+                  password
+                  <span>*</span>
+                </label>
                 <input
                   type="password"
                   id="login-password"

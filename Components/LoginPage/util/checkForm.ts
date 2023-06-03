@@ -4,16 +4,21 @@ type TusernameStatus =
   | "username should be larger than 8 charachters"
   | "username should be smaller than 20 charachters"
   | "username should only include letters"
+  | "username can not be empty"
   | "";
 
 type TpasswordStatus =
   | "password should be larger than 8 charachters"
   | "password should be smaller than 20 charachters"
+  | "password can not be empty"
   | "";
 
 const get = (id: string) => document.getElementById(id);
 
 const isUsernameValid = (username: string): TusernameStatus => {
+  if (username.trim().length === 0) {
+    return "username can not be empty";
+  }
   if (username.length < 8)
     return "username should be larger than 8 charachters";
   if (username.length > 20)
@@ -24,6 +29,9 @@ const isUsernameValid = (username: string): TusernameStatus => {
 };
 
 const isPasswordValid = (password: string): TpasswordStatus => {
+  if (password.trim().length === 0) {
+    return "password can not be empty";
+  }
   if (password.length < 8)
     return "password should be larger than 8 charachters";
   if (password.length > 20)
