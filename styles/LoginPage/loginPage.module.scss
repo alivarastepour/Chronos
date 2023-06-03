@@ -112,6 +112,20 @@
         border-radius: 0.3rem;
       }
 
+      label.login-flex-label-password {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        svg {
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
       .password-util {
         width: 100%;
 
@@ -250,6 +264,11 @@
 
           &:hover {
             background-color: rgba($secondary_color_dark, 0.9);
+          }
+        }
+        label.login-flex-label-password {
+          div svg {
+            color: white;
           }
         }
       }
