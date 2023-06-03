@@ -79,6 +79,8 @@
       input {
         box-sizing: border-box;
 
+        border: 3px white solid !important;
+
         width: 100%;
         height: 40px;
 
@@ -233,11 +235,13 @@
           border: none;
 
           &:focus {
-            box-shadow: 1px 8px 12px rgba(255, 255, 255, 0.1);
+            // box-shadow: 1px 8px 12px rgba(255, 255, 255, 0.1);
+            border: 3px solid $secondary_color_dark !important;
           }
 
           &:hover:not(:focus) {
-            box-shadow: 1px 6px 12px rgba(255, 255, 255, 0.1);
+            // box-shadow: 1px 6px 12px rgba(255, 255, 255, 0.1);
+            border: 3px solid $fourth_color_dark !important;
           }
         }
 
@@ -260,7 +264,7 @@
           }
 
           &:hover {
-            background-color: rgba($secondary_color_dark, 0.1);
+            background-color: rgba($secondary_color_dark, 0.2);
           }
         }
       }
@@ -286,15 +290,15 @@
     .login-page-login-form-container {
       form {
         input {
-          border: 2px solid rgba($primary_color_light, 0.4);
+          border: 3px solid rgba($primary_color_light, 0.4);
           color: $primary_color_light;
 
           &:focus {
-            border: 2px solid rgba($primary_color_light, 0.8);
+            border: 3px solid rgba($primary_color_light, 0.8) !important;
           }
 
           &:hover:not(&:focus) {
-            border: 2px solid rgba($primary_color_light, 0.5);
+            border: 3px solid rgba($primary_color_light, 0.5) !important;
           }
         }
 
@@ -309,7 +313,7 @@
 
       .secondary-login-container {
         .secondary-login-button {
-          border: 1px solid $primary_background_dark;
+          border: 1px solid #aeaeae;
           background-color: white;
 
           div {
