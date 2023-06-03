@@ -6,7 +6,7 @@ import graphic from "@/public/register.svg";
 import SecondaryFooter from "../../SecondaryFooter/SecondaryFooter";
 import Link from "next/link";
 import { TloginState } from "../TloginState";
-import { checkForm } from "../util/checkForm";
+import { blurCheck, submitCheck } from "../util/checkForm";
 
 interface IloginPagePresenter {
   loginState: TloginState;
@@ -36,7 +36,10 @@ const LoginPagePresenter = ({
           </div>
           <main className={styles["login-page-login-form-container"]}>
             <h1 className={styles["login-title"]}>login to your account</h1>
-            <form name="login-form" onSubmit={(e) => checkForm(e, loginState)}>
+            <form
+              name="login-form"
+              onSubmit={(e) => submitCheck(e, loginState)}
+            >
               <div>
                 <label htmlFor="login-username">username</label>
                 <input
@@ -45,12 +48,14 @@ const LoginPagePresenter = ({
                   name="login-username"
                   value={loginState.username}
                   autoComplete="username"
+                  autoFocus={true}
                   onChange={(event) =>
                     setLoginState((prev) => ({
                       ...prev,
                       username: event.target.value,
                     }))
                   }
+                  onBlur={() => blurCheck("username")(loginState.username)}
                 />
                 <p
                   id="login-username-error"
@@ -70,6 +75,7 @@ const LoginPagePresenter = ({
                       password: event.target.value,
                     }))
                   }
+                  onBlur={() => blurCheck("password")(loginState.password)}
                 />
                 <div className={styles["password-util"]}>
                   <div>

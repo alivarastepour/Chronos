@@ -31,7 +31,7 @@ const isPasswordValid = (password: string): TpasswordStatus => {
   return "";
 };
 
-const showPasswordError = (passwordStatus: TpasswordStatus) => {
+const showPasswordError = (passwordStatus: TpasswordStatus): void => {
   const errorContainer = get("login-password-error") as Element;
   if (passwordStatus === "") {
     errorContainer.innerHTML = "";
@@ -41,7 +41,8 @@ const showPasswordError = (passwordStatus: TpasswordStatus) => {
     errorContainer.classList.remove("login-password-error");
   }
 };
-const showUsernameError = (usernameStatus: TusernameStatus) => {
+
+const showUsernameError = (usernameStatus: TusernameStatus): void => {
   const errorContainer = get("login-username-error") as Element;
   if (usernameStatus === "") {
     errorContainer.innerHTML = "";
@@ -52,13 +53,37 @@ const showUsernameError = (usernameStatus: TusernameStatus) => {
   }
 };
 
-export const checkForm = (e: React.SyntheticEvent, loginState: TloginState) => {
-  const { username, password, saveLoginInfo } = loginState;
-  const usernameStatus = isUsernameValid(username);
-  const passwordStatus = isPasswordValid(password);
+const handlePasswordError = (value: string): void => {
+  showPasswordError(isPasswordValid(value));
+};
 
-  showUsernameError(usernameStatus);
-  showPasswordError(passwordStatus);
+const handleUsernameError = (value: string): void => {
+  showUsernameError(isUsernameValid(value));
+};
+
+const handleFieldError = (
+  value: string,
+  handler: (value: string) => void
+): void => {
+  handler(value);
+};
+
+export const submitCheck = (
+  e: React.SyntheticEvent,
+  loginState: TloginState
+): void => {
+  const { username, password, saveLoginInfo } = loginState;
+
+  handleFieldError(username, handleUsernameError);
+  handleFieldError(password, handlePasswordError);
 
   e.preventDefault();
+};
+
+export const blurCheck = (
+  target: "password" | "username"
+): ((value: string) => void) => {
+  return target === "password"
+    ? (value: string) => handleFieldError(value, handlePasswordError)
+    : (value: string) => handleFieldError(value, handleUsernameError);
 };
