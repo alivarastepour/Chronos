@@ -80,12 +80,11 @@
         }
         .signup-stage-desc {
           display: none;
+          width: 80%;
         }
       }
 
       .signup-stage-holder-item.signup-stage-holder-item-active {
-        transition: 0.5s;
-        transform: translateY(-0.5rem);
         .signup-stage-holder-num {
           transition: 0.3s;
           background-color: $primary_color_light;
@@ -97,8 +96,6 @@
       }
 
       .signup-stage-holder-item.signup-stage-holder-item-deactive {
-        transition: 0.5s;
-        transform: translateY(0rem);
         .signup-stage-holder-num {
           transition: 0.3s;
           background-color: #1e1e1ec0;
@@ -459,10 +456,20 @@
       border-radius: 1rem;
       padding: 2rem;
       .signup-header-wrapper {
+        .signup-stage-holder-item.signup-stage-holder-item-active {
+          transition: 0.5s;
+          transform: translateY(-0.5rem);
+        }
+
+        .signup-stage-holder-item.signup-stage-holder-item-deactive {
+          transition: 0.5s;
+          transform: translateY(0rem);
+        }
         flex-direction: column;
         .signup-stage-holder {
           justify-content: space-around;
           margin-bottom: 1.5rem;
+          margin-top: 1rem;
           .signup-stage-holder-item {
             display: flex;
             flex-direction: column;
