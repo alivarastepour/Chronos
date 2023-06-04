@@ -12,13 +12,13 @@ import { useState } from "react";
 interface IloginPagePresenter {
   loginState: TloginState;
   setLoginState: React.Dispatch<React.SetStateAction<TloginState>>;
-  loginToGoogle: Function;
+  signIn: Function;
 }
 
 const LoginPagePresenter = ({
   loginState,
   setLoginState,
-  loginToGoogle,
+  signIn,
 }: IloginPagePresenter) => {
   const [showPassword, setShowPassword] = useState(false);
   return (
@@ -194,7 +194,7 @@ const LoginPagePresenter = ({
             </form>
             <div className={styles["secondary-login-container"]}>
               <button
-                onClick={() => loginToGoogle("google")}
+                onClick={async () => await signIn("github")}
                 className={`${styles["primary-login-button"]} ${styles["secondary-login-button"]}`}
               >
                 <div
