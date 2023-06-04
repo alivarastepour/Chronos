@@ -12,24 +12,32 @@ const SecondStage = ({
       <form onSubmit={(e) => e.preventDefault()}>
         <div>
           <input type="text" autoComplete="username" hidden name="" id="" />
-          <label htmlFor="signup-password">password</label>
+          <label htmlFor="signup-password">
+            password
+            <span>*</span>
+          </label>
           <input
             type="password"
             autoComplete="new-password"
             name="signup-password"
             id="signup-password"
+            // placeholder="Password should be between 8 to 20 charachters"
           />
           <p className={styles["signup-username-error"]}>
             enter a valid password.
           </p>
         </div>
         <div>
-          <label htmlFor="signup-password-repeat">repeat password</label>
+          <label htmlFor="signup-password-repeat">
+            repeat password
+            <span>*</span>
+          </label>
           <input
             type="password"
             autoComplete="new-password"
             name="signup-password-repeat"
             id="signup-password-repeat"
+            // placeholder="Just to be sure, enter your password again"
           />
           <p className={styles["signup-password-error"]}>
             passwords dont match
