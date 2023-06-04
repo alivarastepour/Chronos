@@ -38,8 +38,8 @@ const SignUpPage: React.FC = () => {
 
   const getStageHolderClassName = (state: number) => {
     return state === signUpStage
-      ? "signup-stage-active"
-      : "signup-stage-deactive";
+      ? styles["signup-stage-holder-item-active"]
+      : styles["signup-stage-holder-item-deactive"];
   };
 
   return (
@@ -61,14 +61,50 @@ const SignUpPage: React.FC = () => {
             <div className={styles["signup-header-wrapper"]}>
               <h1 className={styles["signup-title"]}>Create your account</h1>
               <div className={styles["signup-stage-holder"]}>
-                <div data-current={1} className={getStageHolderClassName(1)}>
-                  1
+                <div
+                  className={`${
+                    styles["signup-stage-holder-item"]
+                  } ${getStageHolderClassName(1)}`}
+                >
+                  <div
+                    data-current={1}
+                    className={`${styles["signup-stage-holder-num"]}`}
+                  >
+                    1
+                  </div>
+                  <div className={styles["signup-stage-desc"]}>
+                    your personal information
+                  </div>
                 </div>
-                <div data-current={2} className={getStageHolderClassName(2)}>
-                  2
+                <div
+                  className={`${
+                    styles["signup-stage-holder-item"]
+                  } ${getStageHolderClassName(2)}`}
+                >
+                  <div
+                    data-current={2}
+                    className={`${styles["signup-stage-holder-num"]}`}
+                  >
+                    2
+                  </div>
+                  <div className={styles["signup-stage-desc"]}>
+                    setup a strong password
+                  </div>
                 </div>
-                <div data-current={3} className={getStageHolderClassName(3)}>
-                  3
+                <div
+                  className={`${
+                    styles["signup-stage-holder-item"]
+                  } ${getStageHolderClassName(3)}`}
+                >
+                  <div
+                    data-current={3}
+                    className={`${styles["signup-stage-holder-num"]}`}
+                  >
+                    3
+                  </div>
+                  <div className={styles["signup-stage-desc"]}>
+                    you are almost there
+                  </div>
                 </div>
               </div>
             </div>

@@ -68,20 +68,6 @@ div[data-type*="container"].deactive-mid {
   cursor: pointer;
 }
 
-.signup-stage-active {
-  transition: 0.3s;
-  background-color: $primary_color_light;
-  color: white;
-  border: 1px solid $primary_color_light;
-}
-
-.signup-stage-deactive {
-  transition: 0.3s;
-  background-color: white;
-  color: $primary_color_light;
-  border: 1px solid $primary_color_light;
-}
-
 .login-username-error,
 .login-password-error {
   visibility: hidden;
