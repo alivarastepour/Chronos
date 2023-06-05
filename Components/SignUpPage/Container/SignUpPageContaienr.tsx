@@ -2,6 +2,12 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 
 import SignUpPagePresenter from "../Presenter/SignUpPagePresenter";
+import {
+  TfirstStageForm,
+  TsecondStageForm,
+  TsignUpState,
+  TthirdStageForm,
+} from "../SignUpPage.types";
 
 const FirstStage = dynamic(() => import("../Presenter/FirstStage"), {
   loading: () => <div>hi</div>,
@@ -12,25 +18,6 @@ const SecondStage = dynamic(() => import("../Presenter/SecondStage"), {
 const ThirdStage = dynamic(() => import("../Presenter/ThirdStage"), {
   loading: () => <div>hi</div>,
 });
-
-export type Tgender = "male" | "female" | "non-binary" | "unknown";
-
-export type TsignUpState = {
-  username: string;
-  email: string;
-  password: string;
-  passwordR: string;
-  gender: Tgender;
-  hasReadTOS: boolean;
-  emailUpdates: boolean;
-};
-
-export type TfirstStageForm = Pick<TsignUpState, "username" | "email">;
-export type TsecondStageForm = Pick<TsignUpState, "password" | "passwordR">;
-export type TthirdStageForm = Pick<
-  TsignUpState,
-  "gender" | "hasReadTOS" | "emailUpdates"
->;
 
 const SignUpPageContainer: React.FC = () => {
   const [signUpStage, setSignUpStage] = useState(1);
