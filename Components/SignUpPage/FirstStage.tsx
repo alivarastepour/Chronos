@@ -1,12 +1,18 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
 
-const FirstStage = ({
+interface IfirstStage {
+  handleSignUpStageChange: (state: "next") => () => void;
+  username: string;
+  email: string;
+}
+
+const FirstStage: React.FC<IfirstStage> = ({
   handleSignUpStageChange,
-}: {
-  handleSignUpStageChange: (
-    state: "next"
-  ) => React.MouseEventHandler<HTMLButtonElement>;
+  username,
+  email,
 }) => {
+  console.log(username, email);
+
   return (
     <>
       <form onSubmit={(e) => e.preventDefault()}>

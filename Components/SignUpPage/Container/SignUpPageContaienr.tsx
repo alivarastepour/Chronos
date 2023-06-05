@@ -13,34 +13,81 @@ const ThirdStage = dynamic(() => import("../ThirdStage"), {
   loading: () => <div>hi</div>,
 });
 
+export type Tgender = "male" | "female" | "non-binary" | "unknown";
+
+type TsignUpState = {
+  username: string;
+  email: string;
+  password: string;
+  passwordR: string;
+  gender: Tgender;
+  hasReadTOS: boolean;
+  emailUpdates: boolean;
+};
+
+export type TfirstStageForm = Pick<TsignUpState, "username" | "email">;
+export type TsecondStageForm = Pick<TsignUpState, "password" | "passwordR">;
+export type TthirdStageForm = Pick<
+  TsignUpState,
+  "gender" | "hasReadTOS" | "emailUpdates"
+>;
+
 const SignUpPageContainer: React.FC = () => {
   const [signUpStage, setSignUpStage] = useState(1);
 
-  const prevStage: React.MouseEventHandler<HTMLButtonElement> = () => {
+  const [signUpState, setSignUpState] = useState<TsignUpState>({
+    username: "",
+    email: "",
+    password: "",
+    passwordR: "",
+    gender: "unknown",
+    hasReadTOS: false,
+    emailUpdates: true,
+  });
+
+  const prevStage = (): void => {
     setSignUpStage((prev) => --prev);
   };
 
-  const nextStage: React.MouseEventHandler<HTMLButtonElement> = () => {
+  const nextStage = (): void => {
     setSignUpStage((prev) => ++prev);
   };
 
-  const handleSignUpStageChange = (state: "next" | "prev") => {
+  const handleSignUpStageChange = (state: "next" | "prev"): (() => void) => {
     return state === "next" ? nextStage : prevStage;
   };
 
-  const getCurrentStageForm = (): React.ReactElement => {
+  const getCurrentStageComponent = () => {
     const Component =
       signUpStage === 1
         ? FirstStage
         : signUpStage === 2
         ? SecondStage
-        : signUpStage === 3
-        ? ThirdStage
-        : undefined;
+        : ThirdStage;
 
-    if (Component)
-      return <Component handleSignUpStageChange={handleSignUpStageChange} />;
-    return <div>error bitch</div>;
+    return Component;
+    // if (Component) return Component as React.FC;
+    // return (<></>) as React.FC;
+  };
+
+  const getCurrentStageProps = () => {
+    const props =
+      signUpStage === 1
+        ? ({
+            username: signUpState.username,
+            email: signUpState.email,
+          } as TfirstStageForm)
+        : signUpStage === 2
+        ? ({
+            password: signUpState.password,
+            passwordR: signUpState.passwordR,
+          } as TsecondStageForm)
+        : ({
+            gender: signUpState.gender,
+            hasReadTOS: signUpState.hasReadTOS,
+            emailUpdates: signUpState.emailUpdates,
+          } as TthirdStageForm);
+    return props;
   };
 
   const getStageHolderClassName = (state: number) => {
@@ -49,11 +96,18 @@ const SignUpPageContainer: React.FC = () => {
       : "signup-stage-holder-item-deactive";
   };
 
-  const currentFormComponent = getCurrentStageForm();
+  const CurrentFormComponent = getCurrentStageComponent();
+  const currentFormComponentProps = getCurrentStageProps();
+  const FormComponent = (
+    <CurrentFormComponent
+      handleSignUpStageChange={handleSignUpStageChange}
+      {...currentFormComponentProps}
+    />
+  );
 
   return (
     <SignUpPagePresenter
-      FormComponent={currentFormComponent}
+      FormComponent={FormComponent}
       getStageHolderClassName={getStageHolderClassName}
     />
   );

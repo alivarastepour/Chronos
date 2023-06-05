@@ -1,12 +1,21 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
+import { Tgender } from "./Container/SignUpPageContaienr";
 
-const ThirdStage = ({
+interface IthirdStage {
+  handleSignUpStageChange: (state: "prev") => () => void;
+  gender: Tgender;
+  hasReadTOS: boolean;
+  emailUpdates: boolean;
+}
+
+const ThirdStage: React.FC<IthirdStage> = ({
   handleSignUpStageChange,
-}: {
-  handleSignUpStageChange: (
-    state: "prev"
-  ) => React.MouseEventHandler<HTMLButtonElement>;
+  gender,
+  hasReadTOS,
+  emailUpdates,
 }) => {
+  console.log(gender, hasReadTOS, emailUpdates);
+
   return (
     <>
       <form onSubmit={(e) => e.preventDefault()}>
