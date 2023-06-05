@@ -15,7 +15,7 @@ const ThirdStage = dynamic(() => import("../ThirdStage"), {
 
 export type Tgender = "male" | "female" | "non-binary" | "unknown";
 
-type TsignUpState = {
+export type TsignUpState = {
   username: string;
   email: string;
   password: string;
@@ -66,8 +66,6 @@ const SignUpPageContainer: React.FC = () => {
         : ThirdStage;
 
     return Component;
-    // if (Component) return Component as React.FC;
-    // return (<></>) as React.FC;
   };
 
   const getCurrentStageProps = () => {
@@ -99,8 +97,10 @@ const SignUpPageContainer: React.FC = () => {
   const CurrentFormComponent = getCurrentStageComponent();
   const currentFormComponentProps = getCurrentStageProps();
   const FormComponent = (
+    // @ts-ignore
     <CurrentFormComponent
       handleSignUpStageChange={handleSignUpStageChange}
+      setSignUpState={setSignUpState}
       {...currentFormComponentProps}
     />
   );

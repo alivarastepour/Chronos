@@ -1,13 +1,16 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
+import { TsignUpState } from "./Container/SignUpPageContaienr";
 
 interface IfirstStage {
   handleSignUpStageChange: (state: "next") => () => void;
+  setSignUpState: React.Dispatch<React.SetStateAction<TsignUpState>>;
   username: string;
   email: string;
 }
 
 const FirstStage: React.FC<IfirstStage> = ({
   handleSignUpStageChange,
+  setSignUpState,
   username,
   email,
 }) => {

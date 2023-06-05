@@ -1,13 +1,16 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
+import { TsignUpState } from "./Container/SignUpPageContaienr";
 
 interface IsecondStage {
   handleSignUpStageChange: (state: "next" | "prev") => () => void;
+  setSignUpState: React.Dispatch<React.SetStateAction<TsignUpState>>;
   password: string;
   passwordR: string;
 }
 
 const SecondStage: React.FC<IsecondStage> = ({
   handleSignUpStageChange,
+  setSignUpState,
   password,
   passwordR,
 }) => {
