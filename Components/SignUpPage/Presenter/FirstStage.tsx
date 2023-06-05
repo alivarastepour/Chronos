@@ -1,5 +1,5 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
-import { TsignUpState } from "./Container/SignUpPageContaienr";
+import { TsignUpState } from "../Container/SignUpPageContaienr";
 
 interface IfirstStage {
   handleSignUpStageChange: (state: "next") => () => void;

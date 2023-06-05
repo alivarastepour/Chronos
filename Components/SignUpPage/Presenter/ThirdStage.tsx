@@ -1,5 +1,5 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
-import { Tgender, TsignUpState } from "./Container/SignUpPageContaienr";
+import { Tgender, TsignUpState } from "../Container/SignUpPageContaienr";
 
 interface IthirdStage {
   handleSignUpStageChange: (state: "prev") => () => void;

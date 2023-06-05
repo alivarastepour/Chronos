@@ -3,13 +3,13 @@ import dynamic from "next/dynamic";
 
 import SignUpPagePresenter from "../Presenter/SignUpPagePresenter";
 
-const FirstStage = dynamic(() => import("../FirstStage"), {
+const FirstStage = dynamic(() => import("../Presenter/FirstStage"), {
   loading: () => <div>hi</div>,
 });
-const SecondStage = dynamic(() => import("../SecondStage"), {
+const SecondStage = dynamic(() => import("../Presenter/SecondStage"), {
   loading: () => <div>hi</div>,
 });
-const ThirdStage = dynamic(() => import("../ThirdStage"), {
+const ThirdStage = dynamic(() => import("../Presenter/ThirdStage"), {
   loading: () => <div>hi</div>,
 });
 
