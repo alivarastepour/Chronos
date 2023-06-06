@@ -1,14 +1,14 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
 import type { TfirstStage } from "../SignUpPage.types";
+import { FormEvent } from "react";
 
 const FirstStage: React.FC<TfirstStage> = ({
   handleSignUpStageChange,
   setSignUpState,
+  shouldStageChange,
   username,
   email,
 }) => {
-  console.log(username, email);
-
   return (
     <>
       <form onSubmit={(e) => e.preventDefault()}>
@@ -50,7 +50,7 @@ const FirstStage: React.FC<TfirstStage> = ({
         <div>
           <button
             className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
-            onClick={handleSignUpStageChange("next")}
+            // onClick={handleSignUpStageChange("next")}
           >
             Next
           </button>

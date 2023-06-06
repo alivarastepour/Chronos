@@ -4,6 +4,7 @@ import type { TsecondStage } from "../SignUpPage.types";
 const SecondStage: React.FC<TsecondStage> = ({
   handleSignUpStageChange,
   setSignUpState,
+  shouldStageChange,
   password,
   passwordR,
 }) => {

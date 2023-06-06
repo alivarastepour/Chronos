@@ -4,6 +4,7 @@ import type { Tgender, TthirdStage } from "../SignUpPage.types";
 const ThirdStage: React.FC<TthirdStage> = ({
   handleSignUpStageChange,
   setSignUpState,
+  shouldStageChange,
   gender,
   hasReadTOS,
   emailUpdates,
