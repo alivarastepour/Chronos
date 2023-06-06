@@ -23,11 +23,21 @@ const ThirdStage: React.FC<IthirdStage> = ({
       <form onSubmit={(e) => e.preventDefault()}>
         <div>
           <label htmlFor="signup-gender">what is your gender?</label>
-          <select name="signup-gender" id="signup-gender">
+          <select
+            name="signup-gender"
+            id="signup-gender"
+            value={gender}
+            onChange={(e) =>
+              setSignUpState((prev) => ({
+                ...prev,
+                gender: e.target.value as Tgender,
+              }))
+            }
+          >
             <option value="male">male</option>
             <option value="female">female</option>
             <option value="non-binary">non-binary</option>
-            <option value="rather-not-say">i rather not say</option>
+            <option value="unknown">i rather not say</option>
           </select>
           <p className={styles["signup-username-error"]}>
             enter a valid password.
@@ -42,6 +52,13 @@ const ThirdStage: React.FC<IthirdStage> = ({
             type="checkbox"
             name="signup-tos"
             id="signup-tos"
+            checked={hasReadTOS}
+            onChange={(e) =>
+              setSignUpState((prev) => ({
+                ...prev,
+                hasReadTOS: e.target.checked,
+              }))
+            }
           />
         </div>
         <div className={styles["signup-checkbox-container"]}>
@@ -50,10 +67,16 @@ const ThirdStage: React.FC<IthirdStage> = ({
           </label>
           <input
             data-checkbox="true"
-            defaultChecked
             type="checkbox"
             name="signup-updates"
             id="signup-updates"
+            checked={emailUpdates}
+            onChange={(e) =>
+              setSignUpState((prev) => ({
+                ...prev,
+                emailUpdates: e.target.checked,
+              }))
+            }
           />
         </div>
         <div className={styles["signup-flex-action-container"]}>

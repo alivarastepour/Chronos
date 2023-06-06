@@ -30,6 +30,10 @@ const SecondStage: React.FC<IsecondStage> = ({
             autoComplete="new-password"
             name="signup-password"
             id="signup-password"
+            value={password}
+            onChange={(e) =>
+              setSignUpState((prev) => ({ ...prev, password: e.target.value }))
+            }
             // placeholder="Password should be between 8 to 20 charachters"
           />
           <p className={styles["signup-username-error"]}>
@@ -46,6 +50,10 @@ const SecondStage: React.FC<IsecondStage> = ({
             autoComplete="new-password"
             name="signup-password-repeat"
             id="signup-password-repeat"
+            value={passwordR}
+            onChange={(e) =>
+              setSignUpState((prev) => ({ ...prev, passwordR: e.target.value }))
+            }
             // placeholder="Just to be sure, enter your password again"
           />
           <p className={styles["signup-password-error"]}>

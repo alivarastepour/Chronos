@@ -28,6 +28,10 @@ const FirstStage: React.FC<IfirstStage> = ({
             type="text"
             name="signup-username"
             id="signup-username"
+            value={username}
+            onChange={(e) =>
+              setSignUpState((prev) => ({ ...prev, username: e.target.value }))
+            }
             // placeholder="Username should be between 8 to 20 alphabetical charachters"
           />
           <p className={styles["signup-username-error"]}>enter a valid name.</p>
@@ -42,6 +46,10 @@ const FirstStage: React.FC<IfirstStage> = ({
             autoComplete="username"
             name="signup-email"
             id="signup-email"
+            value={email}
+            onChange={(e) =>
+              setSignUpState((prev) => ({ ...prev, email: e.target.value }))
+            }
             // placeholder="This is the email we will use to recover your password"
           />
           <p className={styles["signup-password-error"]}>enter an email.</p>
