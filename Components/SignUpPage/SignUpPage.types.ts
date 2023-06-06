@@ -20,6 +20,10 @@ export type TthirdStageForm = Pick<
 export type TstageComponentSharedProps<T> = {
   handleSignUpStageChange: (state: T) => () => void;
   setSignUpState: React.Dispatch<React.SetStateAction<TsignUpState>>;
+  shouldStageChange: (
+    event: React.FormEvent,
+    validationMap: Map<string, Function>
+  ) => boolean;
 };
 
 export type TfirstStage = TfirstStageForm & TstageComponentSharedProps<"next">;
