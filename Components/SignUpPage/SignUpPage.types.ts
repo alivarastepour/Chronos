@@ -16,3 +16,13 @@ export type TthirdStageForm = Pick<
   TsignUpState,
   "gender" | "hasReadTOS" | "emailUpdates"
 >;
+
+export type TstageComponentSharedProps<T> = {
+  handleSignUpStageChange: (state: T) => () => void;
+  setSignUpState: React.Dispatch<React.SetStateAction<TsignUpState>>;
+};
+
+export type TfirstStage = TfirstStageForm & TstageComponentSharedProps<"next">;
+export type TsecondStage = TsecondStageForm &
+  TstageComponentSharedProps<"next" | "prev">;
+export type TthirdStage = TthirdStageForm & TstageComponentSharedProps<"prev">;

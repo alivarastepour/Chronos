@@ -20,7 +20,7 @@ const ThirdStage = dynamic(() => import("../Presenter/ThirdStage"), {
 });
 
 const SignUpPageContainer: React.FC = () => {
-  const [signUpStage, setSignUpStage] = useState(1);
+  const [signUpStage, setSignUpStage] = useState<number>(1);
 
   const [signUpState, setSignUpState] = useState<TsignUpState>({
     username: "",

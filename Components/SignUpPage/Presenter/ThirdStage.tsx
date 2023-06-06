@@ -1,15 +1,7 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
-import { Tgender, TsignUpState } from "../SignUpPage.types";
+import type { Tgender, TthirdStage } from "../SignUpPage.types";
 
-interface IthirdStage {
-  handleSignUpStageChange: (state: "prev") => () => void;
-  setSignUpState: React.Dispatch<React.SetStateAction<TsignUpState>>;
-  gender: Tgender;
-  hasReadTOS: boolean;
-  emailUpdates: boolean;
-}
-
-const ThirdStage: React.FC<IthirdStage> = ({
+const ThirdStage: React.FC<TthirdStage> = ({
   handleSignUpStageChange,
   setSignUpState,
   gender,
