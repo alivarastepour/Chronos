@@ -44,6 +44,19 @@ const SignUpPageContainer: React.FC = () => {
     return state === "next" ? nextStage : prevStage;
   };
 
+  const shouldStageChange = (
+    event: React.FormEvent,
+    validationMap: Map<string, Function>
+  ): boolean => {
+    const form = event.target as any;
+    for (const [field, validator] of validationMap.entries()) {
+      const value = form[field];
+      const isFieldValid = validator(value);
+      if (!isFieldValid) return false;
+    }
+    return true;
+  };
+
   const getCurrentStageComponent = () => {
     const Component =
       signUpStage === 1
