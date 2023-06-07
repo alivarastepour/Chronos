@@ -35,15 +35,15 @@ const SecondStage: React.FC<TsecondStage> = ({
           </p>
         </div>
         <div>
-          <label htmlFor="signup-password-repeat">
+          <label htmlFor="signup-passwordR">
             repeat password
             <span>*</span>
           </label>
           <input
             type="password"
             autoComplete="new-password"
-            name="signup-password-repeat"
-            id="signup-password-repeat"
+            name="signup-passwordR"
+            id="signup-passwordR"
             value={passwordR}
             onChange={(e) =>
               setSignUpState((prev) => ({ ...prev, passwordR: e.target.value }))
