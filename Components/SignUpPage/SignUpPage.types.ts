@@ -11,13 +11,13 @@ export type TsignUpState = {
 };
 
 export type TsignUpStateValidators = {
-  isUserNameValid: (username: string) => string;
-  isEmailValid: (email: string) => string;
-  isPasswordValid: (password: string) => string;
-  isPasswordRepeatValid: (password: string) => string;
-  isGenderVaild: (gender: Tgender) => string;
-  hasReadTOS: (checked: boolean) => string;
-  wantsEmailUpdates: (checked: boolean) => string;
+  username: (username: string) => string;
+  email: (email: string) => string;
+  password: (password: string) => string;
+  passwordR: (password: string, passwordR: string) => string;
+  gender: (gender: Tgender) => string;
+  tos: (checked: boolean) => string;
+  updates: (checked: boolean) => string;
 };
 
 export type TfirstStageForm = Pick<TsignUpState, "username" | "email">;
@@ -29,24 +29,21 @@ export type TthirdStageForm = Pick<
 
 export type TfirstStageFormValidators = Pick<
   TsignUpStateValidators,
-  "isUserNameValid" | "isEmailValid"
+  "username" | "email"
 >;
 export type TsecondStageFormValidators = Pick<
   TsignUpStateValidators,
-  "isPasswordValid" | "isPasswordRepeatValid"
+  "password" | "passwordR"
 >;
 export type TthirdStageFormValidators = Pick<
   TsignUpStateValidators,
-  "hasReadTOS" | "wantsEmailUpdates" | "isGenderVaild"
+  "tos" | "updates" | "gender"
 >;
 
 export type TstageComponentSharedProps<T> = {
   handleSignUpStageChange: (state: T) => () => void;
   setSignUpState: React.Dispatch<React.SetStateAction<TsignUpState>>;
-  shouldStageChange: (
-    event: React.FormEvent,
-    validationMap: Map<string, Function>
-  ) => boolean;
+  shouldStageChange: (event: React.FormEvent) => boolean;
 };
 
 export type TfirstStage = TfirstStageForm &
