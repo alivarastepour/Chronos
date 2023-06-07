@@ -1,4 +1,4 @@
-import { Tgender } from "../SignUpPage.types";
+import { Tgender, TsignUpStateValidators } from "../SignUpPage.types";
 
 const isUsernameValid = (username: string): string => {
   if (username.trim().length === 0) {
@@ -45,3 +45,32 @@ const hasReadTOS = (checked: boolean): string => {
 
 const wantsEmailUpdates = (checked: boolean): "" => "";
 const isGenderVaid = (gender: Tgender): "" => "";
+
+const VALIDATION_MAP: TsignUpStateValidators = {
+  username: isUsernameValid,
+  email: isEmailValid,
+  password: isPasswordValid,
+  passwordR: isPasswordRepeatValid,
+  gender: isGenderVaid,
+  tos: hasReadTOS,
+  updates: wantsEmailUpdates,
+};
+
+type Tfields = keyof TsignUpStateValidators;
+export const getFieldValidators = (fields: string[]): Map<string, Function> => {
+  const partialValidatorsMap = new Map<string, Function>();
+  // const slicesFields = fields.map((field) => field.split("-")[1]);
+  for (const field of fields) {
+    const splitField = field.split("-")[1] as Tfields;
+    const handler = VALIDATION_MAP[splitField];
+    partialValidatorsMap.set(field, handler);
+  }
+  return partialValidatorsMap;
+};
+
+export const getFormFields = (form: HTMLFormElement): string[] => {
+  const formData: FormData = new FormData(form);
+  const fields: string[] = [];
+  for (const key of formData.keys()) fields.push(key);
+  return fields;
+};
