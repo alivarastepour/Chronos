@@ -8,6 +8,7 @@ import {
   TsignUpState,
   TthirdStageForm,
 } from "../SignUpPage.types";
+import { getFieldValidators, getFormFields } from "../util/signup.handlers";
 
 const FirstStage = dynamic(() => import("../Presenter/FirstStage"), {
   loading: () => <div>hi</div>,
@@ -44,15 +45,15 @@ const SignUpPageContainer: React.FC = () => {
     return state === "next" ? nextStage : prevStage;
   };
 
-  const shouldStageChange = (
-    event: React.FormEvent,
-    validationMap: Map<string, Function>
-  ): boolean => {
+  const shouldStageChange = (event: React.FormEvent): boolean => {
     const form = event.target as any;
+    const fields = getFormFields(form);
+    const validationMap: Map<string, Function> = getFieldValidators(fields);
     for (const [field, validator] of validationMap.entries()) {
-      const value = form[field];
+      const value = form[field].value;
       const isFieldValid = validator(value);
-      if (!isFieldValid) return false;
+      console.log(field, value, isFieldValid);
+      if (isFieldValid !== "") return false;
     }
     return true;
   };
@@ -101,6 +102,7 @@ const SignUpPageContainer: React.FC = () => {
     <CurrentFormComponent
       handleSignUpStageChange={handleSignUpStageChange}
       setSignUpState={setSignUpState}
+      shouldStageChange={shouldStageChange}
       {...currentFormComponentProps}
     />
   );
