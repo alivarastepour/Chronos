@@ -52,7 +52,6 @@ const SignUpPageContainer: React.FC = () => {
     for (const [field, validator] of validationMap.entries()) {
       const value = form[field].value;
       const isFieldValid = validator(value);
-      console.log(field, value, isFieldValid);
       if (isFieldValid !== "") return false;
     }
     return true;

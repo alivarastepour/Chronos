@@ -10,10 +10,15 @@ const ThirdStage: React.FC<TthirdStage> = ({
   emailUpdates,
 }) => {
   console.log(gender, hasReadTOS, emailUpdates);
-
   return (
     <>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          const res = shouldStageChange(e);
+          // if (res) handleSignUpStageChange("next")();
+        }}
+      >
         <div>
           <label htmlFor="signup-gender">what is your gender?</label>
           <select

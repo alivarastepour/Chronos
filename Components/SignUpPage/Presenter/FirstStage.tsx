@@ -16,9 +16,7 @@ const FirstStage: React.FC<TfirstStage> = ({
         onSubmit={(e) => {
           e.preventDefault();
           const res = shouldStageChange(e);
-          if (res) {
-            handleSignUpStageChange("next")();
-          }
+          if (res) handleSignUpStageChange("next")();
         }}
       >
         <div>
@@ -58,6 +56,7 @@ const FirstStage: React.FC<TfirstStage> = ({
         </div>
         <div>
           <button
+            type="submit"
             className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
             // onClick={handleSignUpStageChange("next")}
           >

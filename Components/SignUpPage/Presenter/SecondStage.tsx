@@ -9,10 +9,15 @@ const SecondStage: React.FC<TsecondStage> = ({
   passwordR,
 }) => {
   console.log(password, passwordR);
-
   return (
     <>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          const res = shouldStageChange(e);
+          if (res) handleSignUpStageChange("next")();
+        }}
+      >
         <div>
           <input type="text" autoComplete="username" hidden name="" id="" />
           <label htmlFor="signup-password">
@@ -62,8 +67,9 @@ const SecondStage: React.FC<TsecondStage> = ({
             Previous
           </button>
           <button
+            type="submit"
             className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
-            onClick={handleSignUpStageChange("next")}
+            // onClick={handleSignUpStageChange("next")}
           >
             Next
           </button>
