@@ -6,6 +6,7 @@ const FirstStage: React.FC<TfirstStage> = ({
   handleSignUpStageChange,
   setSignUpState,
   shouldStageChange,
+  handleErrors,
   username,
   email,
 }) => {
@@ -16,7 +17,7 @@ const FirstStage: React.FC<TfirstStage> = ({
           e.preventDefault();
           const { shouldStageChange: stc, errors } = shouldStageChange(e);
           if (stc) handleSignUpStageChange("next")();
-          else console.log(errors);
+          else handleErrors(errors);
         }}
       >
         <div>
@@ -34,7 +35,12 @@ const FirstStage: React.FC<TfirstStage> = ({
             }
             // placeholder="Username should be between 8 to 20 alphabetical charachters"
           />
-          <p className={styles["signup-username-error"]}>enter a valid name.</p>
+          <p
+            id="signup-username-error"
+            className={`${styles["signup-username-error"]} signup-username-error`}
+          >
+            enter a valid name.
+          </p>
         </div>
         <div>
           <label htmlFor="signup-email">
@@ -52,7 +58,12 @@ const FirstStage: React.FC<TfirstStage> = ({
             }
             // placeholder="This is the email we will use to recover your password"
           />
-          <p className={styles["signup-password-error"]}>enter an email.</p>
+          <p
+            id="signup-email-error"
+            className={`${styles["signup-email-error"]} signup-email-error`}
+          >
+            enter an email.
+          </p>
         </div>
         <div>
           <button

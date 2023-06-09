@@ -188,7 +188,11 @@
       }
 
       p.signup-password-error,
-      p.signup-username-error {
+      p.signup-username-error,
+      p.signup-email-error,
+      p.signup-passwordR-error {
+        height: 30px;
+        box-sizing: border-box;
         font-size: 0.7rem;
         font-weight: 500;
         color: white;
@@ -200,8 +204,6 @@
         padding: 0.5rem 0.3rem;
 
         border-radius: 0.3rem;
-
-        visibility: hidden;
       }
 
       .password-util {
