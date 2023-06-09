@@ -56,7 +56,7 @@ const SignUpPageContainer: React.FC = () => {
     const validationMap: Map<string, Function> = getFieldValidators(fields);
 
     /**
-     * since validators do not have the same arity, we need an utillity function to help us somehow generalize this procedure.
+     * since validators do not have the same arity nor type, we need an utillity function to help us somehow generalize this procedure.
      * @param field current field to get its value
      * @param componentPrefix a prefix to be added to the name individual fields
      * @returns an array consisting of required args for the given field

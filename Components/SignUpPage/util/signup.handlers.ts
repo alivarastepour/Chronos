@@ -63,7 +63,7 @@ export const getFieldValidators = (fields: string[]): Map<string, Function> => {
   const partialValidatorsMap = new Map<string, Function>();
   // const slicesFields = fields.map((field) => field.split("-")[1]);
   for (const field of fields) {
-    const splitField = field.split("-")[1] as Tfields;
+    const splitField = field.split("-")[field.split("-").length - 1] as Tfields;
     const handler = VALIDATION_MAP[splitField];
     partialValidatorsMap.set(field, handler);
   }
