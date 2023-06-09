@@ -61,10 +61,15 @@ const SignUpPageContainer: React.FC = () => {
      * @param componentPrefix a prefix to be added to the name individual fields
      * @returns an array consisting of required args for the given field
      */
-    const getValidatorArgs = (field: string, componentPrefix: string) =>
-      field === `${componentPrefix}-passwordR`
-        ? [form[`${componentPrefix}-password`].value, form[field].value]
-        : [form[field].value];
+    const getValidatorArgs = (field: string, componentPrefix: string) => {
+      let val: "value" | "checked" = field.includes("checkbox")
+        ? "checked"
+        : "value";
+
+      return field === `${componentPrefix}-passwordR`
+        ? [form[`${componentPrefix}-password`][val], form[field][val]]
+        : [form[field][val]];
+    };
 
     for (const [field, validator] of validationMap.entries()) {
       const value = getValidatorArgs(field, "signup");
