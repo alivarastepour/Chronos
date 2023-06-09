@@ -310,6 +310,11 @@
   padding: 0.4rem 0.8rem;
 
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -340,7 +345,7 @@
         .signup-page-signup-button {
           background-color: $secondary_color_dark;
 
-          &:hover {
+          &:hover:not(&:disabled) {
             background-color: rgba($secondary_color_dark, 0.9);
           }
         }

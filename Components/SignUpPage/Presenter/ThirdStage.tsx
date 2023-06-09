@@ -16,7 +16,7 @@ const ThirdStage: React.FC<TthirdStage> = ({
         onSubmit={(e) => {
           e.preventDefault();
           const res = shouldStageChange(e);
-          // if (res) handleSignUpStageChange("next")();
+          // if (res) handleSignUpStageChange("submit")();
         }}
       >
         <div>
@@ -42,13 +42,13 @@ const ThirdStage: React.FC<TthirdStage> = ({
           </p>
         </div>
         <div className={styles["signup-checkbox-container"]}>
-          <label data-checkboxlabel="true" htmlFor="signup-tos">
+          <label data-checkboxlabel="true" htmlFor="signup-checkbox-tos">
             i agree to Chronos's terms of services
           </label>
           <input
             data-checkbox="true"
             type="checkbox"
-            name="signup-tos"
+            name="signup-checkbox-tos"
             id="signup-tos"
             checked={hasReadTOS}
             onChange={(e) =>
@@ -60,13 +60,13 @@ const ThirdStage: React.FC<TthirdStage> = ({
           />
         </div>
         <div className={styles["signup-checkbox-container"]}>
-          <label data-checkboxlabel="true" htmlFor="signup-updates">
+          <label data-checkboxlabel="true" htmlFor="signup-checkbox-updates">
             keep me inforemd of the latest updates
           </label>
           <input
             data-checkbox="true"
             type="checkbox"
-            name="signup-updates"
+            name="signup-checkbox-updates"
             id="signup-updates"
             checked={emailUpdates}
             onChange={(e) =>
@@ -85,8 +85,10 @@ const ThirdStage: React.FC<TthirdStage> = ({
             Previous
           </button>
           <button
+            type="submit"
+            disabled={!hasReadTOS}
             className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
-            onClick={undefined}
+            // onClick={undefined}
           >
             Sign Up
           </button>
