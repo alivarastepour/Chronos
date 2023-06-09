@@ -42,13 +42,14 @@ export type TthirdStageFormValidators = Pick<
 
 export type TshouldStageChangeRT = {
   shouldStageChange: boolean;
-  errors: Map<string, string> | undefined;
+  errors: Map<string, string>;
 };
 
 export type TstageComponentSharedProps<T> = {
   handleSignUpStageChange: (state: T) => () => void;
-  setSignUpState: React.Dispatch<React.SetStateAction<TsignUpState>>;
   shouldStageChange: (event: React.FormEvent) => TshouldStageChangeRT;
+  handleErrors: (errors: Map<string, string>) => void;
+  setSignUpState: React.Dispatch<React.SetStateAction<TsignUpState>>;
 };
 
 export type TfirstStage = TfirstStageForm &

@@ -9,7 +9,11 @@ import type {
   TsignUpState,
   TthirdStageForm,
 } from "../SignUpPage.types";
-import { getFieldValidators, getFormFields } from "../util/signup.handlers";
+import {
+  getFieldValidators,
+  getFormFields,
+  handleSignUpErrors,
+} from "../util/signup.handlers";
 
 const FirstStage = dynamic(() => import("../Presenter/FirstStage"), {
   loading: () => <div>hi</div>,
@@ -52,7 +56,7 @@ const SignUpPageContainer: React.FC = () => {
    *  if not, returns errors.
    * @param event the event that was triggered on form submit
    * @returns an object with two properties; shouldStageChange which is a boolean; errors which is a map
-   * from fields to their errors. if there is no error, errors is undefined
+   * from fields to their errors.
    */
   const shouldStageChange = (event: React.FormEvent): TshouldStageChangeRT => {
     const form = event.target as any;
@@ -82,12 +86,10 @@ const SignUpPageContainer: React.FC = () => {
       const isFieldValid = validator(...value);
       if (isFieldValid !== "") {
         hasError = true;
-        errors.set(field, isFieldValid);
       }
+      errors.set(field, isFieldValid);
     }
-    return hasError
-      ? { shouldStageChange: false, errors: errors }
-      : { shouldStageChange: true, errors: undefined };
+    return { shouldStageChange: !hasError, errors: errors };
   };
 
   const getCurrentStageComponent = () => {
@@ -135,6 +137,7 @@ const SignUpPageContainer: React.FC = () => {
       handleSignUpStageChange={handleSignUpStageChange}
       setSignUpState={setSignUpState}
       shouldStageChange={shouldStageChange}
+      handleErrors={handleSignUpErrors}
       {...currentFormComponentProps}
     />
   );
