@@ -8,7 +8,7 @@ const SecondStage: React.FC<TsecondStage> = ({
   password,
   passwordR,
 }) => {
-  console.log(password, passwordR);
+  console.log(password);
   return (
     <>
       <form

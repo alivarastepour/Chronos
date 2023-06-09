@@ -45,13 +45,30 @@ const SignUpPageContainer: React.FC = () => {
     return state === "next" ? nextStage : prevStage;
   };
 
+  /**
+   *  given a form, finds its fields and their respective valditors and runs the validators on field values to determine if the value is valid or not.
+   * @param event the event that was triggered on form submit
+   * @returns true if the stage should change, false otherwise
+   */
   const shouldStageChange = (event: React.FormEvent): boolean => {
     const form = event.target as any;
     const fields = getFormFields(form);
     const validationMap: Map<string, Function> = getFieldValidators(fields);
+
+    /**
+     * since validators do not have the same arity, we need an utillity function to help us somehow generalize this procedure.
+     * @param field current field to get its value
+     * @param componentPrefix a prefix to be added to the name individual fields
+     * @returns an array consisting of required args for the given field
+     */
+    const getValidatorArgs = (field: string, componentPrefix: string) =>
+      field === `${componentPrefix}-passwordR`
+        ? [form[`${componentPrefix}-password`].value, form[field].value]
+        : [form[field].value];
+
     for (const [field, validator] of validationMap.entries()) {
-      const value = form[field].value;
-      const isFieldValid = validator(value);
+      const value = getValidatorArgs(field, "signup");
+      const isFieldValid = validator(...value);
       if (isFieldValid !== "") return false;
     }
     return true;

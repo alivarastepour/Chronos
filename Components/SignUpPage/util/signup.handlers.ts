@@ -31,7 +31,9 @@ const isPasswordValid = (password: string): string => {
   return "";
 };
 
-const isPasswordRepeatValid = (password: string, passwordR: string): string => {
+const isPasswordRepeatValid = (passwordR: string, password: string): string => {
+  console.log(passwordR, password);
+
   return password === passwordR
     ? ""
     : "password repeat does not match the provided password";
