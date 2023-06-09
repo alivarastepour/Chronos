@@ -40,10 +40,15 @@ export type TthirdStageFormValidators = Pick<
   "tos" | "updates" | "gender"
 >;
 
+export type TshouldStageChangeRT = {
+  shouldStageChange: boolean;
+  errors: Map<string, string> | undefined;
+};
+
 export type TstageComponentSharedProps<T> = {
   handleSignUpStageChange: (state: T) => () => void;
   setSignUpState: React.Dispatch<React.SetStateAction<TsignUpState>>;
-  shouldStageChange: (event: React.FormEvent) => boolean;
+  shouldStageChange: (event: React.FormEvent) => TshouldStageChangeRT;
 };
 
 export type TfirstStage = TfirstStageForm &

@@ -5,7 +5,6 @@ import { FormEvent } from "react";
 const FirstStage: React.FC<TfirstStage> = ({
   handleSignUpStageChange,
   setSignUpState,
-
   shouldStageChange,
   username,
   email,
@@ -15,8 +14,9 @@ const FirstStage: React.FC<TfirstStage> = ({
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const res = shouldStageChange(e);
-          if (res) handleSignUpStageChange("next")();
+          const { shouldStageChange: stc, errors } = shouldStageChange(e);
+          if (stc) handleSignUpStageChange("next")();
+          else console.log(errors);
         }}
       >
         <div>

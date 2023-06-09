@@ -2,9 +2,10 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 
 import SignUpPagePresenter from "../Presenter/SignUpPagePresenter";
-import {
+import type {
   TfirstStageForm,
   TsecondStageForm,
+  TshouldStageChangeRT,
   TsignUpState,
   TthirdStageForm,
 } from "../SignUpPage.types";
@@ -46,11 +47,14 @@ const SignUpPageContainer: React.FC = () => {
   };
 
   /**
-   *  given a form, finds its fields and their respective valditors and runs the validators on field values to determine if the value is valid or not.
+   *  given a form, finds its fields and their respective valditors and runs the validators
+   *  on field values to determine if the value is valid or not. if values are valid, proceeds;
+   *  if not, returns errors.
    * @param event the event that was triggered on form submit
-   * @returns true if the stage should change, false otherwise
+   * @returns an object with two properties; shouldStageChange which is a boolean; errors which is a map
+   * from fields to their errors. if there is no error, errors is undefined
    */
-  const shouldStageChange = (event: React.FormEvent): boolean => {
+  const shouldStageChange = (event: React.FormEvent): TshouldStageChangeRT => {
     const form = event.target as any;
     const fields = getFormFields(form);
     const validationMap: Map<string, Function> = getFieldValidators(fields);
@@ -71,12 +75,19 @@ const SignUpPageContainer: React.FC = () => {
         : [form[field][val]];
     };
 
+    const errors = new Map<string, string>();
+    let hasError: boolean = false;
     for (const [field, validator] of validationMap.entries()) {
       const value = getValidatorArgs(field, "signup");
       const isFieldValid = validator(...value);
-      if (isFieldValid !== "") return false;
+      if (isFieldValid !== "") {
+        hasError = true;
+        errors.set(field, isFieldValid);
+      }
     }
-    return true;
+    return hasError
+      ? { shouldStageChange: false, errors: errors }
+      : { shouldStageChange: true, errors: undefined };
   };
 
   const getCurrentStageComponent = () => {
