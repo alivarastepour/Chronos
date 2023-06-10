@@ -5,6 +5,7 @@ const ThirdStage: React.FC<TthirdStage> = ({
   handleSignUpStageChange,
   setSignUpState,
   shouldStageChange,
+  handleErrors,
   gender,
   hasReadTOS,
   emailUpdates,
@@ -15,8 +16,11 @@ const ThirdStage: React.FC<TthirdStage> = ({
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const res = shouldStageChange(e);
-          // if (res) handleSignUpStageChange("submit")();
+          const { shouldStageChange: stc, errors } = shouldStageChange(e);
+          console.log(stc, errors);
+
+          if (stc) handleSignUpStageChange("submit")();
+          else handleErrors(errors);
         }}
       >
         <div>
@@ -37,9 +41,6 @@ const ThirdStage: React.FC<TthirdStage> = ({
             <option value="non-binary">non-binary</option>
             <option value="unknown">i rather not say</option>
           </select>
-          <p className={styles["signup-username-error"]}>
-            enter a valid password.
-          </p>
         </div>
         <div className={styles["signup-checkbox-container"]}>
           <label data-checkboxlabel="true" htmlFor="signup-checkbox-tos">
@@ -58,6 +59,12 @@ const ThirdStage: React.FC<TthirdStage> = ({
               }))
             }
           />
+          {/* <p
+            id="signup-hasReadTOS-error"
+            className={`${styles["signup-hasReadTOS-error"]} signup-hasReadTOS-error`}
+          >
+            agree
+          </p> */}
         </div>
         <div className={styles["signup-checkbox-container"]}>
           <label data-checkboxlabel="true" htmlFor="signup-checkbox-updates">
@@ -86,7 +93,7 @@ const ThirdStage: React.FC<TthirdStage> = ({
           </button>
           <button
             type="submit"
-            disabled={!hasReadTOS}
+            // disabled={!hasReadTOS}
             className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
             // onClick={undefined}
           >
