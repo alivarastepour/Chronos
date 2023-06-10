@@ -5,17 +5,18 @@ const SecondStage: React.FC<TsecondStage> = ({
   handleSignUpStageChange,
   setSignUpState,
   shouldStageChange,
+  handleErrors,
   password,
   passwordR,
 }) => {
-  console.log(password);
   return (
     <>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const res = shouldStageChange(e);
-          if (res) handleSignUpStageChange("next")();
+          const { shouldStageChange: stc, errors } = shouldStageChange(e);
+          if (stc) handleSignUpStageChange("next")();
+          else handleErrors(errors);
         }}
       >
         <div>
@@ -35,7 +36,10 @@ const SecondStage: React.FC<TsecondStage> = ({
             }
             // placeholder="Password should be between 8 to 20 charachters"
           />
-          <p className={styles["signup-username-error"]}>
+          <p
+            id="signup-password-error"
+            className={`${styles["signup-password-error"]} signup-password-error`}
+          >
             enter a valid password.
           </p>
         </div>
@@ -55,7 +59,10 @@ const SecondStage: React.FC<TsecondStage> = ({
             }
             // placeholder="Just to be sure, enter your password again"
           />
-          <p className={styles["signup-password-error"]}>
+          <p
+            id="signup-passwordR-error"
+            className={`${styles["signup-passwordR-error"]} signup-passwordR-error`}
+          >
             passwords dont match
           </p>
         </div>
