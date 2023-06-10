@@ -46,8 +46,14 @@ const SignUpPageContainer: React.FC = () => {
     setSignUpStage((prev) => ++prev);
   };
 
-  const handleSignUpStageChange = (state: "next" | "prev"): (() => void) => {
-    return state === "next" ? nextStage : prevStage;
+  const handleSignUpStageChange = (
+    state: "next" | "prev" | "submit"
+  ): (() => void) => {
+    return state === "next"
+      ? nextStage
+      : state === "prev"
+      ? prevStage
+      : () => {};
   };
 
   /**

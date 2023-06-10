@@ -62,4 +62,4 @@ export type TsecondStage = TsecondStageForm &
 
 export type TthirdStage = TthirdStageForm &
   TthirdStageFormValidators &
-  TstageComponentSharedProps<"prev">;
+  TstageComponentSharedProps<"prev" | "submit">;
