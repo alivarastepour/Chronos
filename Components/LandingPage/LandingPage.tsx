@@ -8,10 +8,12 @@ import Footer from "../Footer/Footer";
 import Features from "../Features/Container/FeaturesContainer";
 import CookiesTOS from "../CookiesTOS/CookiesTOS";
 import FastJoin from "../FastJoin/FastJoin";
+import Spinner from "../Spinner/Spinner";
 
 const LandingPage: React.FC = () => {
   return (
     <>
+      {/* <Spinner /> */}
       <Header />
 
       <Overview />
