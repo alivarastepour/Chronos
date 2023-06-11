@@ -38,9 +38,7 @@ const isPasswordRepeatValid = (passwordR: string, password: string): string => {
 };
 
 const hasReadTOS = (checked: boolean): string => {
-  return checked
-    ? ""
-    : "please review and agree to our terms of services before creating your account.";
+  return checked ? "" : "please review and agree to our terms of services.";
 };
 
 const wantsEmailUpdates = (checked: boolean): "" => "";
@@ -68,9 +66,9 @@ export const getFieldValidators = (fields: string[]): Map<string, Function> => {
 };
 
 export const getFormFields = (form: HTMLFormElement): string[] => {
-  const formData: FormData = new FormData(form);
+  const inputs = form.querySelectorAll("input");
   const fields: string[] = [];
-  for (const key of formData.keys()) fields.push(key);
+  inputs.forEach((input) => input.name !== "" && fields.push(input.name));
   return fields;
 };
 

@@ -193,7 +193,9 @@
       p.signup-password-error,
       p.signup-username-error,
       p.signup-email-error,
-      p.signup-passwordR-error {
+      p.signup-passwordR-error,
+      p.signup-checkbox-tos-error,
+      p.signup-checkbox-updates-error {
         height: 30px;
         box-sizing: border-box;
         font-size: 0.7rem;

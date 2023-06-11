@@ -10,17 +10,14 @@ const ThirdStage: React.FC<TthirdStage> = ({
   hasReadTOS,
   emailUpdates,
 }) => {
-  console.log(gender, hasReadTOS, emailUpdates);
   return (
     <>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           const { shouldStageChange: stc, errors } = shouldStageChange(e);
-          console.log(stc, errors);
-
+          handleErrors(errors);
           if (stc) handleSignUpStageChange("submit")();
-          else handleErrors(errors);
         }}
       >
         <div>
@@ -59,13 +56,11 @@ const ThirdStage: React.FC<TthirdStage> = ({
               }))
             }
           />
-          {/* <p
-            id="signup-hasReadTOS-error"
-            className={`${styles["signup-hasReadTOS-error"]} signup-hasReadTOS-error`}
-          >
-            agree
-          </p> */}
         </div>
+        <p
+          id="signup-checkbox-tos-error"
+          className={`${styles["signup-checkbox-tos-error"]} signup-checkbox-tos-error`}
+        ></p>
         <div className={styles["signup-checkbox-container"]}>
           <label data-checkboxlabel="true" htmlFor="signup-checkbox-updates">
             keep me inforemd of the latest updates
@@ -84,6 +79,10 @@ const ThirdStage: React.FC<TthirdStage> = ({
             }
           />
         </div>
+        <p
+          id="signup-checkbox-updates-error"
+          className={`${styles["signup-checkbox-updates-error"]} signup-checkbox-updates-error`}
+        ></p>
         <div className={styles["signup-flex-action-container"]}>
           <button
             className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}

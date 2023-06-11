@@ -76,7 +76,9 @@ div[data-type*="container"].deactive-mid {
 .signup-password-error,
 .signup-username-error,
 .signup-email-error,
-.signup-passwordR-error {
+.signup-passwordR-error,
+.signup-checkbox-tos-error,
+.signup-checkbox-updates-error {
   visibility: hidden !important;
 }
 
