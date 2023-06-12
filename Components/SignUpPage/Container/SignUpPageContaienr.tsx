@@ -14,15 +14,16 @@ import {
   getFormFields,
   handleSignUpErrors,
 } from "../util/signup.handlers";
+import SpinnerWrapper from "../Presenter/SpinnerWrapper";
 
 const FirstStage = dynamic(() => import("../Presenter/FirstStage"), {
-  loading: () => <div>hi</div>,
+  loading: () => <SpinnerWrapper />,
 });
 const SecondStage = dynamic(() => import("../Presenter/SecondStage"), {
-  loading: () => <div>hi</div>,
+  loading: () => <SpinnerWrapper />,
 });
 const ThirdStage = dynamic(() => import("../Presenter/ThirdStage"), {
-  loading: () => <div>hi</div>,
+  loading: () => <SpinnerWrapper />,
 });
 
 const SignUpPageContainer: React.FC = () => {
