@@ -1,21 +1,23 @@
 @import "../_variables.scss";
 
 .spinner-wrapper {
-  padding: 5rem;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   .spinner-item {
-    width: 10px;
-    height: 10px;
-    border: 1px solid black;
-    background-color: black;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
+    margin-right: 0.3rem;
   }
   .spinner-item-1 {
-    animation: 2s roll infinite;
+    animation: 2s roll infinite, 2s changeColor infinite ease-in-out;
+    transform: translateX(2rem);
   }
   .spinner-item-2 {
-    animation: 2s rollR infinite;
+    animation: 2s rollR infinite, 2s changeColor infinite;
+    transform: translateX(-2rem);
   }
 }
 
@@ -23,9 +25,15 @@
   50% {
     transform: translateX(-1rem);
   }
-  100% {
+  75% {
     transform: translateX(1rem);
-    transform: translateY(1rem);
+    transform: translateY(2rem);
+    @media (prefers-color-sheme: dark) {
+      background-color: white;
+    }
+  }
+  100% {
+    transform: translateY(0rem) translateX(2rem);
   }
 }
 
@@ -33,8 +41,45 @@
   50% {
     transform: translateX(1rem);
   }
-  100% {
+  75% {
     transform: translateX(-1rem);
-    transform: translateY(-1rem);
+    transform: translateY(-2rem);
+  }
+  100% {
+    transform: translateY(0rem) translateX(-2rem);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .spinner-item {
+    background-color: $primary_color_dark;
+  }
+  @keyframes changeColor {
+    50% {
+      background-color: $fourth_color_dark;
+    }
+    75% {
+      background-color: $third_color_dark;
+    }
+    100% {
+      background-color: $primary_color_dark;
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .spinner-item {
+    background-color: $primary_color_light;
+  }
+  @keyframes changeColor {
+    50% {
+      background-color: $secondary_color_light;
+    }
+    75% {
+      background-color: $third_color_light;
+    }
+    100% {
+      background-color: $primary_color_light;
+    }
   }
 }
