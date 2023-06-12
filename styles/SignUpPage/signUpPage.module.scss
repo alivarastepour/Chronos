@@ -89,7 +89,9 @@
           transition: 0.3s;
           background-color: $primary_color_light;
           color: white;
+          border: 1px solid transparent;
         }
+
         .signup-stage-desc {
           color: $primary_color_light;
         }
@@ -98,7 +100,6 @@
       .signup-stage-holder-item.signup-stage-holder-item-deactive {
         .signup-stage-holder-num {
           transition: 0.3s;
-          background-color: #1e1e1ec0;
           color: $primary_color_light;
           border: 1px solid $primary_color_light;
         }
@@ -358,6 +359,15 @@
         }
       }
 
+      .signup-header-wrapper {
+        .signup-stage-holder-item.signup-stage-holder-item-deactive {
+          .signup-stage-holder-num {
+            background-color: #1e1e1ec0;
+            // border: 1px solid transparent;
+          }
+        }
+      }
+
       .secondary-signup-container {
         .secondary-signup-button {
           border: 1px solid white;
@@ -412,6 +422,13 @@
 
           &:hover {
             background-color: rgba($primary_color_light, 0.9);
+          }
+        }
+      }
+      .signup-header-wrapper {
+        .signup-stage-holder-item.signup-stage-holder-item-deactive {
+          .signup-stage-holder-num {
+            background-color: white;
           }
         }
       }
