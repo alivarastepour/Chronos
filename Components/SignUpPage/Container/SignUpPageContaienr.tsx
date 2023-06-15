@@ -9,11 +9,13 @@ import type {
   TsignUpState,
   TthirdStageForm,
 } from "../SignUpPage.types";
+
 import {
   getFieldValidators,
   getFormFields,
   handleSignUpErrors,
 } from "../util/signup.handlers";
+
 import SpinnerWrapper from "../Presenter/SpinnerWrapper";
 
 const FirstStage = dynamic(() => import("../Presenter/FirstStage"), {
@@ -39,10 +41,16 @@ const SignUpPageContainer: React.FC = () => {
     emailUpdates: true,
   });
 
+  /**
+   * triggers an action to go back to the previous stage
+   */
   const prevStage = (): void => {
     setSignUpStage((prev: number) => --prev);
   };
 
+  /**
+   * triggers an action to go to the next stage
+   */
   const nextStage = (): void => {
     setSignUpStage((prev: number) => ++prev);
   };
@@ -103,6 +111,10 @@ const SignUpPageContainer: React.FC = () => {
     return { shouldStageChange: !hasError, errors: errors };
   };
 
+  /**
+   * determines the current signup stage using `signUpStage` state.
+   * @returns the current signup stage
+   */
   const getCurrentStageComponent = () => {
     const Component =
       signUpStage === 1
@@ -114,6 +126,10 @@ const SignUpPageContainer: React.FC = () => {
     return Component;
   };
 
+  /**
+   * determines the current signup stage props using `signUpStage` state.
+   * @returns the current signup stage props
+   */
   const getCurrentStageProps = () => {
     const props =
       signUpStage === 1
@@ -147,6 +163,7 @@ const SignUpPageContainer: React.FC = () => {
 
   const CurrentFormComponent = getCurrentStageComponent();
   const currentFormComponentProps = getCurrentStageProps();
+
   const FormComponent = (
     // @ts-ignore
     <CurrentFormComponent
@@ -157,7 +174,6 @@ const SignUpPageContainer: React.FC = () => {
       {...currentFormComponentProps}
     />
   );
-
   return (
     <SignUpPagePresenter
       FormComponent={FormComponent}
