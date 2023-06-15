@@ -35,3 +35,4 @@ this list grows as more parts of the applicataion are implemented.
 these are the resolutions i try to follow through on them. this list will also grow as i face new challenges.
 - mobile first design
 - clean, readable, extendable and reusable components
+- commentig seems very pro and NECESSARY!
