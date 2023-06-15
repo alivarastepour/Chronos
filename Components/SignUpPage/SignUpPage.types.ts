@@ -63,3 +63,32 @@ export type TsecondStage = TsecondStageForm &
 export type TthirdStage = TthirdStageForm &
   TthirdStageFormValidators &
   TstageComponentSharedProps<"prev" | "submit">;
+
+export type TusernameErrors =
+  | "username can not be empty"
+  | "username should be larger than 8 charachters"
+  | "username should be smaller than 20 charachters"
+  | "username should only include letters"
+  | "";
+
+export type TemailErrors =
+  | "email can not be empty"
+  | "email should have an standard formation"
+  | "";
+
+export type TpasswordErrors =
+  | "password can not be empty"
+  | "password should be larger than 8 charachters"
+  | "password should be smaller than 20 charachters"
+  | "";
+
+export type TpasswordRepeatErrors =
+  | "password repeat should match the provided password"
+  | "";
+
+export type ThasReadTOSErrors =
+  | "please review and agree to our terms of services"
+  | "";
+
+export type TwantsEmailUpdatesErrors = "";
+export type TgenderErrors = "";
