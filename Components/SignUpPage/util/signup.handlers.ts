@@ -89,6 +89,9 @@ const wantsEmailUpdates = (checked: boolean): TwantsEmailUpdatesErrors => "";
  */
 const isGenderVaid = (gender: Tgender): TgenderErrors => "";
 
+/**
+ * a map from field names to their respective validators
+ */
 const VALIDATION_MAP: TsignUpStateValidators = {
   username: isUsernameValid,
   email: isEmailValid,
@@ -100,6 +103,12 @@ const VALIDATION_MAP: TsignUpStateValidators = {
 };
 
 type Tfields = keyof TsignUpStateValidators;
+
+/**
+ * given a fields array, returns a map from fields to their validators.
+ * @param fields an array of strings in which each element is a field name from a form.
+ * @returns a partial map from fields to their validators.
+ */
 export const getFieldValidators = (fields: string[]): Map<string, Function> => {
   const partialValidatorsMap = new Map<string, Function>();
   for (const field of fields) {
@@ -110,6 +119,11 @@ export const getFieldValidators = (fields: string[]): Map<string, Function> => {
   return partialValidatorsMap;
 };
 
+/**
+ * selects all input fields in a given form element.
+ * @param form an HTMLFormElement to select its inputs
+ * @returns an array that contains the name of fields in the given form
+ */
 export const getFormFields = (form: HTMLFormElement): string[] => {
   const inputs = form.querySelectorAll("input");
   const fields: string[] = [];
@@ -119,18 +133,17 @@ export const getFormFields = (form: HTMLFormElement): string[] => {
 
 const get = (id: string) => document.getElementById(id);
 
+/**
+ * from a given map, shows or hides errors for each form field.
+ * @param errorMap a map from field names to their respective errors
+ */
 export const handleSignUpErrors = (errorMap: Map<string, string>) => {
-  console.log(errorMap);
-
   for (const [field, value] of errorMap) {
     const errorElementID: string = `${field}-error`;
     const errorElement = get(errorElementID) as HTMLElement;
     const shouldClearError: boolean = value === "";
     errorElement.innerHTML = value;
-    if (shouldClearError) {
-      errorElement.classList.add(errorElementID);
-    } else {
-      errorElement.classList.remove(errorElementID);
-    }
+    if (shouldClearError) errorElement.classList.add(errorElementID);
+    else errorElement.classList.remove(errorElementID);
   }
 };
