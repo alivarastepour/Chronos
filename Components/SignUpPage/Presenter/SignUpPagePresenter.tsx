@@ -80,8 +80,9 @@ const SignUpPagePresenter: React.FC<IsignUpPagePresnter> = ({
                 </div>
               </div>
             </div>
-
-            {FormComponent}
+            <div className={styles["signup-stage-wrapper"]}>
+              {FormComponent}
+            </div>
 
             <div className={styles["secondary-signup-container"]}>
               <button
