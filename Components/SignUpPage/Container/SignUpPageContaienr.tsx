@@ -40,13 +40,18 @@ const SignUpPageContainer: React.FC = () => {
   });
 
   const prevStage = (): void => {
-    setSignUpStage((prev) => --prev);
+    setSignUpStage((prev: number) => --prev);
   };
 
   const nextStage = (): void => {
-    setSignUpStage((prev) => ++prev);
+    setSignUpStage((prev: number) => ++prev);
   };
 
+  /**
+   * handles stage change in signup component after an action is dispatched.
+   * @param state a literal that indicates which function should be used to handle stage change
+   * @returns a function to handle the stage change
+   */
   const handleSignUpStageChange = (
     state: "next" | "prev" | "submit"
   ): (() => void) => {
@@ -59,8 +64,7 @@ const SignUpPageContainer: React.FC = () => {
 
   /**
    *  given a form, finds its fields and their respective valditors and runs the validators
-   *  on field values to determine if the value is valid or not. if values are valid, proceeds;
-   *  if not, returns errors.
+   *  on field values to determine if the value is valid or not.
    * @param event the event that was triggered on form submit
    * @returns an object with two properties; shouldStageChange which is a boolean; errors which is a map
    * from fields to their errors.
@@ -130,6 +134,11 @@ const SignUpPageContainer: React.FC = () => {
     return props;
   };
 
+  /**
+   * determines the classsname to be applied to each stage holder regarding current stage.
+   * @param state is a unique identfier for each stage holder to be compared to the current stage
+   * @returns the corresponding classname for each stage regarding its activeness
+   */
   const getStageHolderClassName = (state: number) => {
     return state === signUpStage
       ? "signup-stage-holder-item-active"
