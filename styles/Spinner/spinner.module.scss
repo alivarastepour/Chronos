@@ -1,52 +1,131 @@
 @import "../_variables.scss";
 
 .spinner-wrapper {
+  position: relative;
+
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: row;
-  .spinner-item {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin-right: 0.3rem;
-  }
-  .spinner-item-1 {
-    animation: 2s roll infinite, 2s changeColor infinite ease-in-out;
-    transform: translateX(2rem);
-  }
-  .spinner-item-2 {
-    animation: 2s rollR infinite, 2s changeColor infinite;
-    transform: translateX(-2rem);
-  }
-}
 
-@keyframes roll {
-  50% {
-    transform: translateX(-1rem);
-  }
-  75% {
-    transform: translateX(1rem);
-    transform: translateY(2rem);
-    @media (prefers-color-sheme: dark) {
-      background-color: white;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .spinner-flex-container {
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .spinner-item-container {
+      position: relative;
+
+      width: 60px;
+      height: 10px;
+
+      animation: spin 1s infinite;
+
+      .spinner-item {
+        width: 20px;
+        height: 20px;
+
+        border-radius: 50%;
+
+        margin-right: 0.3rem;
+
+        position: absolute;
+      }
+
+      .spinner-item-1 {
+        animation: 2s rollLeft infinite, 2s changeColor infinite ease-in-out;
+        transform: translateX(2rem);
+
+        left: 0;
+      }
+
+      .spinner-item-2 {
+        animation: 2s rollTop infinite, 2s changeColor infinite ease-in-out;
+        transform: translateX(-2rem);
+
+        left: 20px;
+      }
+
+      .spinner-item-3 {
+        animation: 2s rollBottom infinite, 2s changeColor infinite ease-in-out;
+        transform: translateX(-2rem);
+
+        left: 20px;
+      }
+
+      .spinner-item-4 {
+        animation: 2s rollRight infinite, 2s changeColor infinite ease-in-out;
+        transform: translateX(-2rem);
+
+        left: 40px;
+      }
     }
   }
+}
+
+@keyframes rollLeft {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-1rem, 0);
+  }
   100% {
-    transform: translateY(0rem) translateX(2rem);
+    transform: translate(0, 0);
   }
 }
 
-@keyframes rollR {
-  50% {
-    transform: translateX(1rem);
+@keyframes rollRight {
+  0% {
+    transform: translate(0, 0);
   }
-  75% {
-    transform: translateX(-1rem);
-    transform: translateY(-2rem);
+  50% {
+    transform: translate(1rem, 0);
   }
   100% {
-    transform: translateY(0rem) translateX(-2rem);
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes rollTop {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 2rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes rollBottom {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -2rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -54,6 +133,7 @@
   .spinner-item {
     background-color: $primary_color_dark;
   }
+
   @keyframes changeColor {
     50% {
       background-color: $fourth_color_dark;
@@ -71,6 +151,7 @@
   .spinner-item {
     background-color: $primary_color_light;
   }
+
   @keyframes changeColor {
     50% {
       background-color: $secondary_color_light;
