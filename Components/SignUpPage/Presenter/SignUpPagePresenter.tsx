@@ -1,9 +1,12 @@
-import styles from "@/styles/SignUpPage/signUpPage.module.scss";
-import Image from "next/image";
-import logo from "@/public/logo.png";
-import { inter } from "@/public/util/Fonts";
 import Link from "next/link";
+import Image from "next/image";
+
+import styles from "@/styles/SignUpPage/signUpPage.module.scss";
+
 import SecondaryFooter from "../../SecondaryFooter/SecondaryFooter";
+
+import { inter } from "@/public/util/Fonts";
+import logo from "@/public/logo.png";
 
 interface IsignUpPagePresnter {
   getStageHolderClassName: (holder: number) => string;

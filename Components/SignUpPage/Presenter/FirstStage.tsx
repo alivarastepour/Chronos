@@ -1,6 +1,6 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
+
 import type { TfirstStage } from "../SignUpPage.types";
-import { FormEvent } from "react";
 
 const FirstStage: React.FC<TfirstStage> = ({
   handleSignUpStageChange,
@@ -33,7 +33,6 @@ const FirstStage: React.FC<TfirstStage> = ({
             onChange={(e) =>
               setSignUpState((prev) => ({ ...prev, username: e.target.value }))
             }
-            // placeholder="Username should be between 8 to 20 alphabetical charachters"
           />
           <p
             id="signup-username-error"
@@ -56,7 +55,6 @@ const FirstStage: React.FC<TfirstStage> = ({
             onChange={(e) =>
               setSignUpState((prev) => ({ ...prev, email: e.target.value }))
             }
-            // placeholder="This is the email we will use to recover your password"
           />
           <p
             id="signup-email-error"
@@ -69,7 +67,6 @@ const FirstStage: React.FC<TfirstStage> = ({
           <button
             type="submit"
             className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
-            // onClick={handleSignUpStageChange("next")}
           >
             Next
           </button>

@@ -1,4 +1,5 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
+
 import type { Tgender, TthirdStage } from "../SignUpPage.types";
 
 const ThirdStage: React.FC<TthirdStage> = ({
@@ -92,9 +93,7 @@ const ThirdStage: React.FC<TthirdStage> = ({
           </button>
           <button
             type="submit"
-            // disabled={!hasReadTOS}
             className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
-            // onClick={undefined}
           >
             Sign Up
           </button>

@@ -1,4 +1,5 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
+
 import type { TsecondStage } from "../SignUpPage.types";
 
 const SecondStage: React.FC<TsecondStage> = ({
@@ -34,7 +35,6 @@ const SecondStage: React.FC<TsecondStage> = ({
             onChange={(e) =>
               setSignUpState((prev) => ({ ...prev, password: e.target.value }))
             }
-            // placeholder="Password should be between 8 to 20 charachters"
           />
           <p
             id="signup-password-error"
@@ -57,7 +57,6 @@ const SecondStage: React.FC<TsecondStage> = ({
             onChange={(e) =>
               setSignUpState((prev) => ({ ...prev, passwordR: e.target.value }))
             }
-            // placeholder="Just to be sure, enter your password again"
           />
           <p
             id="signup-passwordR-error"
@@ -76,7 +75,6 @@ const SecondStage: React.FC<TsecondStage> = ({
           <button
             type="submit"
             className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
-            // onClick={handleSignUpStageChange("next")}
           >
             Next
           </button>
