@@ -1,4 +1,4 @@
-import styles from "@/styles/Spinner/spinner.module.scss";
+import styles from "@/styles/_ui_components/Spinner/spinner.module.scss";
 
 const Spinner = () => {
   return (
