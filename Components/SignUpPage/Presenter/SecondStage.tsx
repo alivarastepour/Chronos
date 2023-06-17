@@ -1,6 +1,8 @@
 import styles from "@/styles/SignUpPage/signUpPage.module.scss";
 
-import type { TsecondStage } from "../SignUpPage.types";
+import PasswordInput from "@/Components/_ui_components/PasswordInput/PasswordInput";
+
+import type { TsecondStage, TsignUpState } from "../SignUpPage.types";
 
 const SecondStage: React.FC<TsecondStage> = ({
   handleSignUpStageChange,
@@ -22,19 +24,14 @@ const SecondStage: React.FC<TsecondStage> = ({
       >
         <div>
           <input type="text" autoComplete="username" hidden name="" id="" />
-          <label htmlFor="signup-password">
-            password
-            <span>*</span>
-          </label>
-          <input
-            type="password"
+          <PasswordInput<TsignUpState>
+            password={password}
+            setState={setSignUpState}
+            label="password"
             autoComplete="new-password"
-            name="signup-password"
             id="signup-password"
-            value={password}
-            onChange={(e) =>
-              setSignUpState((prev) => ({ ...prev, password: e.target.value }))
-            }
+            name="signup-password"
+            htmlFor="signup-password"
           />
           <p
             id="signup-password-error"
@@ -44,19 +41,14 @@ const SecondStage: React.FC<TsecondStage> = ({
           </p>
         </div>
         <div>
-          <label htmlFor="signup-passwordR">
-            repeat password
-            <span>*</span>
-          </label>
-          <input
-            type="password"
+          <PasswordInput<TsignUpState>
+            password={passwordR}
+            setState={setSignUpState}
+            label="repeat password"
             autoComplete="new-password"
-            name="signup-passwordR"
             id="signup-passwordR"
-            value={passwordR}
-            onChange={(e) =>
-              setSignUpState((prev) => ({ ...prev, passwordR: e.target.value }))
-            }
+            name="signup-passwordR"
+            htmlFor="signup-passwordR"
           />
           <p
             id="signup-passwordR-error"
