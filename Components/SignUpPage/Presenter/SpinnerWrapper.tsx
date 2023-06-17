@@ -1,4 +1,4 @@
-import Spinner from "@/Components/Spinner/Spinner";
+import Spinner from "@/Components/_ui_components/Spinner/Spinner";
 import styles from "@/styles/SignUpPage/spinnerWrapper.module.scss";
 const SpinnerWrapper: React.FC = () => {
   return (
