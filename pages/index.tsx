@@ -6,6 +6,10 @@ const Home = () => {
     <>
       <Head>
         <title>Chronos | Manage Your Time Like You Are The God Of It.</title>
+        <meta
+          name="description"
+          content="chronos is a web-based management tool that helps your organization to manage tasks in an efficient way."
+        />
       </Head>
       <LandingPage />
     </>
