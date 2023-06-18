@@ -8,6 +8,7 @@ import Link from "next/link";
 import { TloginState } from "../TloginState";
 import { blurCheck, submitCheck } from "../util/checkForm";
 import { useState } from "react";
+import PasswordInput from "@/Components/_ui_components/PasswordInput/PasswordInput";
 
 interface IloginPagePresenter {
   loginState: TloginState;
@@ -62,7 +63,7 @@ const LoginPagePresenter = ({
                       username: event.target.value,
                     }))
                   }
-                  onBlur={() => blurCheck("username")(loginState.username)}
+                  // onBlur={() => blurCheck("username")(loginState.username)}
                 />
                 <p
                   id="login-username-error"
@@ -70,7 +71,7 @@ const LoginPagePresenter = ({
                 ></p>
               </div>
               <div>
-                <label
+                {/* <label
                   htmlFor="login-password"
                   className={styles["login-flex-label-password"]}
                 >
@@ -149,7 +150,16 @@ const LoginPagePresenter = ({
                       password: event.target.value,
                     }))
                   }
-                  onBlur={() => blurCheck("password")(loginState.password)}
+                  // onBlur={() => blurCheck("password")(loginState.password)}
+                /> */}
+                <PasswordInput<TloginState>
+                  autoComplete="current-password"
+                  htmlFor="login-password"
+                  id="login-password"
+                  label="password"
+                  name="login-password"
+                  password={loginState.password}
+                  setState={setLoginState}
                 />
                 <div className={styles["password-util"]}>
                   <div>
