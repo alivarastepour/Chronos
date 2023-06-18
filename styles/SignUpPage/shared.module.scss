@@ -27,7 +27,8 @@
 
 @media (prefers-color-scheme: dark) {
   .signup-page-signup-button {
-    background-color: $secondary_color_dark;
+    // background-color: rgba($primary_background_dark, 0.1);
+    background-color: $secondary_color_dark_high_contrast;
 
     &:hover {
       background-color: rgba($secondary_color_dark, 0.9);
