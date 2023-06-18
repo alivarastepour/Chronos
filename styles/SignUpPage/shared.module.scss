@@ -38,10 +38,10 @@
 
 @media (prefers-color-scheme: light) {
   .signup-page-signup-button {
-    background-color: $primary_color_light;
+    background-color: $secondary_color_dark_high_contrast;
 
     &:hover {
-      background-color: rgba($primary_color_light, 0.9);
+      background-color: rgba($secondary_color_dark_high_contrast, 0.9);
     }
   }
 }

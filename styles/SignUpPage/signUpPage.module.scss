@@ -22,7 +22,7 @@
     .signup-page-logo-subtitle {
       margin-top: 0.5rem;
 
-      font-size: 0.7rem;
+      font-size: 0.76rem;
       text-align: center;
       text-transform: capitalize;
     }
@@ -158,7 +158,7 @@
       p {
         height: 30px;
         box-sizing: border-box;
-        font-size: 0.7rem;
+        font-size: 0.76rem;
         font-weight: 500;
         color: white;
         text-transform: uppercase;
@@ -179,12 +179,12 @@
         justify-content: space-between;
         align-items: center;
 
-        font-size: 0.7rem;
+        font-size: 0.76rem;
 
         margin-top: 0.4rem;
 
         .signup-remember-label {
-          font-size: 0.7rem;
+          font-size: 0.76rem;
         }
 
         .signup-remember-checkbox {
@@ -241,7 +241,7 @@
     .signup-signup-referrer-container {
       text-align: center;
       text-transform: capitalize;
-      font-size: 0.7rem;
+      font-size: 0.76rem;
 
       a {
         display: inline-block;
@@ -359,6 +359,11 @@
         .signup-stage-holder-item.signup-stage-holder-item-deactive {
           .signup-stage-holder-num {
             background-color: white;
+          }
+        }
+        .signup-stage-holder-item.signup-stage-holder-item-active {
+          .signup-stage-desc {
+            color: $secondary_color_dark_high_contrast;
           }
         }
       }
