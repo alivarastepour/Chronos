@@ -36,3 +36,4 @@ these are the resolutions i try to follow through on them. this list will also g
 - mobile first design
 - clean, readable, extendable and reusable components
 - commentig seems very pro and NECESSARY!
+- keep an eye on different pages' performance using Lighthouse
