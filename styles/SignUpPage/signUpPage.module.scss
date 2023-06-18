@@ -111,22 +111,6 @@
 
       height: 304px;
 
-      .signup-flex-action-container {
-        position: absolute;
-        bottom: 0;
-
-        width: 100%;
-
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-
-        button {
-          font-size: 1.4rem;
-          width: 45%;
-        }
-      }
-
       label {
         display: block;
 
@@ -168,26 +152,6 @@
 
         &:focus {
           outline: none;
-        }
-      }
-
-      .signup-checkbox-container:nth-child(2) {
-        margin-top: 3rem;
-      }
-      .signup-checkbox-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 0.5rem;
-
-        label[data-checkboxlabel*="true"] {
-          font-size: 0.9rem;
-          margin-bottom: 0;
-        }
-
-        input[data-checkbox*="true"] {
-          width: 15px;
-          height: 15px;
         }
       }
 
@@ -248,14 +212,6 @@
           cursor: pointer;
         }
       }
-
-      .signup-page-signup-button {
-        font-size: 1.4rem;
-        color: white;
-        border-radius: 1rem;
-
-        transition: 0.3s;
-      }
     }
 
     .secondary-signup-container {
@@ -313,11 +269,6 @@
   padding: 0.4rem 0.8rem;
 
   cursor: pointer;
-
-  &:disabled {
-    opacity: 0.2;
-    cursor: default;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -342,14 +293,6 @@
 
           &:hover:not(:focus) {
             box-shadow: 1px 6px 12px rgba(255, 255, 255, 0.1);
-          }
-        }
-
-        .signup-page-signup-button {
-          background-color: $secondary_color_dark;
-
-          &:hover:not(&:disabled) {
-            background-color: rgba($secondary_color_dark, 0.9);
           }
         }
       }
@@ -409,14 +352,6 @@
 
           &:hover:not(&:focus) {
             border: 2px solid rgba($primary_color_light, 0.5);
-          }
-        }
-
-        .signup-page-signup-button {
-          background-color: $primary_color_light;
-
-          &:hover {
-            background-color: rgba($primary_color_light, 0.9);
           }
         }
       }

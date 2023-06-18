@@ -1,0 +1,46 @@
+@import "../variables";
+
+.signup-page-signup-button {
+  font-size: 1.4rem;
+  color: white;
+  border-radius: 1rem;
+
+  transition: 0.3s;
+}
+
+.primary-signup-button {
+  width: 100%;
+
+  border-radius: 0.6rem;
+  border: none;
+
+  margin-top: 2rem;
+  padding: 0.4rem 0.8rem;
+
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .signup-page-signup-button {
+    background-color: $secondary_color_dark;
+
+    &:hover {
+      background-color: rgba($secondary_color_dark, 0.9);
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .signup-page-signup-button {
+    background-color: $primary_color_light;
+
+    &:hover {
+      background-color: rgba($primary_color_light, 0.9);
+    }
+  }
+}

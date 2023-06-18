@@ -1,0 +1,36 @@
+.signup-checkbox-container:nth-child(2) {
+  margin-top: 3rem;
+}
+
+.signup-checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+
+  label[data-checkboxlabel*="true"] {
+    font-size: 0.9rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  input[data-checkbox*="true"] {
+    width: 15px !important;
+    height: 15px !important;
+  }
+}
+
+.signup-flex-action-container {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  button {
+    font-size: 1.4rem;
+    width: 45%;
+  }
+}

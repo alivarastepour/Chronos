@@ -1,4 +1,5 @@
-import styles from "@/styles/SignUpPage/signUpPage.module.scss";
+import styles from "@/styles/SignUpPage/thirdStage.module.scss";
+import commonStyles from "@/styles/SignUpPage/shared.module.scss";
 
 import type { Tgender, TthirdStage } from "../SignUpPage.types";
 
@@ -14,6 +15,7 @@ const ThirdStage: React.FC<TthirdStage> = ({
   return (
     <>
       <form
+        className={styles["third-stage-form"]}
         onSubmit={(e) => {
           e.preventDefault();
           const { shouldStageChange: stc, errors } = shouldStageChange(e);
@@ -86,14 +88,14 @@ const ThirdStage: React.FC<TthirdStage> = ({
         ></p>
         <div className={styles["signup-flex-action-container"]}>
           <button
-            className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
+            className={`${commonStyles["signup-page-signup-button"]} ${commonStyles["primary-signup-button"]}`}
             onClick={handleSignUpStageChange("prev")}
           >
             Previous
           </button>
           <button
             type="submit"
-            className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
+            className={`${commonStyles["signup-page-signup-button"]} ${commonStyles["primary-signup-button"]}`}
           >
             Sign Up
           </button>

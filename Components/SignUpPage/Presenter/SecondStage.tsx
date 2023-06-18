@@ -1,4 +1,5 @@
-import styles from "@/styles/SignUpPage/signUpPage.module.scss";
+import styles from "@/styles/SignUpPage/secondStage.module.scss";
+import commonStyles from "@/styles/SignUpPage/shared.module.scss";
 
 import PasswordInput from "@/Components/_ui_components/PasswordInput/PasswordInput";
 
@@ -53,14 +54,14 @@ const SecondStage: React.FC<TsecondStage> = ({
         </div>
         <div className={styles["signup-flex-action-container"]}>
           <button
-            className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
+            className={`${commonStyles["signup-page-signup-button"]} ${commonStyles["primary-signup-button"]}`}
             onClick={handleSignUpStageChange("prev")}
           >
             Previous
           </button>
           <button
             type="submit"
-            className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
+            className={`${commonStyles["signup-page-signup-button"]} ${commonStyles["primary-signup-button"]}`}
           >
             Next
           </button>

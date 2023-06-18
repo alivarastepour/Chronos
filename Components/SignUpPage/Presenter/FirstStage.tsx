@@ -1,4 +1,4 @@
-import styles from "@/styles/SignUpPage/signUpPage.module.scss";
+import commonStyles from "@/styles/SignUpPage/shared.module.scss";
 
 import type { TfirstStage } from "../SignUpPage.types";
 
@@ -60,7 +60,7 @@ const FirstStage: React.FC<TfirstStage> = ({
         <div>
           <button
             type="submit"
-            className={`${styles["signup-page-signup-button"]} ${styles["primary-signup-button"]}`}
+            className={`${commonStyles["signup-page-signup-button"]} ${commonStyles["primary-signup-button"]}`}
           >
             Next
           </button>
