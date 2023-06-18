@@ -34,10 +34,7 @@ const FirstStage: React.FC<TfirstStage> = ({
               setSignUpState((prev) => ({ ...prev, username: e.target.value }))
             }
           />
-          <p
-            id="signup-username-error"
-            className={`${styles["signup-username-error"]} signup-username-error`}
-          >
+          <p id="signup-username-error" className="signup-username-error">
             enter a valid name.
           </p>
         </div>
@@ -56,10 +53,7 @@ const FirstStage: React.FC<TfirstStage> = ({
               setSignUpState((prev) => ({ ...prev, email: e.target.value }))
             }
           />
-          <p
-            id="signup-email-error"
-            className={`${styles["signup-email-error"]} signup-email-error`}
-          >
+          <p id="signup-email-error" className="signup-email-error">
             enter an email.
           </p>
         </div>

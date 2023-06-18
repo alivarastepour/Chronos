@@ -60,7 +60,7 @@ const ThirdStage: React.FC<TthirdStage> = ({
         </div>
         <p
           id="signup-checkbox-tos-error"
-          className={`${styles["signup-checkbox-tos-error"]} signup-checkbox-tos-error`}
+          className="signup-checkbox-tos-error"
         ></p>
         <div className={styles["signup-checkbox-container"]}>
           <label data-checkboxlabel="true" htmlFor="signup-checkbox-updates">
@@ -82,7 +82,7 @@ const ThirdStage: React.FC<TthirdStage> = ({
         </div>
         <p
           id="signup-checkbox-updates-error"
-          className={`${styles["signup-checkbox-updates-error"]} signup-checkbox-updates-error`}
+          className="signup-checkbox-updates-error"
         ></p>
         <div className={styles["signup-flex-action-container"]}>
           <button

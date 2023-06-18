@@ -33,10 +33,7 @@ const SecondStage: React.FC<TsecondStage> = ({
             name="signup-password"
             htmlFor="signup-password"
           />
-          <p
-            id="signup-password-error"
-            className={`${styles["signup-password-error"]} signup-password-error`}
-          >
+          <p id="signup-password-error" className="signup-password-error">
             enter a valid password.
           </p>
         </div>
@@ -50,10 +47,7 @@ const SecondStage: React.FC<TsecondStage> = ({
             name="signup-passwordR"
             htmlFor="signup-passwordR"
           />
-          <p
-            id="signup-passwordR-error"
-            className={`${styles["signup-passwordR-error"]} signup-passwordR-error`}
-          >
+          <p id="signup-passwordR-error" className="signup-passwordR-error">
             passwords dont match
           </p>
         </div>
