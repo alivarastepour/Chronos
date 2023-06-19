@@ -21,8 +21,8 @@ const Overview: React.FC = () => {
           <div className={styles["right-overview"]}>
             <Image
               src={HeroImage}
-              width={630}
-              height={560}
+              width={640}
+              height={565}
               quality={100}
               placeholder="blur"
               alt="managing tasks"
