@@ -28,17 +28,28 @@ const Header: React.FC = () => {
         >
           <div>
             <Link href={"/"}>
-              <div className={styles["header-content-item"]}>features</div>
+              <div className={styles["header-content-item"]}>Blog</div>
             </Link>
           </div>
           <div>
             <Link href={"/"}>
-              <div className={styles["header-content-item"]}>plans</div>
+              <div className={styles["header-content-item"]}>
+                terms of services
+              </div>
             </Link>
           </div>
           <div>
-            <Link href={"/"}>
-              <div className={styles["header-content-item"]}>try a demo</div>
+            <Link href={"/signup"}>
+              <div className={styles["header-content-item"]}>
+                Signup for an account
+              </div>
+            </Link>
+          </div>
+          <div>
+            <Link href={"/login"}>
+              <div className={styles["header-content-item"]}>
+                Login to your account
+              </div>
             </Link>
           </div>
           <div className={styles["header-footer"]}>
