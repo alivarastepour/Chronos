@@ -1,5 +1,4 @@
 import Head from "next/head";
-
 const TermsOfServices = () => {
   return (
     <>
