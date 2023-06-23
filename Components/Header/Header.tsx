@@ -6,8 +6,18 @@ import { inter } from "@/public/util/Fonts";
 import logo from "@/public/logo.png";
 import { useEffect } from "react";
 import { tieEventListener } from "./util/tieEventListener";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
 const Header: React.FC = () => {
+  const [isSmall] = useMediaQuery({ queries: [{ "max-width": 720 }] });
+  const links = [
+    { id: 0, name: "Features", link: "" },
+    { id: 1, name: "Prices", link: "" },
+    { id: 2, name: "Platform", link: "" },
+    { id: 3, name: "", link: "" },
+    { id: 4, name: "", link: "" },
+    { id: 5, name: "", link: "" },
+  ];
   useEffect(() => {
     tieEventListener();
   }, []);
